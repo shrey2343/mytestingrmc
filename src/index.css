@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 355 77% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 210 17% 95%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 355 77% 49%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --hero-bg: 0 0% 0%;
+    --hero-foreground: 0 0% 100%;
+    --section-light: 210 17% 96%;
+    --card-beige: 42 24% 84%;
+    --card-slate: 199 18% 44%;
+    --card-sage: 169 14% 41%;
+    --card-teal: 190 72% 24%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 355 77% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 355 77% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-[1200px] mx-auto px-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:brightness-90 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-primary-foreground/10;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .btn-pill-black {
+    @apply inline-block bg-foreground text-background text-sm font-medium py-2.5 px-10 rounded-full transition-colors duration-300 hover:bg-foreground/90;
+  }
+
+  .section-dark {
+    @apply bg-foreground text-background;
+  }
+
+  .section-light {
+    @apply bg-secondary;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-background/20 bg-background/5 text-background/90;
+  }
+
+  .stat-card {
+    @apply flex flex-col items-center justify-center p-6 rounded-xl border border-primary/20 bg-background/5;
+  }
+
+  .stat-number {
+    @apply text-3xl md:text-4xl font-semibold text-primary;
+  }
+
+  .stat-label {
+    @apply text-sm text-background/80 mt-1;
+  }
+
+  .service-card {
+    @apply bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .check-item {
+    @apply flex items-start gap-3;
+  }
+
+  .check-icon {
+    @apply mt-1 bg-primary/10 p-1 rounded-full flex-shrink-0;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent, transparent);
+  }
+
+  .hero-gradient {
+    background: radial-gradient(ellipse at 20% 80%, rgba(217, 35, 45, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(217, 35, 45, 0.1) 0%, transparent 40%);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
