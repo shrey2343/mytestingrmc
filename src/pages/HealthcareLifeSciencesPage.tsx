@@ -17,15 +17,15 @@ const HealthcareLifeSciencesPage = () => {
   const heroData = {
     badge: "Healthcare & Life Sciences",
     badgeIcon: <Heart className="w-4 h-4" />,
-    titleWhite: "Evidence-Driven",
-    titleRed: "Healthcare Research",
-    subtitle: "Evidence generation and research execution for regulated, impact-driven domains. Supporting pharma, medtech, and life sciences with scientific excellence.",
-    tags: ["Pharma", "MedTech", "Digital Health", "Life Sciences Firms", "CROs", "Biotech"],
-    primaryCta: "Get Started",
+    titleWhite: "Scientific Research",
+    titleRed: "Services",
+    subtitle: "We collaborate with healthcare, life sciences, and medical communication teams to transform data, studies, and insights into high-quality scientific publications, medical content, and global conference outputs — without overclaiming or regulatory risk.",
+    tags: ["Healthcare Organizations", "Life Sciences Companies", "Medical Communication Teams", "Research Groups", "Scientific Consultancies"],
+    primaryCta: " Book a Discussion",
     secondaryCta: "Our Services",
     stats: [
       { value: "1000+", label: "Studies Completed" },
-      { value: "200+", label: "Pharma Clients" },
+      { value: "200+", label: "Healthcare Clients" },
       { value: "50+", label: "Therapeutic Areas" },
       { value: "100%", label: "Compliance Rate" },
     ],
@@ -33,36 +33,44 @@ const HealthcareLifeSciencesPage = () => {
 
   const services = [
     {
-      title: "Clinical Research Support",
-      description: "End-to-end clinical trial documentation, protocol development, and regulatory submissions.",
+      title: "Scientific Publications & Medical Writing",
+      description: "Develop scientific manuscripts and research papers. Provide medical writing support aligned with your study or data. Structure content for journals and scientific platforms. Ensure clarity, consistency, and scientific rigor.",
+      benefits: [
+        "Communicate scientific findings with clarity and accuracy",
+        "Strengthen credibility with academic, industry, and clinical audiences",
+        "Support thought leadership through peer-aligned publications",
+        "Maintain ethical and scientific communication standards"
+      ]
     },
     {
-      title: "Real-World Evidence Studies",
-      description: "Generate compelling real-world data to support product value and market access strategies.",
+      title: "Research Communication & White Papers",
+      description: "Create white papers and scientific reports. Develop technical and research communication documents. Align content with scientific and industry expectations. Support ethical and transparent research communication.",
+      benefits: [
+        "Translate complex scientific information into structured narratives",
+        "Support partnerships, internal alignment, and external communication",
+        "Build evidence-based documentation without regulatory claims",
+        "Strengthen scientific positioning"
+      ]
     },
     {
-      title: "Medical Writing & Publications",
-      description: "Publication-ready manuscripts, abstracts, posters, and medical communication materials.",
+      title: "Data Analysis & Research Support",
+      description: "Perform limited quantitative data analysis. Support interpretation of research findings. Prepare data summaries for publications and presentations. Align analysis with scientific writing outputs.",
+      benefits: [
+        "Derive meaningful insights from existing datasets",
+        "Support publications and reports with structured analysis",
+        "Improve interpretation and presentation of results",
+        "Reduce ambiguity in scientific communication"
+      ]
     },
     {
-      title: "Health Economics & Outcomes",
-      description: "HEOR studies, budget impact models, and cost-effectiveness analyses for market access.",
-    },
-    {
-      title: "Systematic Reviews & Meta-Analysis",
-      description: "Rigorous evidence synthesis following PRISMA guidelines and Cochrane standards.",
-    },
-    {
-      title: "Regulatory Affairs Support",
-      description: "Regulatory strategy, dossier preparation, and compliance documentation.",
-    },
-    {
-      title: "Biostatistics & Data Analytics",
-      description: "Advanced statistical analysis, study design consultation, and data interpretation.",
-    },
-    {
-      title: "Medical Affairs & MSL Support",
-      description: "Scientific content, training materials, and medical information support.",
+      title: "Conferences, Posters & Scientific Presentations",
+      description: "Prepare conference papers and abstracts. Develop poster and presentation content. Format materials to conference guidelines. Support scientific storytelling for presentations.",
+      benefits: [
+        "Share research on international scientific platforms",
+        "Enhance visibility within healthcare and life sciences communities",
+        "Support professional and organizational credibility",
+        "Communicate findings clearly to expert audiences"
+      ]
     },
   ];
 
@@ -90,19 +98,29 @@ const HealthcareLifeSciencesPage = () => {
   ];
 
   const benefits = [
-    "Ph. D.-level medical writers and scientists",
-    "ICMJE and GPP3 compliant deliverables",
-    "Experience with 50+ therapeutic areas",
-    "Regulatory submission expertise (FDA, EMA, PMDA)",
-    "Rapid turnaround without quality compromise",
-    "Dedicated project management",
+    "Scientific writing and publication expertise",
+    "Ethical, non-clinical positioning",
+    "Experience with global conferences and journals",
+    "Clear separation from clinical trial execution",
+    "Confidential and white-label friendly support",
+    "Ph.D.-level medical writers and scientists",
   ];
 
   const testimonials = [
     {
       quote: "RMC's medical writing team delivered exceptional quality manuscripts that were accepted in top-tier journals. Their understanding of regulatory requirements is impeccable.",
-      author: "Dr. Meera Kapoor",
-      role: "VP Medical Affairs, Leading Pharma",
+      author: "Dr. Sarah Johnson",
+      role: "VP Medical Affairs, BioPharma Inc., Boston",
+    },
+    {
+      quote: "The scientific rigor and attention to detail in RMC's publications helped us secure FDA approval faster than expected. Outstanding partnership.",
+      author: "Dr. Michael Chen",
+      role: "Chief Scientific Officer, MedTech Solutions, San Francisco",
+    },
+    {
+      quote: "Working with RMC transformed our research communication strategy. Their expertise in life sciences is unmatched in the industry.",
+      author: "Dr. Emily Rodriguez",
+      role: "Director of Research, LifeSciences Corp., New York",
     },
   ];
 
@@ -112,7 +130,7 @@ const HealthcareLifeSciencesPage = () => {
       <IndustryServices
         sectionLabel="Our Expertise"
         title="Scientific Research Services"
-        subtitle="Comprehensive research and evidence generation services designed for the unique needs of healthcare and life sciences organizations."
+        subtitle="We collaborate with healthcare, life sciences, and medical communication teams to transform data, studies, and insights into high-quality scientific publications, medical content, and global conference outputs — without overclaiming or regulatory risk."
         services={services}
       />
 
@@ -155,7 +173,7 @@ const HealthcareLifeSciencesPage = () => {
         steps={processSteps}
       />
       <IndustryWhyUs
-        sectionLabel="Why Healthcare Leaders Choose Us"
+        sectionLabel="Why RMC"
         title="Scientific Excellence"
         subtitle="Partner with a team that understands the unique demands of healthcare research."
         benefits={benefits}

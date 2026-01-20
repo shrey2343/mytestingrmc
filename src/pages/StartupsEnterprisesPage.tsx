@@ -9,13 +9,13 @@ import { Rocket } from "lucide-react";
 
 const StartupsEnterprisesPage = () => {
   const heroData = {
-    badge: "For Startups & Enterprises",
+    badge: "Startups & Enterprises",
     badgeIcon: <Rocket className="w-4 h-4" />,
-    titleWhite: "Research-Backed",
-    titleRed: "Growth & Innovation",
-    subtitle: "Validating ideas, strengthening funding stories, and building research-backed credibility for startups and enterprise innovation teams.",
-    tags: ["Founders", "Innovation Teams", "Corporate R&D", "VC-backed Companies", "Accelerators", "Enterprise Strategy"],
-    primaryCta: "Get Started",
+    titleWhite: "What We Do for",
+    titleRed: "Startups & Enterprises",
+    subtitle: "We partner with founders, innovation teams, and enterprises to transform ideas, data, and experiments into research-backed outputs that strengthen trust with investors, partners, and global audiences.",
+    tags: ["Startup Founders", "Innovation Teams", "Enterprise Strategy Teams", "VC-backed Companies", "Product-led Organizations"],
+    primaryCta: " Book a Discussion",
     secondaryCta: "Explore Services",
     stats: [
       { value: "500+", label: "Startups Supported" },
@@ -27,36 +27,54 @@ const StartupsEnterprisesPage = () => {
 
   const services = [
     {
-      title: "Idea Validation & Market Research",
-      description: "Validate your startup ideas with comprehensive market research, competitive analysis, and feasibility studies.",
+      title: "Scientific Publications & Research Communication",
+      description: "Identify publication-ready topics aligned with your solution. Develop startup-aligned research papers and manuscripts. Create white papers and technical research reports. Support journal- and conference-ready scientific publications.",
+      benefits: [
+        "Build long-term, research-backed credibility",
+        "Strengthen investor, partner, and enterprise trust",
+        "Position your innovation as evidence-driven",
+        "Create authority beyond pitch decks and demos"
+      ]
     },
     {
-      title: "Pitch Deck & Investor Materials",
-      description: "Create compelling pitch decks, business plans, and investor presentations backed by solid research.",
+      title: "Data Analysis & Research Insights",
+      description: "Analyze quantitative or mixed datasets. Interpret findings for research and business use. Prepare research-ready results and summaries. Align data insights with publications and presentations.",
+      benefits: [
+        "Make sense of existing product, pilot, or business data",
+        "Support decisions with structured insights",
+        "Strengthen research papers, decks, and reports",
+        "Move from raw data to clear narratives"
+      ]
     },
     {
-      title: "Data Analytics & Insights",
-      description: "Transform raw data into actionable business insights with advanced analytics and visualization.",
+      title: "Conferences & Global Visibility",
+      description: "Prepare conference papers and abstracts. Develop presentations and posters. Support founder and team presentation readiness. Align submissions with relevant international conferences.",
+      benefits: [
+        "Build thought leadership on global platforms",
+        "Gain visibility across academia, industry, and innovation ecosystems",
+        "Strengthen credibility with international audiences",
+        "Network beyond local markets"
+      ]
     },
     {
-      title: "Go-to-Market Strategy",
-      description: "Research-driven market entry strategies, customer segmentation, and positioning frameworks.",
+      title: "Research-Driven MVP Support",
+      description: "Use research insights to inform MVP scope. Support hypothesis-driven feature framing. Align MVP outcomes with research and data narratives. Ensure consistency between product, research, and pitch.",
+      benefits: [
+        "Build MVPs grounded in evidence, not guesswork",
+        "Align product features with validated insights",
+        "Strengthen product narratives for stakeholders",
+        "Reduce iteration risk"
+      ]
     },
     {
-      title: "Growth Research & Optimization",
-      description: "Identify growth opportunities through customer research, funnel analysis, and market trends.",
-    },
-    {
-      title: "Due Diligence Support",
-      description: "Comprehensive research support for M&A, partnerships, and investment decisions.",
-    },
-    {
-      title: "Industry & Competitive Intelligence",
-      description: "Stay ahead with in-depth industry reports, competitor tracking, and market monitoring.",
-    },
-    {
-      title: "IP & Patent Research",
-      description: "Patent landscape analysis, freedom-to-operate searches, and innovation mapping.",
+      title: "Evidence-Backed Pitch Decks",
+      description: "Develop research-supported problem–solution narratives. Integrate data and research into pitch decks. Create clear, credible slides for investors and partners. Align decks with publications and conference outputs.",
+      benefits: [
+        "Build investor confidence through credibility",
+        "Differentiate from assumption-led competitors",
+        "Tell a clear, research-backed story",
+        "Strengthen funding and partnership conversations"
+      ]
     },
   ];
 
@@ -84,18 +102,29 @@ const StartupsEnterprisesPage = () => {
   ];
 
   const benefits = [
+    "Research-first mindset",
+    "Academic + industry alignment",
+    "Global publication and conference experience",
+    "Honest, non-overclaiming delivery",
+    "Confidential and white-label friendly",
     "Rapid turnaround without compromising quality",
-    "Industry experts with startup and enterprise experience",
-    "Flexible engagement models for any stage",
-    "Confidential and secure research practices",
-    "Direct access to senior researchers",
   ];
 
   const testimonials = [
     {
-      quote: "RMC's market research helped us pivot our product strategy and secure our Series A funding. Their insights were invaluable.",
-      author: "Rahul Sharma",
-      role: "Founder & CEO, TechVenture",
+      quote: "RMC's market research helped us pivot our product strategy and secure our Series A funding. Their insights were invaluable for our growth.",
+      author: "James Mitchell",
+      role: "Founder & CEO, TechVenture, Austin",
+    },
+    {
+      quote: "The research-backed pitch deck RMC created helped us close a $5M funding round. Their data analysis was spot-on and investor-ready.",
+      author: "Lisa Thompson",
+      role: "Co-founder, HealthTech Startup, Seattle",
+    },
+    {
+      quote: "RMC's evidence-driven approach transformed our MVP development. We launched with confidence backed by solid research insights.",
+      author: "David Park",
+      role: "Head of Innovation, Enterprise Solutions, Chicago",
     },
   ];
 
@@ -103,9 +132,9 @@ const StartupsEnterprisesPage = () => {
     <Layout>
       <IndustryHero {...heroData} />
       <IndustryServices
-        sectionLabel="What We Offer"
+        sectionLabel=" "
         title="Research Services for Growth"
-        subtitle="Comprehensive research solutions designed to accelerate your startup journey and enterprise innovation initiatives."
+        subtitle="We partner with founders, innovation teams, and enterprises to transform ideas, data, and experiments into research-backed outputs that strengthen trust with investors, partners, and global audiences."
         services={services}
       />
       <IndustryProcess
@@ -115,7 +144,7 @@ const StartupsEnterprisesPage = () => {
         steps={processSteps}
       />
       <IndustryWhyUs
-        sectionLabel="Why Choose Us"
+        sectionLabel="Why RMC"
         title="Built for Speed & Scale"
         subtitle="We understand the fast-paced world of startups and enterprise innovation. Our research team combines academic rigor with business acumen to deliver insights that drive decisions."
         benefits={benefits}

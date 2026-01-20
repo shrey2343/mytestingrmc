@@ -51,11 +51,16 @@ export default {
           DEFAULT: "hsl(var(--hero-bg))",
           foreground: "hsl(var(--hero-foreground))",
         },
+        linkedin: {
+          DEFAULT: "hsl(var(--linkedin-blue))",
+        },
+        charcoal: {
+          DEFAULT: "hsl(var(--charcoal-black))",
+        },
+        "research-teal": "hsl(var(--research-teal))",
+        "innovation-purple": "hsl(var(--innovation-purple))",
         "section-light": "hsl(var(--section-light))",
-        "card-beige": "hsl(var(--card-beige))",
-        "card-slate": "hsl(var(--card-slate))",
-        "card-sage": "hsl(var(--card-sage))",
-        "card-teal": "hsl(var(--card-teal))",
+        "slate-grey": "hsl(var(--slate-grey))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

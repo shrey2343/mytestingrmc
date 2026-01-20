@@ -33,12 +33,12 @@ const whyPartnerFeatures = [
 
 const MedComResearchAgenciesPage = () => {
   const heroData = {
-    badge: "For MedCom & Research Agencies",
+    badge: "MedCom & Research Agencies",
     badgeIcon: <Handshake className="w-4 h-4" />,
-    titleWhite: "Your White-Label",
-    titleRed: "Research Partner",
-    subtitle: "A dependable, white-label research and scientific execution partner. Expand your capabilities without expanding your team.",
-    tags: ["Medical Communication Agencies", "Research Consultancies", "Scientific Writing Firms", "Healthcare PR Agencies"],
+    titleWhite: "Your White-Label Scientific &",
+    titleRed: "Research Execution Partner",
+    subtitle: "Medical communication agencies operate in a high-trust, high-precision environment. Timelines are tight. Accuracy is non-negotiable. Confidentiality is critical. RMC partners with MedCom and research agencies as a reliable, white-label scientific execution partner, supporting your teams with publication-ready content, medical writing, data analysis, and conference materials — seamlessly and discreetly.",
+    tags: ["Medical Communication Agencies", "Scientific Consultancies", "Research Agencies", "Healthcare Communication Firms", "Teams with Overflow Needs"],
     primaryCta: "Partner With Us",
     secondaryCta: "Our Services",
     stats: [
@@ -51,76 +51,94 @@ const MedComResearchAgenciesPage = () => {
 
   const services = [
     {
-      title: "Medical Writing Services",
-      description: "White-label medical writing for manuscripts, abstracts, posters, and regulatory documents.",
+      title: "Scientific Writing & Publications Support",
+      description: "Medical and scientific writing support. Research papers and publication-ready manuscripts. Journal-aligned formatting and structuring. Ethical, accurate, and reviewer-ready content.",
+      benefits: [
+        "Scale delivery without expanding internal teams",
+        "Maintain scientific accuracy and consistency",
+        "Meet client and publication timelines confidently",
+        "Deliver high-quality outputs under your brand"
+      ]
     },
     {
-      title: "Systematic Reviews & Meta-Analysis",
-      description: "Rigorous evidence synthesis delivered under your agency's brand with full confidentiality.",
+      title: "Research Communication & White Papers",
+      description: "White papers and scientific reports. Research summaries and technical documents. Insight-driven content aligned with client goals. Consistent tone, structure, and accuracy.",
+      benefits: [
+        "Translate complex science into clear narratives",
+        "Support client communication and positioning",
+        "Deliver structured, evidence-aligned documentation",
+        "Maintain scientific credibility across materials"
+      ]
     },
     {
-      title: "Literature Search & Review",
-      description: "Comprehensive literature searches across databases with detailed evidence tables.",
+      title: "Data Analysis & Scientific Support",
+      description: "Limited quantitative data analysis. Support for result interpretation. Data summaries for publications and presentations. Alignment between data and written outputs.",
+      benefits: [
+        "Strengthen publications and reports with analysis",
+        "Improve interpretation and presentation of results",
+        "Reduce internal analytical workload",
+        "Support evidence-based communication"
+      ]
     },
     {
-      title: "Data Analysis & Biostatistics",
-      description: "Statistical analysis support for clinical and real-world studies.",
-    },
-    {
-      title: "Research Protocol Development",
-      description: "Custom research protocols aligned with regulatory and publication standards.",
-    },
-    {
-      title: "Overflow & Capacity Support",
-      description: "Flexible capacity augmentation during peak periods without hiring overhead.",
-    },
-    {
-      title: "Quality Assurance & Review",
-      description: "Independent QA review of scientific content ensuring accuracy and compliance.",
-    },
-    {
-      title: "Ongoing Partnership Models",
-      description: "Retainer-based partnerships for consistent, reliable research support.",
+      title: "Conferences, Posters & Scientific Presentations",
+      description: "Conference papers and abstracts. Poster and presentation development. Scientific storytelling for expert audiences. Formatting aligned with conference guidelines.",
+      benefits: [
+        "Deliver high-quality conference materials to clients",
+        "Meet international submission standards",
+        "Support agency credibility on global platforms",
+        "Reduce last-minute delivery pressure"
+      ]
     },
   ];
 
   const processSteps = [
     {
       number: 1,
-      title: "Brief & Scope",
-      description: "Share your project requirements, timelines, and specific deliverable formats.",
+      title: "Share Your Requirements",
+      description: "You share scope, timelines, formats, and expectations. We understand your therapeutic area, audience, and delivery needs.",
     },
     {
       number: 2,
-      title: "Team Assignment",
-      description: "We assign dedicated experts matched to your project's therapeutic area and needs.",
+      title: "Scope Alignment & Planning",
+      description: "We align on deliverables, timelines, and confidentiality requirements. Execution is planned to integrate seamlessly with your workflows.",
     },
     {
       number: 3,
-      title: "Execution & QC",
-      description: "Work executed with rigorous quality checks at every milestone.",
+      title: "White-Label Execution",
+      description: "Our experts deliver scientific outputs under your brand. Accuracy, consistency, and discretion are maintained throughout.",
     },
     {
       number: 4,
-      title: "White-Label Delivery",
-      description: "Deliverables provided in your templates, ready for client presentation.",
+      title: "Review, Delivery & Ongoing Support",
+      description: "We incorporate feedback and deliver submission-ready materials. Ongoing support is available for revisions and extended capacity needs.",
     },
   ];
 
   const benefits = [
+    "White-label friendly execution",
+    "Confidential and non-competitive partnership",
+    "Scientific and publication expertise",
+    "Flexible capacity support",
+    "Global journal and conference experience",
     "No hiring overhead or training costs",
-    "Access to 200+ subject matter experts",
-    "Scalable capacity for any project size",
-    "Consistent quality under strict SOPs",
-    "Dedicated account management",
-    "Flexible pricing models",
   ];
 
   const testimonials = [
     {
       quote: "RMC has been our go-to partner for overflow work. Their quality is indistinguishable from our in-house team, and they always meet our tight deadlines.",
-      author: "Managing Director",
-      role: "Leading MedCom Agency, Mumbai",
+      author: "Robert Anderson",
+      role: "Managing Director, MedCom Agency, Philadelphia",
+    },
+    {
+      quote: "The white-label scientific writing support from RMC allowed us to scale our operations without hiring overhead. Exceptional partnership.",
+      author: "Jennifer Davis",
+      role: "VP Operations, Research Consultancy, Denver",
+    },
+    {
+      quote: "RMC's confidential support helped us deliver complex medical communications on time. Their expertise in regulatory writing is outstanding.",
+      author: "Mark Wilson",
+      role: "Director, Healthcare Communications, Miami",
     },
   ];
 
@@ -175,13 +193,13 @@ const MedComResearchAgenciesPage = () => {
         services={services}
       />
       <IndustryProcess
-        sectionLabel="How It Works"
-        title="Seamless Partnership Process"
+        sectionLabel="How We Work"
+        title="A Reliable, White-Label Scientific Partnership"
         subtitle="A streamlined workflow designed to integrate seamlessly with your agency operations."
         steps={processSteps}
       />
       <IndustryWhyUs
-        sectionLabel="Partnership Benefits"
+        sectionLabel="Why Agencies Choose RMC"
         title="Scale Without Limits"
         subtitle="Focus on client relationships and business growth while we handle the research execution. Our white-label model ensures your brand stays front and center."
         benefits={benefits}

@@ -15,7 +15,7 @@ const DataAnalysisPage = () => {
     titleRed: "Data Analysis Services",
     subtitle: "Expert statistical analysis and data interpretation for research, business, and academic projects using advanced tools and techniques.",
     tags: ["SPSS", "R Programming", "Python", "Excel", "AMOS", "Statistical Modeling"],
-    primaryCta: "Get Started",
+    primaryCta: " Book a Discussion",
     secondaryCta: "Explore Services",
     stats: [
       { value: "3000+", label: "Projects Completed" },
@@ -103,7 +103,7 @@ const DataAnalysisPage = () => {
     <Layout>
       <IndustryHero {...heroData} />
       <IndustryServices
-        sectionLabel="What We Offer"
+        sectionLabel=" "
         title="Data Analysis Services"
         subtitle="Comprehensive statistical analysis services to transform your data into meaningful insights."
         services={services}

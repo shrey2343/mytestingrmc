@@ -42,7 +42,7 @@ const ResearchPaperPublicationPage = () => {
               className="btn-primary inline-flex items-center gap-2"
             >
               <Zap className="w-4 h-4" />
-              Get Started
+               Book a Discussion
             </a>
           </motion.div>
         </div>
@@ -51,12 +51,12 @@ const ResearchPaperPublicationPage = () => {
       {/* Who Is This For Section */}
       <WhoIsThisFor />
 
-      {/* What We Offer Section */}
+      {/*   Section */}
       <section className="py-24 bg-secondary/20">
         <div className="container-custom">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-medium uppercase tracking-wider mb-4 block">
-              What We Offer
+               
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               End-to-End Publication Support

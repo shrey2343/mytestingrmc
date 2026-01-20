@@ -3,7 +3,7 @@ import { Linkedin, Twitter, Instagram, Facebook, Youtube, Zap } from "lucide-rea
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-charcoal text-background">
       {/* Main Footer */}
       <div className="border-b border-background/10">
         <div className="container-custom py-16">
@@ -47,7 +47,7 @@ const Footer = () => {
               {/* Email */}
               <a
                 href="mailto:Hello@rmcdr.com"
-                className="text-background/70 hover:text-background text-sm transition-colors mt-4 block"
+                className="text-background/70 hover:text-white text-sm transition-colors mt-4 block"
               >
                 Hello@rmcdr.com
               </a>
@@ -55,25 +55,25 @@ const Footer = () => {
 
             {/* Industries */}
             <div>
-              <h3 className="font-semibold text-background mb-4">Industries</h3>
+              <h3 className="font-semibold text-white mb-4">Industries</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/startups-enterprises" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/startups-enterprises" className="text-background/70 hover:text-white text-sm transition-colors">
                     Startups & Enterprises
                   </Link>
                 </li>
                 <li>
-                  <Link to="/healthcare-life-sciences" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/healthcare-life-sciences" className="text-background/70 hover:text-white text-sm transition-colors">
                     Healthcare & Life Sciences
                   </Link>
                 </li>
                 <li>
-                  <Link to="/medcom-research-agencies" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/medcom-research-agencies" className="text-background/70 hover:text-white text-sm transition-colors">
                     MedCom & Research Agencies
                   </Link>
                 </li>
                 <li>
-                  <Link to="/research-for-everyone" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/research-for-everyone" className="text-background/70 hover:text-white text-sm transition-colors">
                     Research for Everyone
                   </Link>
                 </li>
@@ -82,35 +82,35 @@ const Footer = () => {
 
             {/* Solutions */}
             <div>
-              <h3 className="font-semibold text-background mb-4">Solutions</h3>
+              <h3 className="font-semibold text-white mb-4">Solutions</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/research-paper-publication" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/research-paper-publication" className="text-background/70 hover:text-white text-sm transition-colors">
                     Research Paper Publication
                   </Link>
                 </li>
                 <li>
-                  <Link to="/phd-assistance" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/phd-assistance" className="text-background/70 hover:text-white text-sm transition-colors">
                     Ph. D. Assistance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/masters-research-assistance" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/masters-research-assistance" className="text-background/70 hover:text-white text-sm transition-colors">
                     Master's Research Assistance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/data-analysis" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/data-analysis" className="text-background/70 hover:text-white text-sm transition-colors">
                     Data Analysis
                   </Link>
                 </li>
                 <li>
-                  <Link to="/essay-writing" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/essay-writing" className="text-background/70 hover:text-white text-sm transition-colors">
                     Essay Writing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/editing" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="/editing" className="text-background/70 hover:text-white text-sm transition-colors">
                     Editing
                   </Link>
                 </li>
@@ -119,30 +119,30 @@ const Footer = () => {
 
             {/* About Us */}
             <div>
-              <h3 className="font-semibold text-background mb-4">About Us</h3>
+              <h3 className="font-semibold text-white mb-4">About Us</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     About RMC
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Leadership
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Mission
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Policies
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Media Center
                   </Link>
                 </li>
@@ -151,20 +151,20 @@ const Footer = () => {
 
             {/* Careers */}
             <div>
-              <h3 className="font-semibold text-background mb-4">Careers</h3>
+              <h3 className="font-semibold text-white mb-4">Careers</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Employer Brand Promise
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Life at RMC
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-background text-sm transition-colors">
+                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
                     Open Positions
                   </Link>
                 </li>
@@ -178,13 +178,13 @@ const Footer = () => {
       <div className="container-custom py-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-background/50 text-sm">
-            Copyrights ©2025 RMC
+            © 2025 Research Mentor Clinic •
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            <Link to="/privacy-policy" className="text-background/50 hover:text-background text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-background/50 hover:text-white text-sm transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-use" className="text-background/50 hover:text-background text-sm transition-colors">
+            <Link to="/terms-of-use" className="text-background/50 hover:text-white text-sm transition-colors">
               Terms Of Use
             </Link>
           </div>

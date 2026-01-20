@@ -15,7 +15,7 @@ const EssayWritingPage = () => {
     titleRed: "Essay Writing Services",
     subtitle: "High-quality essay writing for students and professionals. From academic essays to application essays with guaranteed originality.",
     tags: ["Academic Essays", "Argumentative", "Descriptive", "Narrative", "Persuasive", "Critical Analysis"],
-    primaryCta: "Get Started",
+    primaryCta: " Book a Discussion",
     secondaryCta: "Explore Services",
     stats: [
       { value: "5000+", label: "Essays Written" },
@@ -103,7 +103,7 @@ const EssayWritingPage = () => {
     <Layout>
       <IndustryHero {...heroData} />
       <IndustryServices
-        sectionLabel="What We Offer"
+        sectionLabel=" "
         title="Essay Writing Services"
         subtitle="Professional essay writing services for all academic levels and topics with guaranteed quality."
         services={services}

@@ -15,7 +15,7 @@ const EditingPage = () => {
     titleRed: "Editing & Proofreading",
     subtitle: "Expert editing and proofreading services to polish your academic papers, manuscripts, and documents to perfection.",
     tags: ["Proofreading", "Copy Editing", "Language Editing", "Formatting", "Citation Check", "Quality Assurance"],
-    primaryCta: "Get Started",
+    primaryCta: " Book a Discussion",
     secondaryCta: "Explore Services",
     stats: [
       { value: "10K+", label: "Documents Edited" },
@@ -103,7 +103,7 @@ const EditingPage = () => {
     <Layout>
       <IndustryHero {...heroData} />
       <IndustryServices
-        sectionLabel="What We Offer"
+        sectionLabel=" "
         title="Editing & Proofreading Services"
         subtitle="Comprehensive editing services to ensure your documents are error-free and publication-ready."
         services={services}

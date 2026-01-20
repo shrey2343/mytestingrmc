@@ -15,22 +15,57 @@ interface IndustryProcessProps {
 
 const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProcessProps) => {
   return (
-    <section className="py-24 bg-secondary">
-      <div className="container-custom">
-        {/* Header */}
+    <section className="py-24 bg-gradient-to-r from-blue-50 to-white relative overflow-hidden">
+      {/* Animated Background Graphics */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-20 right-20 w-40 h-40 border border-blue-200/20 rounded-3xl"
+          animate={{ rotate: 360, borderRadius: ["30%", "50%", "30%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-40 left-20 w-48 h-48 border border-cyan-200/20 rounded-full"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 18, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute w-[350px] h-[350px] bg-gradient-to-r from-cyan-300/8 to-blue-300/8 rounded-full blur-3xl"
+          animate={{ x: [0, -40, 0], y: [0, -50, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          style={{ bottom: '10%', right: '10%' }}
+        />
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16">
-          <span className="text-primary text-sm font-medium uppercase tracking-wider mb-4 block">
+          <motion.span 
+            className="text-blue-600 text-sm font-medium uppercase tracking-wider mb-4 block"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             {sectionLabel}
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          </motion.span>
+          <motion.h2 
+            className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
             {title}
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-slate-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
             {subtitle}
-          </p>
+          </motion.p>
         </div>
 
-        {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
@@ -39,24 +74,58 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative"
+              whileHover={{ y: -10, scale: 1.03 }}
+              className="relative group"
             >
-              {/* Number */}
-              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4">
-                {step.number}
-              </div>
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"
+                animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                style={{ backgroundSize: '200% 200%' }}
+              />
+              <div className="relative bg-white border-2 border-blue-100 group-hover:border-blue-300 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                <motion.div
+                  className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-lg"
+                  animate={{
+                    boxShadow: [
+                      '0 0 0 0 rgba(59, 130, 246, 0.4)',
+                      '0 0 0 10px rgba(59, 130, 246, 0)',
+                      '0 0 0 0 rgba(59, 130, 246, 0)',
+                    ],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                  whileHover={{ scale: 1.1, rotate: 360 }}
+                >
+                  {step.number}
+                </motion.div>
               
-              {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-12 w-full h-0.5 bg-border" />
+                <motion.div 
+                  className="hidden lg:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-blue-400 to-transparent"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.15 + 0.5 }}
+                />
               )}
 
-              <h3 className="font-display text-lg font-bold text-foreground mb-2">
+              <motion.h3 
+                className="font-display text-xl font-bold text-slate-900 mb-3 relative inline-block"
+                whileHover={{ scale: 1.05 }}
+              >
                 {step.title}
-              </h3>
-              <p className="text-sm text-muted-foreground">
+                <motion.div
+                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
+                />
+              </motion.h3>
+              <p className="text-slate-600 leading-relaxed text-sm">
                 {step.description}
               </p>
+              </div>
             </motion.div>
           ))}
         </div>
