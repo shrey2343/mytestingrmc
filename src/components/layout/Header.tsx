@@ -11,6 +11,7 @@ const industries = [
 ];
 
 const solutions = [
+  { name: "Global Admission Standout", href: "/global-admission-standout" },
   { name: "Research Paper Publication", href: "/research-paper-publication" },
   { name: "Ph. D. Assistance", href: "/phd-assistance" },
   { name: "Master's Research Assistance", href: "/masters-research-assistance" },

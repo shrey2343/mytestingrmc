@@ -5,20 +5,21 @@ import IndustryProcess from "@/components/industry/IndustryProcess";
 import IndustryWhyUs from "@/components/industry/IndustryWhyUs";
 import IndustryTestimonials from "@/components/industry/IndustryTestimonials";
 import IndustryCTA from "@/components/industry/IndustryCTA";
+import IndustryPainPoints from "@/components/industry/IndustryPainPoints";
 import { BookOpen } from "lucide-react";
 
 const MastersResearchAssistancePage = () => {
   const heroData = {
-    badge: "Master's Research Assistance",
+    badge: "Dissertation Help for Masters & Ph.D ",
     badgeIcon: <BookOpen className="w-4 h-4" />,
-    titleWhite: "Master's Thesis",
+    titleWhite: "Dissertation Help",
     titleRed: "End-to-End Research Support Solution",
     subtitle: "Complete, Structured, and Ethical Support for Your Master's Thesis. A Master's thesis is a critical academic milestone that requires clear research direction, sound methodology, accurate analysis, and strong academic writing.",
-    tags: ["Topic Selection", "Literature Review", "Data Analysis", "Thesis Writing", "Formatting", "Defense Support"],
+    tags: ["Data Collection","Questionnaire Development","Data Analysis",  "Topic Selection", "Literature Review",  "Thesis Writing", "Formatting"],
     primaryCta: "Contact Us",
     secondaryCta: "Learn More",
     stats: [
-      { value: "Master's", label: "Students Supported" },
+      { value: "Master's & Ph.D", label: "Students Supported" },
       { value: "Ethical", label: "Research Practices" },
       { value: "Structured", label: "Guidance" },
       { value: "Complete", label: "Support" },
@@ -111,9 +112,42 @@ const MastersResearchAssistancePage = () => {
   },
   ];
 
+  const painPoints = [
+    {
+      title: "Dissertation stress & overwhelm",
+      description: "Balancing coursework, research, and personal life while managing the complexity of a master's thesis can feel overwhelming and exhausting.",
+    },
+    {
+      title: "Time pressure & urgent deadlines",
+      description: "Tight submission deadlines and multiple academic commitments leave little room for thorough research and quality writing.",
+    },
+    {
+      title: "Confusion about UK academic standards",
+      description: "Understanding specific formatting requirements, citation styles, and academic writing conventions expected by UK universities can be challenging.",
+    },
+    {
+      title: "Fear of plagiarism / Turnitin failure",
+      description: "Concerns about unintentional plagiarism and failing similarity checks create anxiety, especially when paraphrasing complex academic sources.",
+    },
+    {
+      title: "Difficulty with literature review & research gaps",
+      description: "Identifying relevant studies, synthesizing existing research, and articulating clear research gaps requires extensive reading and critical analysis skills.",
+    },
+    {
+      title: "Anxiety about grades & supervisor approval",
+      description: "Pressure to meet supervisor expectations and achieve high grades while navigating feedback and revision cycles can be stressful.",
+    },
+  ];
+
   return (
     <Layout>
       <IndustryHero {...heroData} />
+      <IndustryPainPoints
+        sectionLabel="Common Challenges"
+        title="Struggling with Your Master's Thesis?"
+        subtitle="Many students face these challenges during their research journey. We're here to help you overcome them."
+        painPoints={painPoints}
+      />
       <IndustryServices
         sectionLabel="Our End-to-End Master's Thesis Support Covers Every Stage"
         title="Comprehensive Master's Research Support"

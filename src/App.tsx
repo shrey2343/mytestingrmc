@@ -17,6 +17,7 @@ import EditingPage from "./pages/EditingPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
 import NotFound from "./pages/NotFound";
+import GlobalAdmissionStandout from "./pages/GlobalAdmissionStandout";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/data-analysis" element={<DataAnalysisPage />} />
           <Route path="/essay-writing" element={<EssayWritingPage />} />
           <Route path="/editing" element={<EditingPage />} />
+          <Route path="/global-admission-standout" element={<GlobalAdmissionStandout />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
