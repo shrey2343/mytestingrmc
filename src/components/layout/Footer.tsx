@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook, Youtube, Zap } from "lucide-react";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-charcoal text-background">
       {/* Main Footer */}
@@ -58,22 +62,22 @@ const Footer = () => {
               <h3 className="font-semibold text-white mb-4">Industries</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/startups-enterprises" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/startups-enterprises" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Startups & Enterprises
                   </Link>
                 </li>
                 <li>
-                  <Link to="/healthcare-life-sciences" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/healthcare-life-sciences" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Healthcare & Life Sciences
                   </Link>
                 </li>
                 <li>
-                  <Link to="/medcom-research-agencies" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/medcom-research-agencies" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     MedCom & Research Agencies
                   </Link>
                 </li>
                 <li>
-                  <Link to="/research-for-everyone" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/research-for-everyone" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Research for Everyone
                   </Link>
                 </li>
@@ -85,32 +89,32 @@ const Footer = () => {
               <h3 className="font-semibold text-white mb-4">Solutions</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/research-paper-publication" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/research-paper-publication" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Research Paper Publication
                   </Link>
                 </li>
                 <li>
-                  <Link to="/phd-assistance" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/phd-assistance" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Ph. D. Assistance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/masters-research-assistance" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/masters-research-assistance" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Master's Research Assistance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/data-analysis" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/data-analysis" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Data Analysis
                   </Link>
                 </li>
                 <li>
-                  <Link to="/essay-writing" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/essay-writing" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Essay Writing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/editing" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="/editing" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Editing
                   </Link>
                 </li>
@@ -122,27 +126,27 @@ const Footer = () => {
               <h3 className="font-semibold text-white mb-4">About Us</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     About RMC
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Leadership
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Mission
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Policies
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Media Center
                   </Link>
                 </li>
@@ -154,17 +158,17 @@ const Footer = () => {
               <h3 className="font-semibold text-white mb-4">Careers</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Employer Brand Promise
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Life at RMC
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-background/70 hover:text-white text-sm transition-colors">
+                  <Link to="#" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
                     Open Positions
                   </Link>
                 </li>
@@ -181,10 +185,10 @@ const Footer = () => {
             © 2025 Research Mentor Clinic •
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            <Link to="/privacy-policy" className="text-background/50 hover:text-white text-sm transition-colors">
+            <Link to="/privacy-policy" onClick={scrollToTop} className="text-background/50 hover:text-white text-sm transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-use" className="text-background/50 hover:text-white text-sm transition-colors">
+            <Link to="/terms-of-use" onClick={scrollToTop} className="text-background/50 hover:text-white text-sm transition-colors">
               Terms Of Use
             </Link>
           </div>

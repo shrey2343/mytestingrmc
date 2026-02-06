@@ -11,7 +11,7 @@ const steps = [
   },
   {
     number: "2",
-    title: "Research Planning & Scope Design",
+    title: "Research Planning  & Scope Design",
     description:
       "Our research experts design a clear plan tailored to your objectives. We define the scope, deliverables, timelines, and match you with the right expertise.",
     icon: FileText,

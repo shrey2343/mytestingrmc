@@ -16,6 +16,10 @@ import EssayWritingPage from "./pages/EssayWritingPage";
 import EditingPage from "./pages/EditingPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
+import CareerPage from "./pages/CareerPage";
+import BlogPage from "./pages/BlogPage";
+import PublishingResearchPaper from "./pages/blog/PublishingResearchPaper";
+import ResearchMethodology from "./pages/blog/ResearchMethodology";
 import NotFound from "./pages/NotFound";
 import GlobalAdmissionStandout from "./pages/GlobalAdmissionStandout";
 
@@ -40,6 +44,10 @@ const App = () => (
           <Route path="/essay-writing" element={<EssayWritingPage />} />
           <Route path="/editing" element={<EditingPage />} />
           <Route path="/global-admission-standout" element={<GlobalAdmissionStandout />} />
+          <Route path="/career" element={<CareerPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/publishing-research-paper" element={<PublishingResearchPaper />} />
+          <Route path="/blog/research-methodology" element={<ResearchMethodology />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

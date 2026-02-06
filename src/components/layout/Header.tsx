@@ -115,13 +115,13 @@ const Header = () => {
             </AnimatePresence>
           </div>
           <Link 
-            to="#" 
+            to="/career" 
             className="text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
           >
             Career
           </Link>
           <Link 
-            to="#" 
+            to="/blog" 
             className="text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
           >
             Blog
@@ -247,14 +247,14 @@ const Header = () => {
               </div>
               <div className="space-y-2 pt-4 border-t border-charcoal/10">
                 <Link
-                  to="#"
+                  to="/career"
                   className="block py-2 text-charcoal hover:text-linkedin transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Career
                 </Link>
                 <Link
-                  to="#"
+                  to="/blog"
                   className="block py-2 text-charcoal hover:text-linkedin transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
