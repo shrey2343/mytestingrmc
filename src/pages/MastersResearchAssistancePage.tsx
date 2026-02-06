@@ -13,7 +13,7 @@ import { BookOpen } from "lucide-react";
 
 const MastersResearchAssistancePage = () => {
   const heroData = {
-    badge: "Dissertation Help for Masters & Ph.D ",
+    badge: "Dissertation Help for Masters ",
     badgeIcon: <BookOpen className="w-4 h-4" />,
     titleWhite: "Dissertation Help",
     titleRed: "End-to-End Research Support Solution",
@@ -23,7 +23,7 @@ const MastersResearchAssistancePage = () => {
       "On-time Delivery",
       "100% Plagiarism Free",
     ],
-    tags: ["Topic Selection","Literature Review","Methodology Design","Questionnaire Development","Data Collection","Data Analysis" ],
+    tags: ["Topic Selection","Literature Review","Methodology Design","Questionnaire Development","Data Collection","Data Analysis","Thesis/Dissertation Writing"],
     primaryCta: "WhatsApp Now",
     primaryCtaLink: "https://wa.me/918719070455",
     secondaryCta: "Learn More",
