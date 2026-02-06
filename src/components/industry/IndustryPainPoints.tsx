@@ -82,10 +82,10 @@ const IndustryPainPoints = ({
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.02, y: -5 }}
             >
-              <h3 className="font-display text-xl font-bold text-slate-900 mb-3">
+              <h3 className="font-display text-xl font-semibold text-slate-900 mb-3 leading-tight tracking-tight">
                 {painPoint.title}
               </h3>
-              <p className="text-sm text-slate-600">
+              <p className="text-base text-slate-600 leading-relaxed font-normal">
                 {painPoint.description}
               </p>
             </motion.div>

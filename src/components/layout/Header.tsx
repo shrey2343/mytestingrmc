@@ -12,9 +12,9 @@ const industries = [
 
 const solutions = [
   { name: "Global Admission Standout", href: "/global-admission-standout" },
+  { name: "Master's Research Assistance", href: "/masters-research-assistance" },
   { name: "Research Paper Publication", href: "/research-paper-publication" },
   { name: "Ph. D. Assistance", href: "/phd-assistance" },
-  { name: "Master's Research Assistance", href: "/masters-research-assistance" },
   { name: "Data Analysis", href: "/data-analysis" },
   { name: "Essay Writing", href: "/essay-writing" },
   { name: "Editing", href: "/editing" },

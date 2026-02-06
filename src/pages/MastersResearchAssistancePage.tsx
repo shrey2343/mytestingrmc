@@ -6,6 +6,9 @@ import IndustryWhyUs from "@/components/industry/IndustryWhyUs";
 import IndustryTestimonials from "@/components/industry/IndustryTestimonials";
 import IndustryCTA from "@/components/industry/IndustryCTA";
 import IndustryPainPoints from "@/components/industry/IndustryPainPoints";
+import IndustryAuthority from "@/components/industry/IndustryAuthority";
+import IndustryDomains from "@/components/industry/IndustryDomains";
+import IndustryAssurance from "@/components/industry/IndustryAssurance";
 import { BookOpen } from "lucide-react";
 
 const MastersResearchAssistancePage = () => {
@@ -15,8 +18,8 @@ const MastersResearchAssistancePage = () => {
     titleWhite: "Dissertation Help",
     titleRed: "End-to-End Research Support Solution",
     subtitle: "Complete, Structured, and Ethical Support for Your Master's Thesis. A Master's thesis is a critical academic milestone that requires clear research direction, sound methodology, accurate analysis, and strong academic writing.",
-    tags: ["Data Collection","Questionnaire Development","Data Analysis",  "Topic Selection", "Literature Review",  "Thesis Writing", "Formatting"],
-    primaryCta: "Contact Us",
+    tags: ["Topic Selection","Literature Review","Methodology Design","Questionnaire Development","Data Collection","Data Analysis" ],
+    primaryCta: "Book a Call",
     secondaryCta: "Learn More",
     stats: [
       { value: "Master's & Ph.D", label: "Students Supported" },
@@ -50,10 +53,6 @@ const MastersResearchAssistancePage = () => {
     {
       title: "Editing, Formatting & Final Review",
       description: "Proofreading and consistency checks, formatting as per university requirements, reference and citation verification, final submission readiness review.",
-    },
-    {
-      title: "Training & Presentation Support",
-      description: "Explanation of methodology and results, support for thesis defense or presentation, confidence-building guidance.",
     },
   ];
 
@@ -114,28 +113,139 @@ const MastersResearchAssistancePage = () => {
 
   const painPoints = [
     {
-      title: "Dissertation stress & overwhelm",
+      title: "Dissertation Stress & Overwhelm",
       description: "Balancing coursework, research, and personal life while managing the complexity of a master's thesis can feel overwhelming and exhausting.",
     },
     {
-      title: "Time pressure & urgent deadlines",
+      title: "Time Pressure & Urgent Deadlines",
       description: "Tight submission deadlines and multiple academic commitments leave little room for thorough research and quality writing.",
     },
     {
-      title: "Confusion about UK academic standards",
+      title: "Confusion About Academic Standards",
       description: "Understanding specific formatting requirements, citation styles, and academic writing conventions expected by UK universities can be challenging.",
     },
     {
-      title: "Fear of plagiarism / Turnitin failure",
+      title: "Fear of Plagiarism / Turnitin Failure",
       description: "Concerns about unintentional plagiarism and failing similarity checks create anxiety, especially when paraphrasing complex academic sources.",
     },
     {
-      title: "Difficulty with literature review & research gaps",
+      title: "Difficulty with Literature Review & Research Gaps",
       description: "Identifying relevant studies, synthesizing existing research, and articulating clear research gaps requires extensive reading and critical analysis skills.",
     },
     {
-      title: "Anxiety about grades & supervisor approval",
+      title: "Anxiety About Grades & Supervisor Approval",
       description: "Pressure to meet supervisor expectations and achieve high grades while navigating feedback and revision cycles can be stressful.",
+    },
+  ];
+
+  const authorityPoints = [
+    {
+      title: "Qualified Academic Professionals",
+      items: [
+        "Master's & PhD-qualified subject specialists",
+        "Strong experience in dissertations and academic writing",
+        "Expertise in research methodology and critical analysis",
+        "Skilled in academic structure and referencing",
+      ],
+      description: "Each project is handled by a specialist who understands how dissertations are reviewed, assessed, and evaluated.",
+    },
+    {
+      title: "Research-Focused Academic Support",
+      items: [
+        "Use of credible academic sources and journals",
+        "Identification of research gaps and key arguments",
+        "Structured, evidence-based academic writing",
+        "Accurate citations and referencing",
+      ],
+      description: "Every dissertation is built on strong research foundations, using peer-reviewed sources and systematic academic approaches.",
+    },
+    {
+      title: "Academic Integrity & Quality Assurance",
+      items: [
+        "100% original, plagiarism-free assistance",
+        "Ethical guidance without compromising student authorship",
+        "Confidential handling of academic work",
+        "Multi-level quality review before final submission",
+      ],
+      description: "We maintain the highest standards of academic ethics, ensuring your work is original, properly attributed, and ready for evaluation.",
+    },
+  ];
+
+  const domains = [
+    {
+      title: "Business & Management",
+      description: "Strategic management, marketing, human resources, operations, and organizational studies.",
+    },
+    {
+      title: "Accounting & Finance",
+      description: "Corporate finance, auditing, taxation, financial analysis, and risk management.",
+    },
+    {
+      title: "Computer Science & IT",
+      description: "Software engineering, data science, artificial intelligence, cybersecurity, and emerging technologies.",
+    },
+    {
+      title: "Engineering",
+      description: "Mechanical, civil, electrical, electronics, and interdisciplinary engineering research.",
+    },
+    {
+      title: "Nursing & Healthcare",
+      description: "Evidence-based nursing, public health, healthcare management, and clinical research.",
+    },
+    {
+      title: "Psychology",
+      description: "Clinical, cognitive, behavioral, counseling, and organizational psychology.",
+    },
+    {
+      title: "Law & Legal Studies",
+      description: "Criminal law, corporate law, international law, constitutional studies, and legal analysis.",
+    },
+    {
+      title: "Education",
+      description: "Curriculum studies, educational leadership, teaching methodologies, and learning research.",
+    },
+    {
+      title: "Social Sciences",
+      description: "Sociology, political science, international relations, social work, and cultural studies.",
+    },
+    {
+      title: "Economics",
+      description: "Microeconomics, macroeconomics, development studies, and econometric research.",
+    },
+    {
+      title: "Environmental Sciences",
+      description: "Climate change, sustainability, environmental policy, conservation, and ecological research.",
+    },
+    {
+      title: "Public Health & Epidemiology",
+      description: "Disease prevention, health promotion, biostatistics, global health, and population health studies.",
+    },
+  ];
+
+  const assurances = [
+    {
+      text: "Subject-specialist writers delivering university standard dissertations",
+    },
+    {
+      text: "100% original, Turnitin-safe work with guaranteed authenticity",
+    },
+    {
+      text: "On-time delivery, including urgent deadlines",
+    },
+    {
+      text: "Dedicated writer for every project",
+    },
+    {
+      text: "Free revisions until complete satisfaction",
+    },
+    {
+      text: "Affordable & transparent pricing — no hidden costs",
+    },
+    {
+      text: "Strict confidentiality and full data protection",
+    },
+    {
+      text: "24/7 expert support from start to submission",
     },
   ];
 
@@ -154,6 +264,13 @@ const MastersResearchAssistancePage = () => {
         subtitle="We provide guided academic support, ensuring you understand every stage of your research while maintaining academic integrity and ethical standards."
         services={services}
       />
+      <IndustryAuthority
+        sectionLabel="Academic Excellence"
+        title="Academic Authority & Expertise"
+        subtitle="Our authority is built on academic expertise, subject knowledge, and ethical guidance. We support students through the dissertation process with a clear focus on quality, originality, and academic standards."
+        authorityPoints={authorityPoints}
+        closingStatement="We don't just assist — we guide with clarity, integrity, and academic responsibility."
+      />
       <IndustryProcess
         sectionLabel="How the Process Works"
         title="Your Master's Thesis Journey"
@@ -166,6 +283,19 @@ const MastersResearchAssistancePage = () => {
         subtitle="All services are provided as academic guidance, research assistance, and writing support. We strictly follow university policies, ethical research practices, and academic integrity standards. Final responsibility and authorship remain with the student."
         benefits={benefits}
         ctaText="If you are looking for structured, ethical, and expert-guided Master's thesis support, we are here to help."
+      />
+      <IndustryDomains
+        sectionLabel="Academic Disciplines"
+        title="Domains We Support"
+        subtitle="We provide expert research assistance across a wide range of academic disciplines and fields of study."
+        domains={domains}
+        closingStatement="These are just some of the domains we specialize in. We support many more academic fields and interdisciplinary research areas. Contact us to discuss your specific requirements."
+      />
+      <IndustryAssurance
+        sectionLabel="Our Commitment"
+        title="Your Success is Our Priority"
+        subtitle="We stand behind every project with comprehensive guarantees and dedicated support."
+        assurances={assurances}
       />
       <IndustryTestimonials
         sectionLabel="Testimonials"
