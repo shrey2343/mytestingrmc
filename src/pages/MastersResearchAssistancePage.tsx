@@ -6,9 +6,9 @@ import IndustryWhyUs from "@/components/industry/IndustryWhyUs";
 import IndustryTestimonials from "@/components/industry/IndustryTestimonials";
 import IndustryCTA from "@/components/industry/IndustryCTA";
 import IndustryPainPoints from "@/components/industry/IndustryPainPoints";
-import IndustryAuthority from "@/components/industry/IndustryAuthority";
 import IndustryDomains from "@/components/industry/IndustryDomains";
 import IndustryAssurance from "@/components/industry/IndustryAssurance";
+import VideoTestimonialsSection from "@/components/home/VideoTestimonialsSection";
 import { BookOpen } from "lucide-react";
 
 const MastersResearchAssistancePage = () => {
@@ -17,16 +17,18 @@ const MastersResearchAssistancePage = () => {
     badgeIcon: <BookOpen className="w-4 h-4" />,
     titleWhite: "Dissertation Help",
     titleRed: "End-to-End Research Support Solution",
-    subtitle: "Complete, Structured, and Ethical Support for Your Master's Thesis. A Master's thesis is a critical academic milestone that requires clear research direction, sound methodology, accurate analysis, and strong academic writing.",
-    tags: ["Topic Selection","Literature Review","Methodology Design","Questionnaire Development","Data Collection","Data Analysis" ],
-    primaryCta: "Book a Call",
-    secondaryCta: "Learn More",
-    stats: [
-      { value: "Master's & Ph.D", label: "Students Supported" },
-      { value: "Ethical", label: "Research Practices" },
-      { value: "Structured", label: "Guidance" },
-      { value: "Complete", label: "Support" },
+    bulletPoints: [
+      "Affordable Price",
+      "Unlimited Revisions",
+      "On-time Delivery",
+      "100% Plagiarism Free",
     ],
+    tags: ["Topic Selection","Literature Review","Methodology Design","Questionnaire Development","Data Collection","Data Analysis" ],
+    primaryCta: "WhatsApp Now",
+    primaryCtaLink: "https://wa.me/918719070455",
+    secondaryCta: "Learn More",
+    showQuoteForm: true,
+    whatsappNumber: "+918719070455",
   };
 
   const services = [
@@ -69,16 +71,11 @@ const MastersResearchAssistancePage = () => {
     },
     {
       number: 3,
-      title: "Research & Writing Support",
-      description: "Milestone-based support throughout your thesis journey.",
+      title: "Research Writing & Review Support",
+      description: "Milestone-based research writing assistance with continuous review and refinement.",
     },
     {
       number: 4,
-      title: "Review & Refinement",
-      description: "Iterative improvement ensuring academic quality.",
-    },
-    {
-      number: 5,
       title: "Final Submission Support",
       description: "Complete preparation for successful thesis submission.",
     },
@@ -138,38 +135,7 @@ const MastersResearchAssistancePage = () => {
     },
   ];
 
-  const authorityPoints = [
-    {
-      title: "Qualified Academic Professionals",
-      items: [
-        "Master's & PhD-qualified subject specialists",
-        "Strong experience in dissertations and academic writing",
-        "Expertise in research methodology and critical analysis",
-        "Skilled in academic structure and referencing",
-      ],
-      description: "Each project is handled by a specialist who understands how dissertations are reviewed, assessed, and evaluated.",
-    },
-    {
-      title: "Research-Focused Academic Support",
-      items: [
-        "Use of credible academic sources and journals",
-        "Identification of research gaps and key arguments",
-        "Structured, evidence-based academic writing",
-        "Accurate citations and referencing",
-      ],
-      description: "Every dissertation is built on strong research foundations, using peer-reviewed sources and systematic academic approaches.",
-    },
-    {
-      title: "Academic Integrity & Quality Assurance",
-      items: [
-        "100% original, plagiarism-free assistance",
-        "Ethical guidance without compromising student authorship",
-        "Confidential handling of academic work",
-        "Multi-level quality review before final submission",
-      ],
-      description: "We maintain the highest standards of academic ethics, ensuring your work is original, properly attributed, and ready for evaluation.",
-    },
-  ];
+
 
   const domains = [
     {
@@ -264,13 +230,6 @@ const MastersResearchAssistancePage = () => {
         subtitle="We provide guided academic support, ensuring you understand every stage of your research while maintaining academic integrity and ethical standards."
         services={services}
       />
-      <IndustryAuthority
-        sectionLabel="Academic Excellence"
-        title="Academic Authority & Expertise"
-        subtitle="Our authority is built on academic expertise, subject knowledge, and ethical guidance. We support students through the dissertation process with a clear focus on quality, originality, and academic standards."
-        authorityPoints={authorityPoints}
-        closingStatement="We don't just assist — we guide with clarity, integrity, and academic responsibility."
-      />
       <IndustryProcess
         sectionLabel="How the Process Works"
         title="Your Master's Thesis Journey"
@@ -297,6 +256,7 @@ const MastersResearchAssistancePage = () => {
         subtitle="We stand behind every project with comprehensive guarantees and dedicated support."
         assurances={assurances}
       />
+      <VideoTestimonialsSection />
       <IndustryTestimonials
         sectionLabel="Testimonials"
         title="What Our Clients Say"
@@ -305,6 +265,7 @@ const MastersResearchAssistancePage = () => {
       <IndustryCTA
         title="Ready to Start Your Master's Thesis?"
         subtitle="Contact us to discuss your thesis requirements and discover how we can guide you to successful completion."
+        whatsappNumber="+918719070455"
       />
     </Layout>
   );

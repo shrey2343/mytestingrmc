@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Zap } from "lucide-react";
+import { ChevronDown, Menu, X, MessageCircle, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const industries = [
@@ -129,26 +129,42 @@ const Header = () => {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-4">
           <a 
-            href="https://calendly.com/researchstrategycall/30min"
+            href="tel:+918719070455"
+            className="inline-flex items-center gap-2 text-charcoal hover:text-green-600 transition-colors font-semibold"
+          >
+            <Phone className="w-4 h-4" />
+            <span className="text-sm">+91 8719070455</span>
+          </a>
+          <a 
+            href="https://wa.me/918719070455"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all text-sm md:text-base"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
           >
-            Book a Call
+            <MessageCircle className="w-5 h-5" />
+            WhatsApp Now
           </a>
         </div>
 
         {/* Mobile Menu Button & CTA */}
         <div className="lg:hidden flex items-center gap-3">
           <a 
-            href="https://calendly.com/researchstrategycall/30min"
+            href="tel:+918719070455"
+            className="inline-flex items-center justify-center p-2.5 rounded-lg border-2 border-green-500 text-green-600 hover:bg-green-50 transition-all"
+            title="Call Now"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://wa.me/918719070455"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all text-sm md:text-base"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm"
           >
-            Book a Call
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp
           </a>
           <button
             className="text-charcoal p-2"
@@ -245,15 +261,22 @@ const Header = () => {
                   Blog
                 </Link>
               </div>
-              <div className="pt-4 border-t border-charcoal/10">
+              <div className="pt-4 border-t border-charcoal/10 space-y-3">
                 <a 
-                  href="https://calendly.com/researchstrategycall/30min"
+                  href="tel:+918719070455"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold border-2 border-green-500 text-green-600 hover:bg-green-50 transition-all text-sm md:text-base w-full"
+                >
+                  <Phone className="w-5 h-5" />
+                  +91 8719070455
+                </a>
+                <a 
+                  href="https://wa.me/918719070455"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all text-sm md:text-base"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base w-full"
                 >
-                  <Zap className="w-4 h-4" />
-                  Book a Call
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp Now
                 </a>
               </div>
             </div>

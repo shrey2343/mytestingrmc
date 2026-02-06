@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 interface IndustryCTAProps {
   title: string;
   subtitle: string;
+  whatsappNumber?: string;
 }
 
-const IndustryCTA = ({ title, subtitle }: IndustryCTAProps) => {
+const IndustryCTA = ({ title, subtitle, whatsappNumber }: IndustryCTAProps) => {
+  const whatsappLink = whatsappNumber 
+    ? `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`
+    : "https://calendly.com/researchstrategycall/30min";
+  
+  const buttonText = whatsappNumber ? "WhatsApp Now" : "Schedule a Call";
+
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950">
       {/* Animated Background */}
@@ -60,23 +67,20 @@ const IndustryCTA = ({ title, subtitle }: IndustryCTAProps) => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.a
-            href="https://calendly.com/researchstrategycall/30min"
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all"
+            className={`inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold transition-all shadow-lg ${
+              whatsappNumber 
+                ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 hover:shadow-green-500/50"
+                : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600"
+            }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Zap className="w-4 h-4" />
-            Schedule a Call
+            <MessageCircle className="w-5 h-5" />
+            {buttonText}
           </motion.a>
-          <motion.button 
-            className="px-8 py-3 rounded-lg font-semibold border border-white/20 bg-white/5 text-white hover:bg-white/10 transition-all backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Contact Us
-          </motion.button>
         </motion.div>
       </div>
     </section>

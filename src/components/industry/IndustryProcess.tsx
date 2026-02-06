@@ -75,7 +75,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -10, scale: 1.03 }}
-              className="relative group"
+              className="relative group h-full"
             >
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"
@@ -83,7 +83,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 style={{ backgroundSize: '200% 200%' }}
               />
-              <div className="relative bg-white border-2 border-blue-100 group-hover:border-blue-300 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+              <div className="relative bg-white border-2 border-blue-100 group-hover:border-blue-300 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
                 <motion.div
                   className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-lg"
                   animate={{
@@ -99,15 +99,13 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
                   {step.number}
                 </motion.div>
               
-              {index < steps.length - 1 && (
-                <motion.div 
-                  className="hidden lg:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-blue-400 to-transparent"
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 + 0.5 }}
-                />
-              )}
+              <motion.div 
+                className="hidden lg:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-blue-400 to-transparent"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 + 0.5 }}
+              />
 
               <motion.h3 
                 className="font-display text-xl font-bold text-slate-900 mb-3 relative inline-block"
@@ -122,7 +120,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
                   transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
                 />
               </motion.h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <p className="text-slate-600 leading-relaxed text-sm flex-grow">
                 {step.description}
               </p>
               </div>
