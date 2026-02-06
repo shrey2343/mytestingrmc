@@ -243,10 +243,12 @@ body {
 /* Content Wrapper - Single Column Centered Layout */
 .hero-content-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
 /* Text Block - Centered */
@@ -257,7 +259,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    flex: 1;
+    min-width: 400px;
+}
+
+/* Form Block - Right Side */
+.hero-form-block {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes slideInLeft {

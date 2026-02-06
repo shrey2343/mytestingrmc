@@ -9,7 +9,8 @@ import {
     TrendingUp,
     GraduationCap,
     MessageCircle,
-    CheckCircle2
+    CheckCircle2,
+    Send
 } from 'lucide-react'
 import Layout from "@/components/layout/Layout";
 
@@ -18,9 +19,35 @@ import './GlobalAdmissionStandout.css'
 
 function GlobalAdmissionStandout() {
     const [activeFaq, setActiveFaq] = useState(null)
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+    })
 
     const toggleFaq = (index) => {
         setActiveFaq(activeFaq === index ? null : index)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        
+        // Create WhatsApp message
+        const message = `*New Quote Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}`
+        const whatsappLink = `https://wa.me/918719070455?text=${message}`
+        
+        // Open WhatsApp
+        window.open(whatsappLink, '_blank')
+        
+        // Reset form
+        setFormData({ name: "", email: "", phone: "" })
+    }
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        })
     }
 
     useEffect(() => {
@@ -165,11 +192,160 @@ function GlobalAdmissionStandout() {
                                 className="hero-cta-modern"
                                 onClick={() => window.open('https://wa.me/918982188299', '_blank')}
                             >
-                                <span>Connect through WhatsApp</span>
+                                <span>WhatsApp Now</span>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </button>
+                        </div>
+
+                        {/* Right Content Block - Quote Form */}
+                        <div className="hero-form-block slide-in-right" style={{
+                            maxWidth: '500px',
+                            width: '100%',
+                            opacity: 0,
+                            animation: 'slideInRight 0.7s ease-out 0.2s forwards'
+                        }}>
+                            <div style={{
+                                background: 'rgba(255, 255, 255, 0.1)',
+                                backdropFilter: 'blur(20px)',
+                                border: '1px solid rgba(255, 255, 255, 0.2)',
+                                borderRadius: '1.5rem',
+                                padding: '2rem',
+                                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
+                            }}>
+                                <div style={{ marginBottom: '1.5rem' }}>
+                                    <div style={{
+                                        display: 'inline-block',
+                                        padding: '0.375rem 1rem',
+                                        borderRadius: '9999px',
+                                        background: '#3078bdff',
+                                        color: 'white',
+                                        fontSize: '0.75rem',
+                                        fontWeight: 'bold',
+                                        marginBottom: '0.75rem'
+                                    }}>
+                                        20% OFF
+                                    </div>
+                                    <h3 style={{
+                                        fontSize: '1.5rem',
+                                        fontWeight: 'bold',
+                                        color: 'white',
+                                        marginBottom: '0.5rem'
+                                    }}>
+                                        Get Instant Quote
+                                    </h3>
+                                </div>
+
+                                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                    <div>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            placeholder="Full Name *"
+                                            required
+                                            style={{
+                                                width: '100%',
+                                                padding: '0.75rem 1rem',
+                                                borderRadius: '0.5rem',
+                                                background: 'rgba(255, 255, 255, 0.9)',
+                                                backdropFilter: 'blur(10px)',
+                                                border: '1px solid rgba(255, 255, 255, 0.3)',
+                                                color: '#1e293b',
+                                                fontSize: '1rem',
+                                                outline: 'none',
+                                                transition: 'all 0.3s'
+                                            }}
+                                            onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #22d3ee'}
+                                            onBlur={(e) => e.target.style.boxShadow = 'none'}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            placeholder="Email *"
+                                            required
+                                            style={{
+                                                width: '100%',
+                                                padding: '0.75rem 1rem',
+                                                borderRadius: '0.5rem',
+                                                background: 'rgba(255, 255, 255, 0.9)',
+                                                backdropFilter: 'blur(10px)',
+                                                border: '1px solid rgba(255, 255, 255, 0.3)',
+                                                color: '#1e293b',
+                                                fontSize: '1rem',
+                                                outline: 'none',
+                                                transition: 'all 0.3s'
+                                            }}
+                                            onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #22d3ee'}
+                                            onBlur={(e) => e.target.style.boxShadow = 'none'}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            placeholder="Phone *"
+                                            required
+                                            style={{
+                                                width: '100%',
+                                                padding: '0.75rem 1rem',
+                                                borderRadius: '0.5rem',
+                                                background: 'rgba(255, 255, 255, 0.9)',
+                                                backdropFilter: 'blur(10px)',
+                                                border: '1px solid rgba(255, 255, 255, 0.3)',
+                                                color: '#1e293b',
+                                                fontSize: '1rem',
+                                                outline: 'none',
+                                                transition: 'all 0.3s'
+                                            }}
+                                            onFocus={(e) => e.target.style.boxShadow = '0 0 0 2px #22d3ee'}
+                                            onBlur={(e) => e.target.style.boxShadow = 'none'}
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        style={{
+                                            width: '100%',
+                                            padding: '0.875rem 1.5rem',
+                                            borderRadius: '0.5rem',
+                                            fontWeight: 'bold',
+                                            background: 'linear-gradient(to right, #4586d1ff, #2e77b3ff)',
+                                            color: 'white',
+                                            border: 'none',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.3s',
+                                            boxShadow: '0 10px 25px rgba(16, 185, 129, 0.3)',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            gap: '0.5rem',
+                                            fontSize: '1rem'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1.02)'
+                                            e.currentTarget.style.boxShadow = '0 15px 35px rgba(16, 185, 129, 0.5)'
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1)'
+                                            e.currentTarget.style.boxShadow = '0 10px 25px rgba(16, 185, 129, 0.3)'
+                                        }}
+                                    >
+                                        <Send size={20} />
+                                        Get A Free Quote
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

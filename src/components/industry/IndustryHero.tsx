@@ -139,7 +139,7 @@ const IndustryHero = ({
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
                     <CheckCircle2 className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-slate-200 font-medium">{point}</span>
@@ -165,7 +165,7 @@ const IndustryHero = ({
               href={primaryCtaLink || "https://calendly.com/researchstrategycall/30min"}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -184,8 +184,8 @@ const IndustryHero = ({
           {showQuoteForm ? (
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
               <div className="mb-6">
-                <div className="inline-block px-4 py-1.5 rounded-full bg-green-500 text-white text-xs font-bold mb-3">
-                  50% OFF
+                <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-bold mb-3">
+                  20% OFF
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Get Instant Quote</h3>
               </div>
@@ -229,7 +229,7 @@ const IndustryHero = ({
 
                 <motion.button
                   type="submit"
-                  className="w-full px-6 py-3.5 rounded-lg font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2"
+                  className="w-full px-6 py-3.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
