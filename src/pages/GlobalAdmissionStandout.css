@@ -434,8 +434,18 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-text-block {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .hero-form-block {
+        min-width: 100%;
+        max-width: 100%;
     }
 
     .hero-heading {
@@ -450,20 +460,60 @@ body {
 
 @media (max-width: 768px) {
     .modern-hero-section {
-        min-height: 600px;
-        padding-bottom: 0;
+        min-height: auto;
+        padding-bottom: 60px;
     }
 
     .hero-container {
-        padding: 60px 1.5rem;
+        padding: 40px 1rem;
+    }
+
+    .hero-content-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-text-block {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .hero-form-block {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-badge-pill {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
     }
 
     .hero-heading {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    .heading-white {
+        font-size: 1.5rem !important;
     }
 
     .hero-subtitle-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .hero-tags {
+        gap: 0.5rem;
+    }
+
+    .tag-pill {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .hero-cta-modern {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
     }
 
     .stats-grid-card {
@@ -476,28 +526,66 @@ body {
     }
 
     .square-shape {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 
     .circle-shape {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
 
     .orb-1,
     .orb-2,
     .orb-3 {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 
     .wave-svg {
-        display: none;
+        height: 60px;
+    }
+}
+
+/* Extra small devices (phones, less than 480px) */
+@media (max-width: 480px) {
+    .hero-container {
+        padding: 30px 0.75rem;
     }
 
-    .wave-container {
-        display: none;
+    .hero-text-block {
+        min-width: 100%;
+    }
+
+    .hero-form-block {
+        min-width: 100%;
+    }
+
+    .hero-heading {
+        font-size: 1.5rem;
+    }
+
+    .heading-white {
+        font-size: 1.25rem !important;
+    }
+
+    .hero-subtitle-text {
+        font-size: 0.875rem;
+    }
+
+    .hero-badge-pill {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.85rem;
+    }
+
+    .tag-pill {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.65rem;
+    }
+
+    .hero-cta-modern {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
     }
 }
 

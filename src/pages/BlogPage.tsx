@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
-import { BookOpen, Calendar, Clock, ArrowRight, TrendingUp, Users, FileText } from "lucide-react";
+import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const BlogPage = () => {
@@ -48,7 +48,7 @@ const BlogPage = () => {
       category: "PhD Journey",
       date: "January 25, 2026",
       readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop",
       slug: "/blog/publishing-research-paper",
     },
     {
@@ -69,14 +69,6 @@ const BlogPage = () => {
       image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop",
       slug: "/blog/publishing-research-paper",
     },
-  ];
-
-  const categories = [
-    { name: "All Posts", count: 24, icon: <FileText className="w-4 h-4" /> },
-    { name: "Research Tips", count: 8, icon: <TrendingUp className="w-4 h-4" /> },
-    { name: "Academic Writing", count: 6, icon: <BookOpen className="w-4 h-4" /> },
-    { name: "Data Analysis", count: 5, icon: <TrendingUp className="w-4 h-4" /> },
-    { name: "PhD Journey", count: 5, icon: <Users className="w-4 h-4" /> },
   ];
 
   return (
@@ -179,85 +171,54 @@ const BlogPage = () => {
       {/* Blog Posts Grid */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-4 gap-8">
-            {/* Sidebar - Categories */}
-            <div className="lg:col-span-1">
-              <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100 sticky top-24">
-                <h3 className="font-display text-xl font-bold text-slate-900 mb-6">
-                  Categories
-                </h3>
-                <div className="space-y-2">
-                  {categories.map((category, index) => (
-                    <motion.button
-                      key={index}
-                      className="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-blue-100 transition-all text-left group"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="flex items-center gap-2 text-slate-700 group-hover:text-blue-600 font-medium">
-                        {category.icon}
-                        {category.name}
-                      </span>
-                      <span className="text-sm text-slate-500 group-hover:text-blue-600">
-                        {category.count}
-                      </span>
-                    </motion.button>
-                  ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-2xl overflow-hidden border-2 border-blue-100 hover:border-blue-400 hover:shadow-xl transition-all group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="aspect-video bg-gradient-to-br from-blue-400 to-cyan-400 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-              </div>
-            </div>
-
-            {/* Blog Posts */}
-            <div className="lg:col-span-3">
-              <div className="grid md:grid-cols-2 gap-8">
-                {blogPosts.map((post, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white rounded-2xl overflow-hidden border-2 border-blue-100 hover:border-blue-400 hover:shadow-xl transition-all group"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
+                <div className="p-6">
+                  <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold mb-3">
+                    {post.category}
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {post.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <Link
+                    to={post.slug}
+                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
                   >
-                    <div className="aspect-video bg-gradient-to-br from-blue-400 to-cyan-400 overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold mb-3">
-                        {post.category}
-                      </span>
-                      <h3 className="font-display text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {post.date}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                      <Link
-                        to={post.slug}
-                        className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
-                      >
-                        Read Article
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                    Read Article
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

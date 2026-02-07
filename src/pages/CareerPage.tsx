@@ -4,41 +4,7 @@ import { Briefcase, Users, TrendingUp, Heart, Award, Coffee, BookOpen, Target } 
 
 const CareerPage = () => {
   const openPositions = [
-    {
-      title: "Research Consultant",
-      department: "Research Services",
-      location: "Remote",
-      type: "Full-time",
-      description: "Guide students and professionals through their research journey with expertise in methodology and academic writing.",
-    },
-    {
-      title: "Medical Writer",
-      department: "Healthcare & Life Sciences",
-      location: "Remote",
-      type: "Full-time",
-      description: "Create high-quality medical and scientific content for publications, regulatory documents, and research papers.",
-    },
-    {
-      title: "Data Analyst",
-      department: "Analytics",
-      location: "Remote / Hybrid",
-      type: "Full-time",
-      description: "Analyze research data using statistical tools (SPSS, R, Python) and provide insights for academic projects.",
-    },
-    {
-      title: "Academic Editor",
-      department: "Editorial Services",
-      location: "Remote",
-      type: "Part-time / Full-time",
-      description: "Review and refine academic manuscripts, ensuring clarity, coherence, and adherence to publication standards.",
-    },
-    {
-      title: "Business Development Executive",
-      department: "Sales & Marketing",
-      location: "Remote",
-      type: "Full-time",
-      description: "Build relationships with universities, research institutions, and corporate clients to expand our services.",
-    },
+    // Currently no open positions - will be updated when available
   ];
 
   const benefits = [
@@ -240,58 +206,99 @@ const CareerPage = () => {
             viewport={{ once: true }}
           >
             <p className="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">
-              Open Positions
+              Career Opportunities
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Current Opportunities
+              Join Our Growing Team
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Explore our open positions and find the role that matches your skills and passion.
+              We're always looking for talented researchers, writers, and academic professionals to join our mission.
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {openPositions.map((position, index) => (
-              <motion.div
-                key={index}
-                className="bg-white border-2 border-blue-100 rounded-xl p-8 hover:border-blue-400 hover:shadow-xl transition-all"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                  <div>
-                    <h3 className="font-display text-2xl font-bold text-slate-900 mb-2">
-                      {position.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
-                        {position.department}
-                      </span>
-                      <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium">
-                        {position.location}
-                      </span>
-                      <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
-                        {position.type}
-                      </span>
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {openPositions.length > 0 ? (
+              <div className="space-y-6">
+                {openPositions.map((position, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white border-2 border-blue-100 rounded-xl p-8 hover:border-blue-400 hover:shadow-xl transition-all"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                      <div>
+                        <h3 className="font-display text-2xl font-bold text-slate-900 mb-2">
+                          {position.title}
+                        </h3>
+                        <div className="flex flex-wrap gap-3">
+                          <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+                            {position.department}
+                          </span>
+                          <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium">
+                            {position.location}
+                          </span>
+                          <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
+                            {position.type}
+                          </span>
+                        </div>
+                      </div>
+                      <a
+                        href="https://wa.me/918719070455?text=I'm%20interested%20in%20the%20position:%20"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all whitespace-nowrap"
+                      >
+                        Apply Now
+                      </a>
                     </div>
-                  </div>
+                    <p className="text-slate-600 leading-relaxed">
+                      {position.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 rounded-2xl p-12 text-center">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white mx-auto mb-6">
+                  <Briefcase className="w-10 h-10" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-slate-900 mb-4">
+                  No Open Positions at the Moment
+                </h3>
+                <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
+                  We don't have any specific openings right now, but we're always interested in connecting with talented professionals who share our passion for research excellence.
+                </p>
+                <p className="text-slate-600 mb-8">
+                  If you're a researcher, academic writer, data analyst, or subject matter expert looking to make an impact in the academic world, we'd love to hear from you.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="https://wa.me/918719070455?text=I'm%20interested%20in%20the%20position:%20"
+                    href="https://wa.me/918719070455?text=I'm%20interested%20in%20career%20opportunities%20at%20RMC"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all whitespace-nowrap"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg"
                   >
-                    Apply Now
+                    <Briefcase className="w-5 h-5" />
+                    Express Your Interest
+                  </a>
+                  <a
+                    href="mailto:Hello@rmcdr.com"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-blue-500 text-blue-600 font-semibold hover:bg-blue-50 transition-all"
+                  >
+                    Send Your Resume
                   </a>
                 </div>
-                <p className="text-slate-600 leading-relaxed">
-                  {position.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            )}
+          </motion.div>
         </div>
       </section>
 
