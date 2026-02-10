@@ -96,8 +96,22 @@ const videoTestimonials: VideoTestimonial[] = [
   },
 ];
 
-const VideoTestimonialsSection = () => {
+interface VideoTestimonialsProps {
+  darkTheme?: boolean;
+}
+
+const VideoTestimonialsSection = ({ darkTheme = false }: VideoTestimonialsProps) => {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+  
+  const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950" : "bg-white";
+  const titleClass = darkTheme ? "text-white" : "text-slate-900";
+  const gradientTextClass = darkTheme ? "from-blue-400 to-cyan-300" : "from-blue-600 to-cyan-600";
+  const subtitleClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const cardBgClass = darkTheme ? "bg-slate-800/50 border-slate-700" : "bg-white border-slate-200";
+  const cardTitleClass = darkTheme ? "text-white" : "text-slate-900";
+  const cardTextClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const authorNameClass = darkTheme ? "text-white" : "text-slate-900";
+  const authorRoleClass = darkTheme ? "text-slate-400" : "text-slate-500";
 
   const handleVideoClick = (videoId: string) => {
     setPlayingVideo(videoId);
@@ -116,8 +130,8 @@ const VideoTestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container-custom">
+    <section className={`py-8 ${bgClass}`}>
+      <div className={`container-custom ${darkTheme ? '[&_.card-bg]:bg-slate-800/50 [&_.card-bg]:border-slate-700 [&_.card-title]:text-white [&_.card-text]:text-slate-300 [&_.author-name]:text-white [&_.author-role]:text-slate-400' : '[&_.card-bg]:bg-white [&_.card-bg]:border-slate-200 [&_.card-title]:text-slate-900 [&_.card-text]:text-slate-600 [&_.author-name]:text-slate-900 [&_.author-role]:text-slate-500'}`}>
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -126,9 +140,9 @@ const VideoTestimonialsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className={`font-display text-4xl md:text-5xl font-bold mb-4 ${titleClass}`}>
             Real Success Stories from{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            <span className={`bg-gradient-to-r ${gradientTextClass} bg-clip-text text-transparent`}>
               Real People
             </span>
           </h2>

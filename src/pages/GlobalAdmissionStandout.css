@@ -809,7 +809,7 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #8b6dbd 20%, #df123e 80%);
+    background: linear-gradient(135deg, #2b62aa 30%, #7177c4 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -820,7 +820,7 @@ body {
 .workshop-breakdown .gradient-text,
 .success-stories .gradient-text,
 .faq-section .gradient-text {
-    background: linear-gradient(135deg, #8b6dbd 20%, #df123e 80%);
+    background: linear-gradient(135deg, #6361c2 30%, #2a50b8 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

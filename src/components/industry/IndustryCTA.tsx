@@ -5,17 +5,24 @@ interface IndustryCTAProps {
   title: string;
   subtitle: string;
   whatsappNumber?: string;
+  darkTheme?: boolean;
+  sectionLabel?: string;
 }
 
-const IndustryCTA = ({ title, subtitle, whatsappNumber }: IndustryCTAProps) => {
+const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectionLabel }: IndustryCTAProps) => {
   const whatsappLink = whatsappNumber 
     ? `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`
     : "https://calendly.com/researchstrategycall/30min";
   
   const buttonText = whatsappNumber ? "WhatsApp Now" : "Schedule a Call";
+  
+  const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950" : "bg-gradient-to-r from-blue-50 to-white";
+  const titleClass = darkTheme ? "text-white" : "text-slate-900";
+  const subtitleClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const labelClass = darkTheme ? "text-blue-400" : "text-blue-600";
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950">
+    <section className={`py-24 relative overflow-hidden ${bgClass}`}>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -41,8 +48,21 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber }: IndustryCTAProps) => {
       </div>
 
       <div className="container-custom text-center relative z-10">
+        {sectionLabel && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className={`inline-block px-4 py-2 rounded-full ${darkTheme ? 'bg-white/10 border border-white/20' : 'bg-blue-100 border border-blue-200'} ${labelClass} text-sm font-semibold backdrop-blur-sm`}>
+              {sectionLabel}
+            </span>
+          </motion.div>
+        )}
         <motion.h2
-          className="font-display text-3xl md:text-4xl font-bold text-white mb-4"
+          className={`font-display text-3xl md:text-4xl font-bold ${titleClass} mb-4`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +71,7 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber }: IndustryCTAProps) => {
           {title}
         </motion.h2>
         <motion.p
-          className="text-slate-300 max-w-2xl mx-auto mb-10"
+          className={`${subtitleClass} max-w-2xl mx-auto mb-10`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -72,7 +92,7 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber }: IndustryCTAProps) => {
             rel="noopener noreferrer"
             className={`inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold transition-all shadow-lg ${
               whatsappNumber 
-                ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 hover:shadow-green-500/50"
+                ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 hover:shadow-green-500/50"
                 : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600"
             }`}
             whileHover={{ scale: 1.05 }}

@@ -56,7 +56,10 @@ const Header = () => {
         <nav className="hidden lg:flex items-center gap-8">
           <div className="relative">
             <button 
-              onClick={() => setIndustriesOpen(!industriesOpen)}
+              onClick={() => {
+                setIndustriesOpen(!industriesOpen);
+                setSolutionsOpen(false);
+              }}
               className="flex items-center gap-1 text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
             >
               Industries
@@ -86,7 +89,10 @@ const Header = () => {
           </div>
           <div className="relative">
             <button 
-              onClick={() => setSolutionsOpen(!solutionsOpen)}
+              onClick={() => {
+                setSolutionsOpen(!solutionsOpen);
+                setIndustriesOpen(false);
+              }}
               className="flex items-center gap-1 text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
             >
               Solutions
@@ -187,7 +193,10 @@ const Header = () => {
             <div className="container-custom py-4 space-y-4">
               <div className="space-y-2">
                 <button 
-                  onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                  onClick={() => {
+                    setMobileIndustriesOpen(!mobileIndustriesOpen);
+                    setMobileSolutionsOpen(false);
+                  }}
                   className="flex items-center justify-between w-full py-2 text-charcoal/60 text-xs uppercase tracking-wider"
                 >
                   Industries
@@ -217,7 +226,10 @@ const Header = () => {
               </div>
               <div className="space-y-2 pt-4 border-t border-charcoal/10">
                 <button 
-                  onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                  onClick={() => {
+                    setMobileSolutionsOpen(!mobileSolutionsOpen);
+                    setMobileIndustriesOpen(false);
+                  }}
                   className="flex items-center justify-between w-full py-2 text-charcoal/60 text-xs uppercase tracking-wider"
                 >
                   Solutions

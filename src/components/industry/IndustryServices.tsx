@@ -12,11 +12,23 @@ interface IndustryServicesProps {
   title: string;
   subtitle: string;
   services: Service[];
+  hideLearnMore?: boolean;
+  hideDescription?: boolean;
+  darkTheme?: boolean;
 }
 
-const IndustryServices = ({ sectionLabel, title, subtitle, services }: IndustryServicesProps) => {
+const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMore = false, hideDescription = false, darkTheme = false }: IndustryServicesProps) => {
+  const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950" : "bg-gradient-to-r from-white to-blue-50";
+  const labelClass = darkTheme ? "text-blue-400" : "text-blue-600";
+  const titleClass = darkTheme ? "text-white" : "text-slate-900";
+  const subtitleClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const cardBgClass = darkTheme ? "bg-slate-800/50 border-slate-700 group-hover:border-blue-500" : "bg-white border-blue-100 group-hover:border-blue-300";
+  const cardTitleClass = darkTheme ? "text-white" : "text-slate-900";
+  const cardTextClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const benefitIconClass = darkTheme ? "text-blue-400" : "text-blue-500";
+  
   return (
-    <section id="services" className="py-24 bg-gradient-to-r from-white to-blue-50 relative overflow-hidden">
+    <section id="services" className={`py-8 ${bgClass} relative overflow-hidden`}>
       {/* Animated Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -40,7 +52,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services }: IndustryS
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <motion.span 
-            className="text-blue-600 text-sm font-medium uppercase tracking-wider mb-4 block"
+            className={`${labelClass} text-sm font-medium uppercase tracking-wider mb-4 block`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,7 +60,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services }: IndustryS
             {sectionLabel}
           </motion.span>
           <motion.h2 
-            className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            className={`font-display text-3xl md:text-4xl font-bold ${titleClass} mb-4`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -57,7 +69,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services }: IndustryS
             {title}
           </motion.h2>
           <motion.p 
-            className="text-slate-600 max-w-2xl mx-auto"
+            className={`${subtitleClass} max-w-2xl mx-auto`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -81,14 +93,14 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services }: IndustryS
               <motion.div
                 className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"
               />
-              <div className="relative bg-white border-2 border-blue-100 group-hover:border-blue-300 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 flex-1 flex flex-col">
+              <div className={`relative ${cardBgClass} border-2 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 flex-1 flex flex-col`}>
                 <motion.div
-                  className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-bl-3xl rounded-tr-2xl"
+                  className="absolute top-0 right-0 w-16 h-12 bg-gradient-to-br from-blue-400/20 to-transparent rounded-bl-3xl rounded-tr-2xl"
                   animate={{ opacity: [0.3, 0.7, 0.3] }}
                   transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.2 }}
                 />
                 <motion.h3 
-                  className="font-display text-xl font-bold text-slate-900 mb-4 relative inline-block"
+                  className={`font-display text-xl font-bold ${cardTitleClass} mb-4 relative inline-block`}
                   whileHover={{ scale: 1.02 }}
                 >
                   {service.title}
@@ -104,33 +116,37 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services }: IndustryS
               {service.benefits ? (
                 <>
                   <div className="mb-4 flex-grow">
-                    <h4 className="text-sm font-semibold text-slate-900 mb-2">This helps you:</h4>
+                    <h4 className={`text-sm font-semibold ${cardTitleClass} mb-2`}>This helps you in:</h4>
                     <ul className="space-y-2">
                       {service.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-start gap-2 text-sm text-slate-600">
-                          <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <li key={benefitIndex} className={`flex items-start gap-2 text-sm ${cardTextClass}`}>
+                          <CheckCircle className={`w-4 h-4 ${benefitIconClass} mt-0.5 flex-shrink-0`} />
                           {benefit}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-slate-900 mb-2">How we help:</h4>
-                    <p className="text-sm text-slate-600">
-                      {service.description}
-                    </p>
-                  </div>
+                  {!hideDescription && (
+                    <div className="mb-4">
+                      <h4 className={`text-sm font-semibold ${cardTitleClass} mb-2`}>How we help:</h4>
+                      <p className={`text-sm ${cardTextClass}`}>
+                        {service.description}
+                      </p>
+                    </div>
+                  )}
                 </>
               ) : (
-                <p className="text-sm text-slate-600 mb-4 flex-grow">
+                <p className={`text-sm ${cardTextClass} mb-4 flex-grow`}>
                   {service.description}
                 </p>
               )}
               
-              <button className="inline-flex items-center gap-1 text-blue-600 text-sm font-medium group-hover:gap-2 transition-all mt-auto">
-                Learn More
-                <ChevronRight className="w-4 h-4" />
-              </button>
+              {!hideLearnMore && (
+                <button className="inline-flex items-center gap-1 text-blue-600 text-sm font-medium group-hover:gap-2 transition-all mt-auto">
+                  Learn More
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              )}
               </div>
             </motion.div>
           ))}

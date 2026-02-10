@@ -11,11 +11,21 @@ interface IndustryTestimonialsProps {
   sectionLabel: string;
   title: string;
   testimonials: Testimonial[];
+  darkTheme?: boolean;
 }
 
-const IndustryTestimonials = ({ sectionLabel, title, testimonials }: IndustryTestimonialsProps) => {
+const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = true }: IndustryTestimonialsProps) => {
+  const bgClass = darkTheme ? "bg-[#2C3E50]" : "bg-gradient-to-r from-white to-blue-50";
+  const labelClass = darkTheme ? "text-cyan-400" : "text-blue-600";
+  const titleClass = darkTheme ? "text-white" : "text-slate-900";
+  const cardBgClass = darkTheme ? "bg-white/5 border-white/10" : "bg-white border-blue-100";
+  const quoteTextClass = darkTheme ? "text-slate-200" : "text-slate-700";
+  const authorNameClass = darkTheme ? "text-white" : "text-slate-900";
+  const authorRoleClass = darkTheme ? "text-cyan-400" : "text-blue-600";
+  const quoteIconClass = darkTheme ? "text-cyan-400/30" : "text-blue-400/30";
+  
   return (
-    <section className="py-24 relative overflow-hidden bg-[#2C3E50]">
+    <section className={`py-8 relative overflow-hidden ${bgClass}`}>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -48,7 +58,7 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials }: IndustryTes
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <motion.span 
-            className="text-blue-400 text-sm font-medium uppercase tracking-wider mb-4 block"
+            className={`${labelClass} text-sm font-medium uppercase tracking-wider mb-4 block`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,7 +66,7 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials }: IndustryTes
             {sectionLabel}
           </motion.span>
           <motion.h2 
-            className="font-display text-3xl md:text-4xl font-bold text-white"
+            className={`font-display text-3xl md:text-4xl font-bold ${titleClass}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -80,22 +90,22 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials }: IndustryTes
               <motion.div
                 className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"
               />
-              <div className="relative bg-[#34495E]/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+              <div className={`relative ${cardBgClass} backdrop-blur-sm border rounded-2xl p-8 shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
                 <motion.div 
                   className="mb-4"
                   animate={{ rotate: [0, 5, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
                 >
-                  <Quote className="w-8 h-8 text-blue-400 opacity-60" />
+                  <Quote className={`w-8 h-8 ${quoteIconClass} opacity-60`} />
                 </motion.div>
-                <p className="text-slate-300 mb-6 leading-relaxed text-sm">
+                <p className={`${quoteTextClass} mb-6 leading-relaxed text-sm`}>
                   {testimonial.quote}
                 </p>
-                <div className="border-t border-white/10 pt-4">
-                  <h4 className="font-display font-bold text-white text-sm">
+                <div className={`border-t ${darkTheme ? 'border-white/10' : 'border-slate-200'} pt-4`}>
+                  <h4 className={`font-display font-bold ${authorNameClass} text-sm`}>
                     {testimonial.author}
                   </h4>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className={`text-xs ${authorRoleClass} mt-1`}>
                     {testimonial.role}
                   </p>
                 </div>

@@ -11,11 +11,22 @@ interface IndustryProcessProps {
   title: string;
   subtitle: string;
   steps: Step[];
+  darkTheme?: boolean;
 }
 
-const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProcessProps) => {
+const IndustryProcess = ({ sectionLabel, title, subtitle, steps, darkTheme = false }: IndustryProcessProps) => {
+  const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950" : "bg-gradient-to-r from-blue-50 to-white";
+  const labelClass = darkTheme ? "text-blue-400" : "text-blue-600";
+  const titleClass = darkTheme ? "text-white" : "text-slate-900";
+  const subtitleClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const cardBgClass = darkTheme ? "bg-slate-800/50 border-slate-700" : "bg-white border-blue-100";
+  const numberBgClass = darkTheme ? "from-blue-600 to-cyan-500" : "from-blue-500 to-cyan-500";
+  const cardTitleClass = darkTheme ? "text-white" : "text-slate-900";
+  const cardTextClass = darkTheme ? "text-slate-300" : "text-slate-600";
+  const lineClass = darkTheme ? "bg-gradient-to-b from-blue-500 to-cyan-400" : "bg-gradient-to-b from-blue-400 to-cyan-400";
+  
   return (
-    <section className="py-24 bg-gradient-to-r from-blue-50 to-white relative overflow-hidden">
+    <section className={`py-8 ${bgClass} relative overflow-hidden`}>
       {/* Animated Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -39,7 +50,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <motion.span 
-            className="text-blue-600 text-sm font-medium uppercase tracking-wider mb-4 block"
+            className={`${labelClass} text-sm font-medium uppercase tracking-wider mb-4 block`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -47,7 +58,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
             {sectionLabel}
           </motion.span>
           <motion.h2 
-            className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            className={`font-display text-3xl md:text-4xl font-bold ${titleClass} mb-4`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,7 +67,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
             {title}
           </motion.h2>
           <motion.p 
-            className="text-slate-600 max-w-2xl mx-auto"
+            className={`${subtitleClass} max-w-2xl mx-auto`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -83,9 +94,9 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 style={{ backgroundSize: '200% 200%' }}
               />
-              <div className="relative bg-white border-2 border-blue-100 group-hover:border-blue-300 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+              <div className={`relative ${cardBgClass} border-2 rounded-2xl p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 h-full flex flex-col`}>
                 <motion.div
-                  className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 text-white flex items-center justify-center text-xl font-bold mb-6 shadow-lg"
+                  className={`w-16 h-16 rounded-full bg-gradient-to-br ${numberBgClass} text-white flex items-center justify-center text-xl font-bold mb-6 shadow-lg`}
                   animate={{
                     boxShadow: [
                       '0 0 0 0 rgba(59, 130, 246, 0.4)',
@@ -100,7 +111,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
                 </motion.div>
               
               <motion.div 
-                className="hidden lg:block absolute top-8 left-16 w-full h-0.5 bg-gradient-to-r from-blue-400 to-transparent"
+                className={`hidden lg:block absolute top-8 left-16 w-full h-0.5 ${lineClass}`}
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
@@ -108,7 +119,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
               />
 
               <motion.h3 
-                className="font-display text-xl font-bold text-slate-900 mb-3 relative inline-block"
+                className={`font-display text-xl font-bold ${cardTitleClass} mb-3 relative inline-block`}
                 whileHover={{ scale: 1.05 }}
               >
                 {step.title}
@@ -120,7 +131,7 @@ const IndustryProcess = ({ sectionLabel, title, subtitle, steps }: IndustryProce
                   transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
                 />
               </motion.h3>
-              <p className="text-slate-600 leading-relaxed text-sm flex-grow">
+              <p className={`${cardTextClass} leading-relaxed text-sm flex-grow`}>
                 {step.description}
               </p>
               </div>

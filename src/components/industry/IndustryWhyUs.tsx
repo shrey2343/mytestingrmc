@@ -19,7 +19,7 @@ const IndustryWhyUs = ({
   ctaLink,
 }: IndustryWhyUsProps) => {
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950">
+    <section className="py-8 relative overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

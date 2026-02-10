@@ -61,7 +61,7 @@ const IndustryHero = ({
   };
 
   return (
-    <section className="relative min-h-[700px] lg:min-h-[650px] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950">
+    <section className="relative min-h-[600px] lg:min-h-[550px] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 pb-2 md:pb-2">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -103,9 +103,9 @@ const IndustryHero = ({
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/30" />
       </div>
 
-      <div className="container-custom relative z-10 w-full py-20 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+      <div className="container-custom relative z-10 w-full py-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         <motion.div
-          className="flex-1 text-white max-w-[650px]"
+          className="flex-1 text-white max-w-[650px] flex flex-col items-center text-center"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
@@ -130,7 +130,7 @@ const IndustryHero = ({
           )}
 
           {bulletPoints && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 w-full max-w-[500px]">
               {bulletPoints.map((point, index) => (
                 <motion.div
                   key={index}
@@ -148,7 +148,7 @@ const IndustryHero = ({
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-3 mb-10 justify-center">
             {tags.map((tag, index) => (
               <motion.span 
                 key={index} 
@@ -160,12 +160,12 @@ const IndustryHero = ({
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center">
             <motion.a
               href={primaryCtaLink || "https://calendly.com/researchstrategycall/30min"}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -255,6 +255,17 @@ const IndustryHero = ({
             </div>
           )}
         </motion.div>
+      </div>
+
+      {/* Wave SVG at bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+        <svg className="relative block w-[calc(100%+1.3px)] h-[80px] md:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#ffffff"
+            fillOpacity="1"
+            d="M0,160L60,186.7C120,213,240,267,360,277.3C480,288,600,256,720,234.7C840,213,960,203,1080,208C1200,213,1320,235,1380,245.3L1440,256L1440,320L0,320Z"
+          ></path>
+        </svg>
       </div>
     </section>
   );

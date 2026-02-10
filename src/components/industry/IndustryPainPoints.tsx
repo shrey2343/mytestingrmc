@@ -20,7 +20,7 @@ const IndustryPainPoints = ({
   painPoints,
 }: IndustryPainPointsProps) => {
   return (
-    <section className="py-24 bg-gradient-to-r from-white to-blue-50 relative overflow-hidden">
+    <section className="pt-8 pb-8 bg-gradient-to-r from-white to-blue-50 relative overflow-hidden">
       {/* Animated Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
