@@ -1784,7 +1784,7 @@ const GlobalAdmissionStandout = () => {
                 }}>
                   <h4 style={{
                     fontWeight: '700',
-                    color: 'rgba(255, 255, 255, 1)ff',
+                    color: '#ffffffff',
                     fontSize: '0.875rem',
                     marginBottom: '0.25rem'
                   }}>
@@ -1876,7 +1876,7 @@ const GlobalAdmissionStandout = () => {
             <h3 style={{
               fontSize: '1.8rem',
               fontWeight: '700',
-              color: 'rgba(248, 250, 253, 1)ff',
+              color: '#ffffffff',
               marginBottom: '2rem',
               textAlign: 'center'
             }}>
@@ -1934,7 +1934,7 @@ const GlobalAdmissionStandout = () => {
                 <div style={{
                   fontSize: '1.1rem',
                   lineHeight: '1.6',
-                  color: '#334155'
+                  color: '#ffffffff'
                 }}>
                   <strong style={{ color: '#ffffffff' }}>Students with strong academics seeking differentiation</strong>
                 </div>
