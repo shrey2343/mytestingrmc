@@ -1,21 +1,37 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+import { Send } from "lucide-react";
 
 const HeroSection = () => {
-  const containerRef = useRef(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
 
-  // Function to scroll to research-for-everyone section
-  const scrollToResearchSection = () => {
-    const element = document.getElementById('research-for-everyone');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create WhatsApp message
+    const message = `*New Quote Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}`;
+    const whatsappLink = `https://wa.me/918719070455?text=${message}`;
+    
+    // Open WhatsApp
+    window.open(whatsappLink, '_blank');
+    
+    // Reset form
+    setFormData({ name: "", email: "", phone: "" });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
     <section 
-      ref={containerRef}
       className="relative min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     >
       {/* Main Background with Subtle Animation */}
@@ -221,110 +237,81 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right - Single Image Display */}
-        <motion.div 
-          className="flex-1 relative w-full max-w-full lg:max-w-none flex justify-center lg:justify-end px-4 md:px-0"
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+        {/* Right Content - Quote Form */}
+        <motion.div
+          className="flex-1 w-full max-w-[500px] px-4 md:px-0 relative z-20"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="relative w-full max-w-[400px] sm:max-w-[600px] md:max-w-[600px] lg:max-w-[700px]">
-            {/* Animated Glow Effect */}
-            <motion.div
-              className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl"
-              animate={{
-                scale: [1, 1.05, 1],
-                opacity: [0.3, 0.5, 0.3],
-                rotate: [0, 5, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-8 shadow-2xl">
+            <div className="mb-5 md:mb-6">
+              <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-blue-500 text-white text-xs font-bold mb-2 md:mb-3">
+                20% OFF
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Get Instant Quote</h3>
+            </div>
 
-            {/* Main Image Container */}
-            <motion.div
-              className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <motion.img
-                src="/a.jpeg"
-                alt="Research Excellence"
-                className="w-full h-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-              />
-              
-              {/* Subtle Gradient Overlay */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-purple-900/10"
-                animate={{
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                }}
-              />
-            </motion.div>
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Full Name *"
+                  required
+                  className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                />
+              </div>
 
-            {/* Floating Particles Around Image */}
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-blue-400/40 rounded-full"
-                style={{
-                  top: `${20 + Math.random() * 60}%`,
-                  left: i % 2 === 0 ? '-5%' : '105%',
-                }}
-                animate={{
-                  y: [0, -20, 0],
-                  opacity: [0, 1, 0],
-                  scale: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  delay: i * 0.5,
-                  repeat: Infinity,
-                }}
-              />
-            ))}
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email *"
+                  required
+                  className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                />
+              </div>
 
-            {/* Corner Accent Elements */}
-            <motion.div
-              className="absolute -top-3 -right-3 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/30 backdrop-blur-sm border border-white/20"
-              animate={{
-                rotate: 360,
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                scale: { duration: 3, repeat: Infinity },
-              }}
-            />
-            <motion.div
-              className="absolute -bottom-3 -left-3 w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30 backdrop-blur-sm border border-white/20"
-              animate={{
-                rotate: -360,
-                scale: [1, 1.15, 1],
-              }}
-              transition={{
-                rotate: { duration: 15, repeat: Infinity, ease: "linear" },
-                scale: { duration: 4, repeat: Infinity, delay: 0.5 },
-              }}
-            />
+              <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone *"
+                  required
+                  className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                className="w-full px-5 md:px-6 py-3 md:py-3.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2 text-sm md:text-base"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Send className="w-4 h-4 md:w-5 md:h-5" />
+                Get A Free Quote
+              </motion.button>
+            </form>
           </div>
         </motion.div>
+      </div>
+
+      {/* Wave SVG at bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+        <svg className="relative block w-[calc(100%+1.3px)] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="#ffffff"
+            fillOpacity="1"
+            d="M0,160L60,186.7C120,213,240,267,360,277.3C480,288,600,256,720,234.7C840,213,960,203,1080,208C1200,213,1320,235,1380,245.3L1440,256L1440,320L0,320Z"
+          ></path>
+        </svg>
       </div>
 
     </section>

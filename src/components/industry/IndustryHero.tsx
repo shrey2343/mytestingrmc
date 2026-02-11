@@ -30,7 +30,7 @@ const IndustryHero = ({
   primaryCtaLink,
   secondaryCta,
   stats,
-  showQuoteForm = false,
+  showQuoteForm = true,
   whatsappNumber = "+918719070455",
 }: IndustryHeroProps) => {
   const [formData, setFormData] = useState({

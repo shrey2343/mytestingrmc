@@ -1097,7 +1097,7 @@ const GlobalAdmissionStandout = () => {
         background: '#0C1222',
         color: '#ffffff',
         padding: '3rem 2rem'
-      }}>
+      }} className="responsive-padding">
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto'
@@ -1105,7 +1105,7 @@ const GlobalAdmissionStandout = () => {
           <div style={{
             textAlign: 'center',
             marginBottom: '3rem'
-          }}>
+          }} className="responsive-mb">
             <div style={{
               display: 'inline-block',
               background: '#6B46C1',
@@ -1125,7 +1125,7 @@ const GlobalAdmissionStandout = () => {
               fontWeight: '800',
               lineHeight: '1.1',
               marginBottom: '1.5rem'
-            }}>
+            }} className="responsive-text-2xl">
               <span style={{
                 background: 'linear-gradient(135deg, #6361c2 30%, #2a50b8 70%)',
                 WebkitBackgroundClip: 'text',
@@ -1141,7 +1141,7 @@ const GlobalAdmissionStandout = () => {
               maxWidth: '700px',
               margin: '0 auto',
               fontWeight: '500'
-            }}>
+            }} className="responsive-text-lg">
               A complete, guided research experience designed for college admissions.
             </p>
           </div>
@@ -1151,7 +1151,7 @@ const GlobalAdmissionStandout = () => {
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '2rem',
             marginBottom: '3rem'
-          }}>
+          }} className="responsive-grid-3 responsive-gap">
             {/* Card 1 - Personalized Research Mentorship */}
             <div style={{
               background: '#ffffff',
@@ -1160,13 +1160,13 @@ const GlobalAdmissionStandout = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-            }}>
+            }} className="responsive-padding-card">
               <h3 style={{
                 fontSize: '1.5rem',
                 fontWeight: '700',
                 color: '#1e293b',
                 marginBottom: '1rem'
-              }}>
+              }} className="responsive-text-xl">
                 Personalized Research Mentorship
               </h3>
               <p style={{
@@ -1231,13 +1231,13 @@ const GlobalAdmissionStandout = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-            }}>
+            }} className="responsive-padding-card">
               <h3 style={{
                 fontSize: '1.5rem',
                 fontWeight: '700',
                 color: '#1e293b',
                 marginBottom: '1rem'
-              }}>
+              }} className="responsive-text-xl">
                 Journal & Conference Submission
               </h3>
               <p style={{
@@ -1299,13 +1299,13 @@ const GlobalAdmissionStandout = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-            }}>
+            }} className="responsive-padding-card">
               <h3 style={{
                 fontSize: '1.5rem',
                 fontWeight: '700',
                 color: '#1e293b',
                 marginBottom: '1rem'
-              }}>
+              }} className="responsive-text-xl">
                 Strong Research Profile
               </h3>
               <p style={{
@@ -1375,9 +1375,10 @@ const GlobalAdmissionStandout = () => {
               border: '2px solid rgba(139, 92, 246, 0.3)',
               borderRadius: '15px',
               maxWidth: '600px',
-              margin: '0 auto 2rem'
-            }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2">
+              margin: '0 auto 2rem',
+              flexWrap: 'wrap'
+            }} className="responsive-padding-card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" style={{ flexShrink: 0 }}>
                 <circle cx="12" cy="8" r="7"></circle>
                 <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
               </svg>
@@ -1387,7 +1388,7 @@ const GlobalAdmissionStandout = () => {
                 color: '#a78bfa',
                 margin: 0,
                 letterSpacing: '0.3px'
-              }}>
+              }} className="responsive-text-lg">
                 Not a course — a complete academic experience
               </p>
             </div>
