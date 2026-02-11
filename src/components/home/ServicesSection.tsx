@@ -351,7 +351,7 @@ const ServicesSection = () => {
                 }}
               />
 
-              <div className="relative bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-3xl shadow-2xl border-2 border-blue-100 overflow-hidden">
+              <div className="relative bg-white/95 backdrop-blur-sm p-8 md:p-10 pb-12 rounded-3xl shadow-2xl border-2 border-blue-100 overflow-hidden">
                 {/* Animated Corner Decorations */}
                 <motion.div
                   className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-200/40 to-transparent rounded-tr-3xl"
@@ -418,7 +418,7 @@ const ServicesSection = () => {
                             whileHover={{ scale: 1.2, rotate: 360 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <Check className="w-4 h-4 text-blue-500 group-hover:text-white transition-colors duration-300" />
+                            <Check className="w-4 h-6 text-blue-500 group-hover:text-white transition-colors duration-300" />
                           </motion.div>
 
                           <span className="text-[15px] leading-relaxed text-slate-700 group-hover:text-blue-800 transition-colors duration-300 font-medium">
@@ -428,13 +428,7 @@ const ServicesSection = () => {
                       ))}
                     </div>
 
-                    {/* Bottom Accent Bar */}
-                    <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-b-3xl"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
-                    />
+                    
                   </motion.div>
                 </AnimatePresence>
               </div>
