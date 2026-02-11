@@ -130,29 +130,29 @@ const VideoTestimonialsSection = ({ darkTheme = false }: VideoTestimonialsProps)
   };
 
   return (
-    <section className={`py-8 ${bgClass}`}>
-      <div className={`container-custom ${darkTheme ? '[&_.card-bg]:bg-slate-800/50 [&_.card-bg]:border-slate-700 [&_.card-title]:text-white [&_.card-text]:text-slate-300 [&_.author-name]:text-white [&_.author-role]:text-slate-400' : '[&_.card-bg]:bg-white [&_.card-bg]:border-slate-200 [&_.card-title]:text-slate-900 [&_.card-text]:text-slate-600 [&_.author-name]:text-slate-900 [&_.author-role]:text-slate-500'}`}>
+    <section className={`py-12 md:py-16 lg:py-20 ${bgClass}`}>
+      <div className={`container-custom px-4 md:px-6 ${darkTheme ? '[&_.card-bg]:bg-slate-800/50 [&_.card-bg]:border-slate-700 [&_.card-title]:text-white [&_.card-text]:text-slate-300 [&_.author-name]:text-white [&_.author-role]:text-slate-400' : '[&_.card-bg]:bg-white [&_.card-bg]:border-slate-200 [&_.card-title]:text-slate-900 [&_.card-text]:text-slate-600 [&_.author-name]:text-slate-900 [&_.author-role]:text-slate-500'}`}>
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={`font-display text-4xl md:text-5xl font-bold mb-4 ${titleClass}`}>
+          <h2 className={`font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 ${titleClass} px-2`}>
             Real Success Stories from{" "}
             <span className={`bg-gradient-to-r ${gradientTextClass} bg-clip-text text-transparent`}>
               Real People
             </span>
           </h2>
-          <p className="text-slate-600 text-lg max-w-3xl mx-auto">
+          <p className="text-slate-600 text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4">
             Don't just take our word for it. Here's what our graduates say about their transformation.
           </p>
         </motion.div>
 
         {/* Video Grid - First Row (3 videos) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
           {videoTestimonials.slice(0, 3).map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -238,7 +238,7 @@ const VideoTestimonialsSection = ({ darkTheme = false }: VideoTestimonialsProps)
         </div>
 
         {/* Video Grid - Second Row (2 videos centered) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {videoTestimonials.slice(3, 5).map((testimonial, index) => (
             <motion.div
               key={testimonial.id}

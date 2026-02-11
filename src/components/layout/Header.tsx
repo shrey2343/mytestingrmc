@@ -141,7 +141,7 @@ const Header = () => {
             className="inline-flex items-center gap-2 text-charcoal hover:text-green-600 transition-colors font-semibold"
           >
             <Phone className="w-4 h-4" />
-            <span className="text-sm">+91 8719070455</span>
+            <span className="text-sm ">+91 8719070455</span>
           </a>
           <a 
             href="https://wa.me/918719070455"

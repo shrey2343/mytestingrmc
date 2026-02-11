@@ -25,7 +25,7 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = t
   const quoteIconClass = darkTheme ? "text-cyan-400/30" : "text-blue-400/30";
   
   return (
-    <section className={`py-8 relative overflow-hidden ${bgClass}`}>
+    <section className={`py-12 md:py-16 lg:py-20 relative overflow-hidden ${bgClass}`}>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -55,10 +55,10 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = t
         />
       </div>
 
-      <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
+      <div className="container-custom relative z-10 px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-16">
           <motion.span 
-            className={`${labelClass} text-sm font-medium uppercase tracking-wider mb-4 block`}
+            className={`${labelClass} text-xs md:text-sm font-medium uppercase tracking-wider mb-3 md:mb-4 block`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -66,7 +66,7 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = t
             {sectionLabel}
           </motion.span>
           <motion.h2 
-            className={`font-display text-3xl md:text-4xl font-bold ${titleClass}`}
+            className={`font-display text-2xl md:text-3xl lg:text-4xl font-bold ${titleClass} px-2`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,7 +76,7 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = t
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 md:px-0">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -90,22 +90,22 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = t
               <motion.div
                 className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"
               />
-              <div className={`relative ${cardBgClass} backdrop-blur-sm border rounded-2xl p-8 shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
+              <div className={`relative ${cardBgClass} backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
                 <motion.div 
-                  className="mb-4"
+                  className="mb-3 md:mb-4"
                   animate={{ rotate: [0, 5, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
                 >
-                  <Quote className={`w-8 h-8 ${quoteIconClass} opacity-60`} />
+                  <Quote className={`w-7 h-7 md:w-8 md:h-8 ${quoteIconClass} opacity-60`} />
                 </motion.div>
-                <p className={`${quoteTextClass} mb-6 leading-relaxed text-sm`}>
+                <p className={`${quoteTextClass} mb-5 md:mb-6 leading-relaxed text-xs md:text-sm`}>
                   {testimonial.quote}
                 </p>
-                <div className={`border-t ${darkTheme ? 'border-white/10' : 'border-slate-200'} pt-4`}>
-                  <h4 className={`font-display font-bold ${authorNameClass} text-sm`}>
+                <div className={`border-t ${darkTheme ? 'border-white/10' : 'border-slate-200'} pt-3 md:pt-4`}>
+                  <h4 className={`font-display font-bold ${authorNameClass} text-xs md:text-sm`}>
                     {testimonial.author}
                   </h4>
-                  <p className={`text-xs ${authorRoleClass} mt-1`}>
+                  <p className={`text-[11px] md:text-xs ${authorRoleClass} mt-1`}>
                     {testimonial.role}
                   </p>
                 </div>

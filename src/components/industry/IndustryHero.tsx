@@ -103,56 +103,56 @@ const IndustryHero = ({
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/30" />
       </div>
 
-      <div className="container-custom relative z-10 w-full py-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+      <div className="container-custom relative z-20 w-full py-8 md:py-10 px-4 md:px-6 pb-24 md:pb-32 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
         <motion.div
-          className="flex-1 text-white max-w-[650px] flex flex-col items-center text-center"
+          className="flex-1 text-white w-full max-w-[650px] flex flex-col items-center text-center"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
           <motion.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white/10 border border-white/20 mb-4 md:mb-6 backdrop-blur-sm"
             whileHover={{ scale: 1.05 }}
           >
             {badgeIcon}
-            <span className="text-sm text-white/90">{badge}</span>
+            <span className="text-xs md:text-sm text-white/90">{badge}</span>
           </motion.div>
 
-          <h1 className="font-display font-bold text-[36px] md:text-[48px] leading-[1.1] mb-6">
+          <h1 className="font-display font-bold text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] mb-4 md:mb-6">
             {titleWhite}
             <span className="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">{titleRed}</span>
           </h1>
 
           {subtitle && (
-            <p className="font-body text-base md:text-lg leading-relaxed text-slate-300 mb-8">
+            <p className="font-body text-sm md:text-base lg:text-lg leading-relaxed text-slate-300 mb-6 md:mb-8 px-2">
               {subtitle}
             </p>
           )}
 
           {bulletPoints && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 w-full max-w-[500px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8 w-full max-w-[500px] px-2">
               {bulletPoints.map((point, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-3"
+                  className="flex items-center gap-2 md:gap-3"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
-                    <CheckCircle2 className="w-4 h-4 text-white" />
+                  <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
+                    <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4 text-white" />
                   </div>
-                  <span className="text-slate-200 font-medium">{point}</span>
+                  <span className="text-slate-200 font-medium text-sm md:text-base">{point}</span>
                 </motion.div>
               ))}
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3 mb-10 justify-center">
+          <div className="flex flex-wrap gap-2 md:gap-3 mb-8 md:mb-10 justify-center items-center max-w-[700px] mx-auto px-2">
             {tags.map((tag, index) => (
               <motion.span 
                 key={index} 
-                className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 backdrop-blur-sm"
+                className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/5 border border-white/10 text-xs md:text-sm text-white/80 backdrop-blur-sm whitespace-nowrap"
                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
               >
                 {tag}
@@ -160,37 +160,37 @@ const IndustryHero = ({
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-3 md:gap-4 justify-center px-2 relative z-30">
             <motion.a
-              href={primaryCtaLink || "https://calendly.com/researchstrategycall/30min"}
+              href={primaryCtaLink || `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base relative z-30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
               {primaryCta}
             </motion.a>
           </div>
         </motion.div>
 
         <motion.div
-          className="flex-1 w-full max-w-[500px]"
+          className="flex-1 w-full max-w-[500px] px-4 md:px-0 relative z-20"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           {showQuoteForm ? (
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
-              <div className="mb-6">
-                <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-bold mb-3">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-8 shadow-2xl">
+              <div className="mb-5 md:mb-6">
+                <div className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-blue-500 text-white text-xs font-bold mb-2 md:mb-3">
                   20% OFF
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Get Instant Quote</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Get Instant Quote</h3>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                 <div>
                   <input
                     type="text"
@@ -199,7 +199,7 @@ const IndustryHero = ({
                     onChange={handleChange}
                     placeholder="Full Name *"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
                   />
                 </div>
 
@@ -211,7 +211,7 @@ const IndustryHero = ({
                     onChange={handleChange}
                     placeholder="Email *"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
                   />
                 </div>
 
@@ -223,32 +223,32 @@ const IndustryHero = ({
                     onChange={handleChange}
                     placeholder="Phone *"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  className="w-full px-6 py-3.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2"
+                  className="w-full px-5 md:px-6 py-3 md:py-3.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2 text-sm md:text-base"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4 md:w-5 md:h-5" />
                   Get A Free Quote
                 </motion.button>
               </form>
             </div>
           ) : (
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {stats?.map((stat, index) => (
                   <motion.div 
                     key={index} 
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-all"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6 text-center hover:bg-white/10 transition-all"
                     whileHover={{ y: -5, scale: 1.02 }}
                   >
-                    <span className="block text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-2">{stat.value}</span>
-                    <span className="block text-sm text-slate-300">{stat.label}</span>
+                    <span className="block text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-1 md:mb-2">{stat.value}</span>
+                    <span className="block text-xs md:text-sm text-slate-300">{stat.label}</span>
                   </motion.div>
                 ))}
               </div>
@@ -259,7 +259,7 @@ const IndustryHero = ({
 
       {/* Wave SVG at bottom */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
-        <svg className="relative block w-[calc(100%+1.3px)] h-[80px] md:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <svg className="relative block w-[calc(100%+1.3px)] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
           <path
             fill="#ffffff"
             fillOpacity="1"

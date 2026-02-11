@@ -22,7 +22,7 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectio
   const labelClass = darkTheme ? "text-blue-400" : "text-blue-600";
 
   return (
-    <section className={`py-24 relative overflow-hidden ${bgClass}`}>
+    <section className={`py-16 md:py-20 lg:py-24 relative overflow-hidden ${bgClass}`}>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -47,22 +47,22 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectio
         />
       </div>
 
-      <div className="container-custom text-center relative z-10">
+      <div className="container-custom text-center relative z-10 px-4 md:px-6">
         {sectionLabel && (
           <motion.div
-            className="mb-6"
+            className="mb-5 md:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full ${darkTheme ? 'bg-white/10 border border-white/20' : 'bg-blue-100 border border-blue-200'} ${labelClass} text-sm font-semibold backdrop-blur-sm`}>
+            <span className={`inline-block px-3 md:px-4 py-1.5 md:py-2 rounded-full ${darkTheme ? 'bg-white/10 border border-white/20' : 'bg-blue-100 border border-blue-200'} ${labelClass} text-xs md:text-sm font-semibold backdrop-blur-sm`}>
               {sectionLabel}
             </span>
           </motion.div>
         )}
         <motion.h2
-          className={`font-display text-3xl md:text-4xl font-bold ${titleClass} mb-4`}
+          className={`font-display text-2xl md:text-3xl lg:text-4xl font-bold ${titleClass} mb-3 md:mb-4 px-2`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -71,7 +71,7 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectio
           {title}
         </motion.h2>
         <motion.p
-          className={`${subtitleClass} max-w-2xl mx-auto mb-10`}
+          className={`${subtitleClass} max-w-2xl mx-auto mb-8 md:mb-10 text-sm md:text-base px-4`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -80,17 +80,25 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectio
           {subtitle}
         </motion.p>
         <motion.div
-          className="flex flex-wrap justify-center gap-4"
+          className="flex flex-wrap justify-center gap-3 md:gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <motion.a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 px-8 py-3 rounded-lg font-semibold transition-all shadow-lg ${
+           <motion.button
+            onClick={() => {
+              const formElement = document.querySelector('form');
+              if (formElement) {
+                formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Add a subtle highlight effect
+                formElement.parentElement?.classList.add('ring-4', 'ring-blue-400', 'ring-opacity-50');
+                setTimeout(() => {
+                  formElement.parentElement?.classList.remove('ring-4', 'ring-blue-400', 'ring-opacity-50');
+                }, 2000);
+              }
+            }}
+            className={`inline-flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-semibold transition-all shadow-lg text-sm md:text-base ${
               whatsappNumber 
                 ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 hover:shadow-green-500/50"
                 : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600"
@@ -98,9 +106,9 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectio
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <MessageCircle className="w-5 h-5" />
+            <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
             {buttonText}
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
     </section>

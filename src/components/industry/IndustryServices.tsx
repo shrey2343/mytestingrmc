@@ -28,7 +28,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
   const benefitIconClass = darkTheme ? "text-blue-400" : "text-blue-500";
   
   return (
-    <section id="services" className={`py-8 ${bgClass} relative overflow-hidden`}>
+    <section id="services" className={`py-8 md:py-8 lg:py-8 ${bgClass} relative overflow-hidden`}>
       {/* Animated Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -49,10 +49,10 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
         />
       </div>
 
-      <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
+      <div className="container-custom relative z-10 px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-16">
           <motion.span 
-            className={`${labelClass} text-sm font-medium uppercase tracking-wider mb-4 block`}
+            className={`${labelClass} text-xs md:text-sm font-medium uppercase tracking-wider mb-3 md:mb-4 block`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,7 +60,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
             {sectionLabel}
           </motion.span>
           <motion.h2 
-            className={`font-display text-3xl md:text-4xl font-bold ${titleClass} mb-4`}
+            className={`font-display text-2xl md:text-3xl lg:text-4xl font-bold ${titleClass} mb-3 md:mb-4 px-2`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -69,7 +69,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
             {title}
           </motion.h2>
           <motion.p 
-            className={`${subtitleClass} max-w-2xl mx-auto`}
+            className={`${subtitleClass} max-w-2xl mx-auto text-sm md:text-base px-4`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -79,7 +79,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto px-2 md:px-0">
           {services.map((service, index) => (
             <motion.div
               key={index}

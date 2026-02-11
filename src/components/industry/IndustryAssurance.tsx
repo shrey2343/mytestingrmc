@@ -29,7 +29,7 @@ const IndustryAssurance = ({
   const iconBgClass = darkTheme ? "from-cyan-400 to-blue-500" : "from-blue-500 to-cyan-500";
 
   return (
-    <section className={`py-8 ${bgClass} relative overflow-hidden`}>
+    <section className={`py-12 md:py-16 lg:py-20 ${bgClass} relative overflow-hidden`}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -44,30 +44,30 @@ const IndustryAssurance = ({
         />
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 px-4 md:px-6">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className={`${labelClass} text-sm font-semibold uppercase tracking-wider mb-3`}>
+          <p className={`${labelClass} text-xs md:text-sm font-semibold uppercase tracking-wider mb-2 md:mb-3`}>
             {sectionLabel}
           </p>
-          <h2 className={`font-display text-3xl md:text-4xl font-bold ${titleClass} mb-4`}>
+          <h2 className={`font-display text-2xl md:text-3xl lg:text-4xl font-bold ${titleClass} mb-3 md:mb-4 px-2`}>
             {title}
           </h2>
           {subtitle && (
-            <p className={`${subtitleClass} text-lg max-w-3xl mx-auto`}>
+            <p className={`${subtitleClass} text-sm md:text-base lg:text-lg max-w-3xl mx-auto px-4`}>
               {subtitle}
             </p>
           )}
         </motion.div>
 
         {/* Assurances Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto px-2 md:px-0">
           {assurances.map((assurance, index) => (
             <motion.div
               key={index}
@@ -78,16 +78,16 @@ const IndustryAssurance = ({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3 md:gap-4">
                 {/* Check Icon */}
-                <div className="flex-shrink-0 mt-1">
-                  <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${iconBgClass} flex items-center justify-center shadow-lg ${darkTheme ? 'group-hover:shadow-cyan-400/50' : 'group-hover:shadow-blue-400/50'} transition-shadow`}>
-                    <CheckCircle2 className="w-5 h-5 text-white" />
+                <div className="flex-shrink-0 mt-0.5 md:mt-1">
+                  <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-br ${iconBgClass} flex items-center justify-center shadow-lg ${darkTheme ? 'group-hover:shadow-cyan-400/50' : 'group-hover:shadow-blue-400/50'} transition-shadow`}>
+                    <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-white" />
                   </div>
                 </div>
 
                 {/* Text */}
-                <p className={`${cardTextClass} text-base leading-relaxed font-medium`}>
+                <p className={`${cardTextClass} text-sm md:text-base leading-relaxed font-medium`}>
                   {assurance.text}
                 </p>
               </div>
@@ -100,14 +100,14 @@ const IndustryAssurance = ({
 
         {/* Bottom Accent */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-12 md:mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="inline-block">
-            <div className={`h-1 w-32 ${darkTheme ? 'bg-gradient-to-r from-transparent via-cyan-400 to-transparent' : 'bg-gradient-to-r from-transparent via-blue-500 to-transparent'} rounded-full`} />
+            <div className={`h-1 w-24 md:w-32 ${darkTheme ? 'bg-gradient-to-r from-transparent via-cyan-400 to-transparent' : 'bg-gradient-to-r from-transparent via-blue-500 to-transparent'} rounded-full`} />
           </div>
         </motion.div>
       </div>
