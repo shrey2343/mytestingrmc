@@ -241,3 +241,83 @@
     transform: scale(1);
   }
 }
+
+
+/* Global Admission Standout Page - Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .responsive-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .responsive-text-2xl {
+    font-size: 1.75rem !important;
+  }
+  
+  .responsive-text-xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .responsive-text-lg {
+    font-size: 1.125rem !important;
+  }
+  
+  .responsive-padding {
+    padding: 2rem 1rem !important;
+  }
+  
+  .responsive-padding-card {
+    padding: 1.5rem !important;
+  }
+  
+  .responsive-gap {
+    gap: 1rem !important;
+  }
+  
+  .responsive-mb {
+    margin-bottom: 2rem !important;
+  }
+  
+  .mentor-card-responsive {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .mentor-logo-responsive {
+    border-right: none !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 2rem 1rem !important;
+  }
+  
+  .mentor-content-responsive {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .stats-responsive {
+    gap: 0.5rem !important;
+  }
+  
+  .stats-number-responsive {
+    font-size: 1.5rem !important;
+  }
+  
+  .solution-card-responsive {
+    transform: scale(1) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-text-2xl {
+    font-size: 1.5rem !important;
+  }
+  
+  .responsive-text-xl {
+    font-size: 1.125rem !important;
+  }
+  
+  .responsive-padding {
+    padding: 1.5rem 0.75rem !important;
+  }
+}
