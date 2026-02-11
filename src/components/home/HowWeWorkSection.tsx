@@ -34,7 +34,7 @@ const steps = [
 
 const HowWeWorkSection = () => {
   return (
-    <section className="py-24 bg-section-light relative overflow-hidden">
+    <section className="py-12 bg-section-light relative overflow-hidden">
       {/* Animated Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Floating Geometric Shapes */}

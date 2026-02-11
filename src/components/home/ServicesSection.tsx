@@ -79,7 +79,7 @@ const ServicesSection = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <section className="py-12 bg-gradient-to-br from-blue-50 via-white to-blue-50">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row gap-14">
           {/* LEFT – CATEGORY TABS */}
@@ -125,7 +125,7 @@ const ServicesSection = () => {
 
           {/* RIGHT – SERVICES */}
           <div className="lg:w-2/3">
-            <div className="relative bg-white p-10 md:p-14 rounded-3xl shadow-2xl overflow-hidden">
+            <div className="relative bg-white p-8 md:p-8 rounded-3xl shadow-2xl overflow-hidden">
               {/* subtle animated border */}
               <motion.div
                 className="absolute inset-0 rounded-3xl border border-blue-600/20"

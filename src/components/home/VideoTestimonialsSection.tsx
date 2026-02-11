@@ -130,7 +130,7 @@ const VideoTestimonialsSection = ({ darkTheme = false }: VideoTestimonialsProps)
   };
 
   return (
-    <section className={`py-12 md:py-16 lg:py-20 ${bgClass}`}>
+    <section className={`py-8 md:py-12 lg:py-12 ${bgClass}`}>
       <div className={`container-custom px-4 md:px-6 ${darkTheme ? '[&_.card-bg]:bg-slate-800/50 [&_.card-bg]:border-slate-700 [&_.card-title]:text-white [&_.card-text]:text-slate-300 [&_.author-name]:text-white [&_.author-role]:text-slate-400' : '[&_.card-bg]:bg-white [&_.card-bg]:border-slate-200 [&_.card-title]:text-slate-900 [&_.card-text]:text-slate-600 [&_.author-name]:text-slate-900 [&_.author-role]:text-slate-500'}`}>
         {/* Header */}
         <motion.div

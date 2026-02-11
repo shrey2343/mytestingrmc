@@ -32,7 +32,7 @@ const HeroSection = () => {
 
   return (
     <section 
-      className="relative min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
+      className="relative min-h-[400px] lg:min-h-[400px] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     >
       {/* Main Background with Subtle Animation */}
       <div className="absolute inset-0 overflow-hidden">

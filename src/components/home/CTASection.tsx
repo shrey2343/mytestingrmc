@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CTASection = () => {
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-indigo-100 py-24 flex flex-col items-center justify-center"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-indigo-100 py-12 flex flex-col items-center justify-center"
     >
       {/* Background Graphics */}
       <div className="absolute inset-0 overflow-hidden">

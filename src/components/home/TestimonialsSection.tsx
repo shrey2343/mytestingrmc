@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
   );
 
   return (
-    <section className="py-20 bg-charcoal">
+    <section className="py-10 bg-charcoal">
       <div className="container-custom">
         <motion.div
           className="text-center mb-12"

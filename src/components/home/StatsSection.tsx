@@ -9,7 +9,8 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="w-full relative bg-gradient-to-r from-white to-blue-50 py-10 md:py-14 overflow-hidden">
+    <section className="w-full relative bg-gradient-to-r from-white to-blue-50 py-8 md:py-10 overflow-hidden">
+      
       {/* Animated Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Floating Shapes */}

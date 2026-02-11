@@ -85,7 +85,7 @@ const cards = [
 
 const IndustryCardsSection = () => {
   return (
-    <section className="bg-charcoal py-24 px-6">
+    <section className="bg-charcoal py-12 px-6">
       <div className="container max-w-[1240px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
