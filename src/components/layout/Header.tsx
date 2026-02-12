@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const industries = [
   { name: "Research for Everyone", href: "/research-for-everyone" },
   { name: "Startups & Enterprises", href: "/startups-enterprises" },
-  { name: "Healthcare & Life Sciences", href: "/healthcare-life-sciences" },
+  // { name: "Healthcare & Life Sciences", href: "/healthcare-life-sciences" },
   { name: "Biosciences & Bioinformatics", href: "/biosciences" },
   { name: "MedCom & Research Agencies", href: "/medcom-research-agencies" },
 ];
