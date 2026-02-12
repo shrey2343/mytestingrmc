@@ -197,6 +197,7 @@ const MedComResearchAgenciesPage = () => {
         title="A Reliable, White-Label Scientific Partnership"
         subtitle="A streamlined workflow designed to integrate seamlessly with your agency operations."
         steps={processSteps}
+           darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why Agencies Choose RMC"

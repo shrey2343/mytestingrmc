@@ -132,19 +132,28 @@ const HealthcareLifeSciencesPage = () => {
         title="Scientific Research Services"
         subtitle="We collaborate with healthcare, life sciences, and medical communication teams to transform data, studies, and insights into high-quality scientific publications, medical content, and global conference outputs — without overclaiming or regulatory risk."
         services={services}
+        
       />
 
       {/* Therapeutic Areas Section */}
-      <section className="py-24 bg-secondary">
-        <div className="container-custom">
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        
+        <div className="container-custom relative z-10">
           <div className="text-center mb-12">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider mb-4 block">
+            <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">
               Therapeutic Expertise
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Deep Domain Knowledge Across Therapeutic Areas
             </h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-slate-300 max-w-3xl mx-auto">
               Our team of medical writers, biostatisticians, and research specialists bring expertise across multiple therapeutic areas, ensuring scientifically accurate and clinically relevant deliverables.
             </p>
           </div>
@@ -157,7 +166,7 @@ const HealthcareLifeSciencesPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="px-4 py-2 bg-background rounded-full text-sm font-medium text-foreground shadow-sm"
+                className="px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full text-sm font-medium text-white shadow-lg hover:bg-slate-700/50 transition-colors"
               >
                 {area}
               </motion.span>
@@ -171,6 +180,7 @@ const HealthcareLifeSciencesPage = () => {
         title="Scientific Rigor at Every Step"
         subtitle="A structured approach that ensures quality, compliance, and scientific integrity throughout the research lifecycle."
         steps={processSteps}
+        darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why RMC"
@@ -182,6 +192,7 @@ const HealthcareLifeSciencesPage = () => {
         sectionLabel="Testimonials"
         title="Trusted by Healthcare Leaders"
         testimonials={testimonials}
+           darkTheme={true}
       />
       <IndustryCTA
         title="Ready to Elevate Your Research?"

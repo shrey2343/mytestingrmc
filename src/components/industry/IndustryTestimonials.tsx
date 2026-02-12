@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -15,44 +14,39 @@ interface IndustryTestimonialsProps {
 }
 
 const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = true }: IndustryTestimonialsProps) => {
-  const bgClass = darkTheme ? "bg-[#2C3E50]" : "bg-gradient-to-r from-white to-blue-50";
+  const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" : "bg-gradient-to-r from-white to-blue-50";
   const labelClass = darkTheme ? "text-cyan-400" : "text-blue-600";
   const titleClass = darkTheme ? "text-white" : "text-slate-900";
-  const cardBgClass = darkTheme ? "bg-white/5 border-white/10" : "bg-white border-blue-100";
-  const quoteTextClass = darkTheme ? "text-slate-200" : "text-slate-700";
+  const cardBgClass = darkTheme ? "bg-slate-800/20 border-slate-700/30" : "bg-white border-blue-100";
+  const quoteTextClass = darkTheme ? "text-slate-300" : "text-slate-700";
   const authorNameClass = darkTheme ? "text-white" : "text-slate-900";
   const authorRoleClass = darkTheme ? "text-cyan-400" : "text-blue-600";
-  const quoteIconClass = darkTheme ? "text-cyan-400/30" : "text-blue-400/30";
+  const quoteIconClass = darkTheme ? "text-cyan-400" : "text-blue-400";
   
   return (
     <section className={`py-12 md:py-16 lg:py-20 relative overflow-hidden ${bgClass}`}>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 right-20 w-40 h-40 border border-white/5 rounded-3xl"
-          animate={{ rotate: 360, borderRadius: ["30%", "50%", "30%"] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute bottom-40 left-20 w-48 h-48 border border-white/5 rounded-full"
-          animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 18, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute w-[400px] h-[400px] bg-gradient-to-r from-blue-600/5 to-purple-500/5 rounded-full blur-3xl"
-          animate={{ x: [0, 50, 0], y: [0, 60, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          style={{ top: '5%', left: '5%' }}
-        />
-        <motion.div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '40px 40px',
-          }}
-          animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        />
+        {darkTheme && (
+          <>
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0" style={{
+                backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(6, 182, 212, 0.3) 1px, transparent 0)',
+                backgroundSize: '50px 50px'
+              }} />
+            </div>
+            <motion.div
+              className="absolute top-20 right-20 w-40 h-40 border border-cyan-500/10 rounded-3xl"
+              animate={{ rotate: 360, borderRadius: ["30%", "50%", "30%"] }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+              className="absolute bottom-40 left-20 w-48 h-48 border border-cyan-500/10 rounded-full"
+              animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.3, 0.1] }}
+              transition={{ duration: 18, repeat: Infinity }}
+            />
+          </>
+        )}
       </div>
 
       <div className="container-custom relative z-10 px-4 md:px-6">
@@ -88,24 +82,26 @@ const IndustryTestimonials = ({ sectionLabel, title, testimonials, darkTheme = t
               className="relative group"
             >
               <motion.div
-                className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"
+                className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500"
               />
-              <div className={`relative ${cardBgClass} backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
+              <div className={`relative ${cardBgClass} backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-lg group-hover:shadow-2xl group-hover:shadow-cyan-500/50 transition-all duration-300`}>
                 <motion.div 
-                  className="mb-3 md:mb-4"
-                  animate={{ rotate: [0, 5, 0] }}
+                  className="mb-4 md:mb-6"
+                  animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
                 >
-                  <Quote className={`w-7 h-7 md:w-8 md:h-8 ${quoteIconClass} opacity-60`} />
+                  <div className="relative w-12 h-12 md:w-14 md:h-14">
+                    <span className={`${quoteIconClass} text-4xl md:text-5xl font-serif font-bold`}>"</span>
+                  </div>
                 </motion.div>
-                <p className={`${quoteTextClass} mb-5 md:mb-6 leading-relaxed text-xs md:text-sm`}>
+                <p className={`${quoteTextClass} mb-6 md:mb-8 leading-relaxed text-sm md:text-base italic`}>
                   {testimonial.quote}
                 </p>
-                <div className={`border-t ${darkTheme ? 'border-white/10' : 'border-slate-200'} pt-3 md:pt-4`}>
-                  <h4 className={`font-display font-bold ${authorNameClass} text-xs md:text-sm`}>
+                <div className={`border-t ${darkTheme ? 'border-slate-700/50' : 'border-slate-200'} pt-4 md:pt-5`}>
+                  <h4 className={`font-display font-bold ${authorNameClass} text-sm md:text-base mb-1`}>
                     {testimonial.author}
                   </h4>
-                  <p className={`text-[11px] md:text-xs ${authorRoleClass} mt-1`}>
+                  <p className={`text-xs md:text-sm ${authorRoleClass}`}>
                     {testimonial.role}
                   </p>
                 </div>

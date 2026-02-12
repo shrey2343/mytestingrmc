@@ -113,6 +113,7 @@ const EditingPage = () => {
         title="Editing Workflow"
         subtitle="A meticulous editing process that ensures every document meets the highest quality standards."
         steps={processSteps}
+          darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why Choose Us"

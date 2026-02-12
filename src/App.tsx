@@ -23,6 +23,7 @@ import PublishingResearchPaper from "./pages/blog/PublishingResearchPaper";
 import ResearchMethodology from "./pages/blog/ResearchMethodology";
 import NotFound from "./pages/NotFound";
 import GlobalAdmissionStandout from "./pages/GlobalAdmissionStandout";
+import BiosciencesPage from "./pages/BiosciencesPage";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/startups-enterprises" element={<StartupsEnterprisesPage />} />
           <Route path="/healthcare-life-sciences" element={<HealthcareLifeSciencesPage />} />
+          <Route path="/biosciences" element={<BiosciencesPage />} />
           <Route path="/medcom-research-agencies" element={<MedComResearchAgenciesPage />} />
           <Route path="/research-for-everyone" element={<ResearchForEveryonePage />} />
           <Route path="/research-paper-publication" element={<ResearchPaperPublicationPage />} />

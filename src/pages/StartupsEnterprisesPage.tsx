@@ -142,6 +142,7 @@ const StartupsEnterprisesPage = () => {
         title="How We Work"
         subtitle="A streamlined process designed for speed and quality, delivering insights when you need them most."
         steps={processSteps}
+          darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why RMC"

@@ -36,9 +36,11 @@ const ResearchPaperPublicationPage = () => {
             </p>
 
             <a
-              href="https://calendly.com/researchstrategycall/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#quote-form"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }}
               className="btn-primary inline-flex items-center gap-2"
             >
               <Zap className="w-4 h-4" />

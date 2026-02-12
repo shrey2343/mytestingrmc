@@ -37,26 +37,160 @@ const IndustryHero = ({
     name: "",
     email: "",
     phone: "",
+    service: "",
+    otherService: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const validateName = (name: string) => {
+    if (!name.trim()) return ""; // Don't validate empty field
     
-    // Create WhatsApp message
-    const message = `*New Quote Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}`;
-    const whatsappLink = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${message}`;
+    // Check if name contains numbers
+    if (/\d/.test(name)) {
+      return "Name cannot contain numbers";
+    }
     
-    // Open WhatsApp
-    window.open(whatsappLink, '_blank');
+    // Count only alphabetic characters
+    const alphabets = name.replace(/[^a-zA-Z]/g, "");
+    if (alphabets.length < 2) {
+      return "Name must contain at least 2 alphabets";
+    }
     
-    // Reset form
-    setFormData({ name: "", email: "", phone: "" });
+    return "";
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const validateEmail = (email: string) => {
+    const emailLower = email.toLowerCase();
+    if (email !== emailLower) {
+      return "Email must be in lowercase";
+    }
+    if (!email.includes("@")) {
+      return "Email must contain @";
+    }
+    if (!email.includes(".")) {
+      return "Email must contain a dot (.)";
+    }
+    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address";
+    }
+    return "";
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneDigits.length !== 10) {
+      return "Phone number must be exactly 10 digits";
+    }
+    return "";
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate all fields
+    const nameError = validateName(formData.name);
+    const emailError = validateEmail(formData.email);
+    const phoneError = validatePhone(formData.phone);
+
+    if (nameError || emailError || phoneError) {
+      setErrors({
+        name: nameError,
+        email: emailError,
+        phone: phoneError,
+      });
+      return;
+    }
+
+    // Clear errors
+    setErrors({ name: "", email: "", phone: "" });
+    setIsSubmitting(true);
+    
+    try {
+      // Determine which service to send
+      const serviceToSend = formData.service === "Other (Please specify)" 
+        ? `Other: ${formData.otherService}` 
+        : formData.service;
+      
+      // Prepare data for webhook
+      const data = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: serviceToSend,
+        
+      };
+
+      // Send to webhook
+     await fetch("https://script.google.com/macros/s/AKfycbx7mq9gj63h7z6Jm6EBmOXuSCn4UXRXyOG6iVMdvsIdWMm6D9n-O9c4wNK-CMLY5yq0rg/exec", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+});
+
+
+      // Show success message
+      setShowSuccess(true);
+      
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", service: "", otherService: "" });
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
+      
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
+    });
+
+    // Clear error for the field being edited
+    if (name === "name" || name === "email" || name === "phone") {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    
+    let error = "";
+    if (name === "name") {
+      error = validateName(value);
+    } else if (name === "email") {
+      error = validateEmail(value);
+    } else if (name === "phone") {
+      error = validatePhone(value);
+    }
+
+    setErrors({
+      ...errors,
+      [name]: error,
     });
   };
 
@@ -162,9 +296,11 @@ const IndustryHero = ({
 
           <div className="flex flex-wrap gap-3 md:gap-4 justify-center px-2 relative z-30">
             <motion.a
-              href={primaryCtaLink || `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#quote-form"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }}
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base relative z-30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -180,6 +316,7 @@ const IndustryHero = ({
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
+          id="quote-form"
         >
           {showQuoteForm ? (
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-8 shadow-2xl">
@@ -191,16 +328,42 @@ const IndustryHero = ({
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+                {/* Success Message */}
+                {showSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-lg shadow-lg flex items-center gap-3"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-base">Thank You for Submitting!</h4>
+                      <p className="text-sm text-white/90">We've received your request and will get back to you shortly.</p>
+                    </div>
+                  </motion.div>
+                )}
+
                 <div>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     placeholder="Full Name *"
                     required
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                    className={`w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border ${
+                      errors.name ? 'border-red-500' : 'border-white/30'
+                    } text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 ${
+                      errors.name ? 'focus:ring-red-400' : 'focus:ring-cyan-400'
+                    } transition-all text-sm md:text-base`}
                   />
+                  {errors.name && (
+                    <p className="text-red-400 text-xs mt-1 ml-1">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
@@ -209,10 +372,18 @@ const IndustryHero = ({
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     placeholder="Email *"
                     required
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                    className={`w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border ${
+                      errors.email ? 'border-red-500' : 'border-white/30'
+                    } text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 ${
+                      errors.email ? 'focus:ring-red-400' : 'focus:ring-cyan-400'
+                    } transition-all text-sm md:text-base`}
                   />
+                  {errors.email && (
+                    <p className="text-red-400 text-xs mt-1 ml-1">{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
@@ -221,20 +392,84 @@ const IndustryHero = ({
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     placeholder="Phone *"
                     required
-                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                    maxLength={10}
+                    className={`w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border ${
+                      errors.phone ? 'border-red-500' : 'border-white/30'
+                    } text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 ${
+                      errors.phone ? 'focus:ring-red-400' : 'focus:ring-cyan-400'
+                    } transition-all text-sm md:text-base`}
                   />
+                  {errors.phone && (
+                    <p className="text-red-400 text-xs mt-1 ml-1">{errors.phone}</p>
+                  )}
                 </div>
+
+                <div>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                  >
+                    <option value="" disabled hidden>Select Service *</option>
+                    <option value="Data Analysis Support">Data Analysis Support</option>
+                    <option value="Research Methodology Guidance">Research Methodology Guidance</option>
+                    <option value="Dissertation / Thesis Support">Dissertation / Thesis Support</option>
+                    <option value="Research Paper Writing & Publication">Research Paper Writing & Publication</option>
+                    <option value="Research Training Programs">Research Training Programs</option>
+                    <option value="Study Abroad Research Publication Support">Study Abroad Research Publication Support</option>
+                    <option value="Institutional / University Partnership">Institutional / University Partnership</option>
+                    <option value="Business / Corporate Collaboration">Business / Corporate Collaboration</option>
+                    <option value="Other (Please specify)">Other (Please specify)</option>
+                  </select>
+                </div>
+
+                {/* Conditional "Other Service" input field */}
+                {formData.service === "Other (Please specify)" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <input
+                      type="text"
+                      name="otherService"
+                      value={formData.otherService}
+                      onChange={handleChange}
+                      placeholder="Please specify your service *"
+                      required
+                      className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
+                    />
+                  </motion.div>
+                )}
 
                 <motion.button
                   type="submit"
-                  className="w-full px-5 md:px-6 py-3 md:py-3.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2 text-sm md:text-base"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={isSubmitting}
+                  className="w-full px-5 md:px-6 py-3 md:py-3.5 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 flex items-center justify-center gap-2 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
-                  <Send className="w-4 h-4 md:w-5 md:h-5" />
-                  Get A Free Quote
+                  {isSubmitting ? (
+                    <>
+                      <motion.div
+                        className="w-4 h-4 md:w-5 md:h-5 border-2 border-white border-t-transparent rounded-full"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 md:w-5 md:h-5" />
+                      Get A Free Quote
+                    </>
+                  )}
                 </motion.button>
               </form>
             </div>

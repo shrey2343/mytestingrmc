@@ -229,9 +229,11 @@ const CTASection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <motion.a
-            href="https://calendly.com/researchstrategycall/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#quote-form"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
             className="relative inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-2xl overflow-hidden group"
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.98 }}

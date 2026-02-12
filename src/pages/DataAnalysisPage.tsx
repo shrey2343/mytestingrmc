@@ -113,6 +113,7 @@ const DataAnalysisPage = () => {
         title="Analysis Workflow"
         subtitle="A systematic approach to ensure accurate and reliable data analysis results."
         steps={processSteps}
+          darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why Choose Us"

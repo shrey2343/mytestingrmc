@@ -7,6 +7,7 @@ const industries = [
   { name: "Research for Everyone", href: "/research-for-everyone" },
   { name: "Startups & Enterprises", href: "/startups-enterprises" },
   { name: "Healthcare & Life Sciences", href: "/healthcare-life-sciences" },
+  { name: "Biosciences & Bioinformatics", href: "/biosciences" },
   { name: "MedCom & Research Agencies", href: "/medcom-research-agencies" },
 ];
 
@@ -136,13 +137,13 @@ const Header = () => {
 
         {/* CTA Button */}
         <div className="hidden lg:flex items-center gap-4">
-          <a 
+          {/* <a 
             href="tel:+918719070455"
             className="inline-flex items-center gap-2 text-charcoal hover:text-green-600 transition-colors font-semibold"
           >
             <Phone className="w-4 h-4" />
             <span className="text-sm ">+91 8719070455</span>
-          </a>
+          </a> */}
           <a 
             href="https://wa.me/918719070455"
             target="_blank"

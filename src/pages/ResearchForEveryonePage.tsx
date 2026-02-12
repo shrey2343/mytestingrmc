@@ -123,6 +123,7 @@ const ResearchForEveryonePage = () => {
         title="How It Works"
         subtitle="A simple and transparent process to get the research help you need, when you need it."
         steps={processSteps}
+          darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why Choose Us"

@@ -113,6 +113,7 @@ const EssayWritingPage = () => {
         title="How It Works"
         subtitle="A simple and transparent process to get your essay written by experts."
         steps={processSteps}
+          darkTheme={true}
       />
       <IndustryWhyUs
         sectionLabel="Why Choose Us"
