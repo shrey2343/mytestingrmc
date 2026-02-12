@@ -15,7 +15,7 @@ const EditingPage = () => {
     titleRed: "Editing & Proofreading",
     subtitle: "Expert editing and proofreading services to polish your academic papers, manuscripts, and documents to perfection.",
     tags: ["Proofreading", "Copy Editing", "Language Editing", "Formatting", "Citation Check", "Quality Assurance"],
-    primaryCta: " Book a Discussion",
+    primaryCta: " Talk to Our Experts",
     secondaryCta: "Explore Services",
     stats: [
       { value: "10K+", label: "Documents Edited" },

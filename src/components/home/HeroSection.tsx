@@ -376,7 +376,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              Book a Discussion
+              Talk to Our Experts
             </motion.a>
           </motion.div>
         </motion.div>

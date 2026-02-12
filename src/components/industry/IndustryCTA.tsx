@@ -14,7 +14,7 @@ const IndustryCTA = ({ title, subtitle, whatsappNumber, darkTheme = true, sectio
     ? `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`
     : "https://calendly.com/researchstrategycall/30min";
   
-  const buttonText = whatsappNumber ? "WhatsApp Now" : "Schedule a Call";
+  const buttonText = whatsappNumber ? "Talk to Our Experts" : "Talk to Our Experts";
   
   const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950" : "bg-gradient-to-r from-blue-50 to-white";
   const titleClass = darkTheme ? "text-white" : "text-slate-900";

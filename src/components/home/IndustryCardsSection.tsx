@@ -45,8 +45,8 @@ const cards = [
   },
   {
     id: "healthcare",
-    title: "Healthcare & Life Sciences",
-    subtitle: "Evidence generation and research execution for regulated, impact-driven domains",
+    title: "Biosciences",
+    subtitle: "Advancing Research, Innovation & Scientific Intelligence Globally",
     features: [
   "Pharma",
   "MedTech",

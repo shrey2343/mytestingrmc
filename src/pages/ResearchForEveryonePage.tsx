@@ -15,7 +15,7 @@ const ResearchForEveryonePage = () => {
     titleRed: "For All",
     subtitle: "Making quality research accessible to students, professionals, and individuals pursuing knowledge and academic excellence.",
     tags: ["Students", "Researchers", "Professionals", "Academics", "Freelancers", "Learners"],
-    primaryCta: " Book a Discussion",
+    primaryCta: " Talk to Our Experts",
     secondaryCta: "Explore Services",
     stats: [
       { value: "10K+", label: "Students Helped" },

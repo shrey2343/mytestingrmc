@@ -21,7 +21,7 @@ const HealthcareLifeSciencesPage = () => {
     titleRed: "Services",
     subtitle: "We collaborate with healthcare, life sciences, and medical communication teams to transform data, studies, and insights into high-quality scientific publications, medical content, and global conference outputs — without overclaiming or regulatory risk.",
     tags: ["Healthcare Organizations", "Life Sciences Companies", "Medical Communication Teams", "Research Groups", "Scientific Consultancies"],
-    primaryCta: " Book a Discussion",
+    primaryCta: " Talk to Our Experts",
     secondaryCta: "Our Services",
     stats: [
       { value: "1000+", label: "Studies Completed" },

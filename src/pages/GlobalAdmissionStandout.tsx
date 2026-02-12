@@ -20,7 +20,7 @@ const GlobalAdmissionStandout = () => {
     tags: ["Research Mentorship",
       "Publication Support",
       "Profile Building"],
-    primaryCta: "WhatsApp Now",
+    primaryCta: "Talk to Our Experts",
     primaryCtaLink: "https://wa.me/918982188299",
     secondaryCta: "Learn More",
     showQuoteForm: true,

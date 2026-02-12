@@ -15,7 +15,7 @@ const EssayWritingPage = () => {
     titleRed: "Essay Writing Services",
     subtitle: "High-quality essay writing for students and professionals. From academic essays to application essays with guaranteed originality.",
     tags: ["Academic Essays", "Argumentative", "Descriptive", "Narrative", "Persuasive", "Critical Analysis"],
-    primaryCta: " Book a Discussion",
+    primaryCta: " Talk to Our Experts",
     secondaryCta: "Explore Services",
     stats: [
       { value: "5000+", label: "Essays Written" },

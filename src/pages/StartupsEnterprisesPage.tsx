@@ -15,7 +15,7 @@ const StartupsEnterprisesPage = () => {
     titleRed: "Startups & Enterprises",
     subtitle: "We partner with founders, innovation teams, and enterprises to transform ideas, data, and experiments into research-backed outputs that strengthen trust with investors, partners, and global audiences.",
     tags: ["Startup Founders", "Innovation Teams", "Enterprise Strategy Teams", "VC-backed Companies", "Product-led Organizations"],
-    primaryCta: " Book a Discussion",
+    primaryCta: " Talk to Our Experts",
     secondaryCta: "Explore Services",
     stats: [
       { value: "500+", label: "Startups Supported" },

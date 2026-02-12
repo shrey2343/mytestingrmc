@@ -15,7 +15,7 @@ const DataAnalysisPage = () => {
     titleRed: "Data Analysis Services",
     subtitle: "Expert statistical analysis and data interpretation for research, business, and academic projects using advanced tools and techniques.",
     tags: ["SPSS", "R Programming", "Python", "Excel", "AMOS", "Statistical Modeling"],
-    primaryCta: " Book a Discussion",
+    primaryCta: " Talk to Our Experts",
     secondaryCta: "Explore Services",
     stats: [
       { value: "3000+", label: "Projects Completed" },

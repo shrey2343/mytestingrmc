@@ -24,7 +24,7 @@ const MastersResearchAssistancePage = () => {
       "100% Plagiarism Free",
     ],
     tags: ["Topic Selection", "Literature Review", "Methodology Design", "Questionnaire Development", "Data Collection", "Data Analysis"],
-    primaryCta: "WhatsApp Now",
+    primaryCta: "Talk to Our Experts",
     primaryCtaLink: "https://wa.me/918719070455",
     secondaryCta: "Learn More",
     showQuoteForm: true,

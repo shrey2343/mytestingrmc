@@ -43,18 +43,19 @@ const categories = [
   },
   {
     id: "healthcare",
-    title: "Healthcare & Life Sciences",
+    title: "Biosciences ",
     subtitle:
-      "Evidence generation and research execution for regulated, impact-driven domains",
+      "Advancing Research, Innovation & Scientific Intelligence Globally",
     services: [
-      "Clinical research support",
-      "Real-world evidence studies",
-      "Medical writing & publications",
-      "Health economics & outcomes research",
-      "Systematic reviews & meta-analysis",
-      "Regulatory affairs support",
-      "Biostatistics & data analytics",
-      "Medical affairs & MSL support",
+      "Genomics & Next Generation Sequencing (WGS, WES, RNA-Seq, Variant Analysis)",
+      "Clinical Research & Biostatistics (Survival, Regression, Predictive Modeling)",
+      "Microbiome & Metagenomics (16S, Shotgun, Functional Profiling)",
+      "Computational Biology & Bioinformatics Pipelines",
+      "Research Design & Statistical Methodology",
+      "Thesis Data Analysis & Publication Support",
+      "Scientific Reporting & Journal Preparation",
+      "Bioinformatics & Programming Training (R, Python, NGS, ML)",
+      "Applied Machine Learning for Genomic & Clinical Data"
     ],
   },
   {

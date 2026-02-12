@@ -44,7 +44,7 @@ const ResearchPaperPublicationPage = () => {
               className="btn-primary inline-flex items-center gap-2"
             >
               <Zap className="w-4 h-4" />
-               Book a Discussion
+               Talk to Our Experts
             </a>
           </motion.div>
         </div>
