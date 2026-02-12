@@ -6,8 +6,7 @@ import IndustryCardsSection from "@/components/home/IndustryCardsSection";
 import HowWeWorkSection from "@/components/home/HowWeWorkSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
-import VideoTestimonialsSection from "@/components/home/VideoTestimonialsSection";
-import ExpertPopup from "@/components/ExpertPopup";
+import  VideoTestimonialsSection from "@/components/home/VideoTestimonialsSection"
 
 const Index = () => {
   return (
@@ -20,7 +19,6 @@ const Index = () => {
       <VideoTestimonialsSection/>
       <TestimonialsSection />
       <CTASection />
-      <ExpertPopup />
     </Layout>
   );
 };
