@@ -157,13 +157,13 @@ const Header = () => {
 
         {/* Mobile Menu Button & CTA */}
         <div className="lg:hidden flex items-center gap-3">
-          <a 
+          {/* <a 
             href="tel:+918719070455"
             className="inline-flex items-center justify-center p-2.5 rounded-lg border-2 border-blue-500 text-blue-600 hover:bg-blue-50 transition-all"
             title="Call Now"
           >
             <Phone className="w-5 h-5" />
-          </a>
+          </a> */}
           <a 
             href="https://wa.me/918719070455"
             target="_blank"
@@ -275,13 +275,13 @@ const Header = () => {
                 </Link>
               </div>
               <div className="pt-4 border-t border-charcoal/10 space-y-3">
-                <a 
+                {/* <a 
                   href="tel:+918719070455"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold border-2 border-green-500 text-green-600 hover:bg-green-50 transition-all text-sm md:text-base w-full"
                 >
                   <Phone className="w-5 h-5" />
                   +91 8719070455
-                </a>
+                </a> */}
                 <a 
                   href="https://wa.me/918719070455"
                   target="_blank"
