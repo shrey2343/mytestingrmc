@@ -132,10 +132,19 @@ const HeroSection = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    // For phone field, only allow numbers
+    if (name === "phone") {
+      const numericValue = value.replace(/\D/g, "");
+      setFormData({
+        ...formData,
+        [name]: numericValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
 
     // Clear error for the field being edited
     if (name === "name" || name === "email" || name === "phone") {
@@ -454,6 +463,12 @@ const HeroSection = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    onKeyPress={(e) => {
+                      // Only allow numbers
+                      if (!/[0-9]/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    }}
                     placeholder="Phone *"
                     required
                     maxLength={10}
