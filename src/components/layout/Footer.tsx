@@ -15,7 +15,15 @@ const Footer = () => {
             {/* Logo & Social */}
             <div className="lg:col-span-1">
               <Link to="/" className="inline-block mb-6">
-                <img src="/rmcLogo.jpeg" alt="RMC Logo" className="h-12 w-auto" />
+                <img 
+                  src="/rmcLogo.jpeg" 
+                  alt="RMC Logo" 
+                  className="h-12 w-auto rounded-lg"
+                  style={{ 
+                    mixBlendMode: 'screen',
+                    filter: 'brightness(1.2) contrast(1.1)'
+                  }}
+                />
               </Link>
               
               {/* Social Icons */}

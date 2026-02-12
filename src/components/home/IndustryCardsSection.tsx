@@ -44,7 +44,7 @@ const cards = [
     accentColor: "cyan",
   },
   {
-    id: "healthcare",
+    id: "biosciences",
     title: "Biosciences",
     subtitle: "Advancing Research, Innovation & Scientific Intelligence Globally",
     features: [
@@ -61,7 +61,7 @@ const cards = [
 ],
     bgColor: "from-white to-blue-50",
     textColor: "text-charcoal",
-    link: "/healthcare-life-sciences",
+    link: "/biosciences",
     iconUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/a3080d8c-9772-448e-90c5-656be01b7b75-cactusglobal-com/assets/icons/government_icon-5.png",
     accentColor: "amber",
   },
