@@ -50,24 +50,24 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b border-charcoal/10">
-      <div className="container-custom flex items-center justify-between h-16 md:h-20">
+      <div className="container-custom flex items-center justify-between h-20 md:h-24">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/rmcLogo.jpeg" alt="RMC Logo" className="h-16 md:h-20 w-auto" />
+          <img src="/rmcLogo.jpeg" alt="RMC Logo" className="h-20 md:h-24 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           <div className="relative">
             <button 
               onClick={() => {
                 setIndustriesOpen(!industriesOpen);
                 setSolutionsOpen(false);
               }}
-              className="flex items-center gap-1 text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
+              className="flex items-center gap-1 text-charcoal/90 hover:text-charcoal transition-colors text-base font-semibold"
             >
               Industries
-              <ChevronDown className="w-4 h-4" />
+              <ChevronDown className="w-5 h-5" />
             </button>
             <AnimatePresence>
               {industriesOpen && (
@@ -75,14 +75,14 @@ const Header = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl overflow-hidden z-50"
+                  className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl overflow-hidden z-50"
                 >
                   {industries.map((item) => (
                     <Link
                       key={item.href}
                       to={item.href}
                       onClick={() => setIndustriesOpen(false)}
-                      className="block px-4 py-3 text-charcoal hover:bg-section-light transition-colors text-sm"
+                      className="block px-5 py-3.5 text-charcoal hover:bg-section-light transition-colors text-base font-medium"
                     >
                       {item.name}
                     </Link>
@@ -97,10 +97,10 @@ const Header = () => {
                 setSolutionsOpen(!solutionsOpen);
                 setIndustriesOpen(false);
               }}
-              className="flex items-center gap-1 text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
+              className="flex items-center gap-1 text-charcoal/90 hover:text-charcoal transition-colors text-base font-semibold"
             >
               Solutions
-              <ChevronDown className="w-4 h-4" />
+              <ChevronDown className="w-5 h-5" />
             </button>
             <AnimatePresence>
               {solutionsOpen && (
@@ -108,14 +108,14 @@ const Header = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl overflow-hidden z-50"
+                  className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl overflow-hidden z-50"
                 >
                   {solutions.map((item) => (
                     <Link
                       key={item.href}
                       to={item.href}
                       onClick={() => setSolutionsOpen(false)}
-                      className="block px-4 py-3 text-charcoal hover:bg-section-light transition-colors text-sm"
+                      className="block px-5 py-3.5 text-charcoal hover:bg-section-light transition-colors text-base font-medium"
                     >
                       {item.name}
                     </Link>
@@ -126,13 +126,13 @@ const Header = () => {
           </div>
           <Link 
             to="/career" 
-            className="text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
+            className="text-charcoal/90 hover:text-charcoal transition-colors text-base font-semibold"
           >
             Career
           </Link>
           <Link 
             to="/blog" 
-            className="text-charcoal/90 hover:text-charcoal transition-colors text-sm font-medium"
+            className="text-charcoal/90 hover:text-charcoal transition-colors text-base font-semibold"
           >
             Blog
           </Link>
@@ -142,9 +142,9 @@ const Header = () => {
         <div className="hidden lg:flex items-center gap-4">
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
+            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-base"
           >
-            <MessageCircle className="w-5 h-5" />
+            <MessageCircle className="w-6 h-6" />
             Talk to Our Experts
           </button>
         </div>
