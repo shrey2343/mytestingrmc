@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send,CheckCircle2  } from "lucide-react";
+import { Send,CheckCircle2,MessageCircle  } from "lucide-react";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -330,7 +330,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="container-custom relative z-10 w-full py-8 md:py-12 lg:py-16 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
+      <div className="container-custom relative z-20 w-full py-8 md:py-12 lg:py-16 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
         {/* Left Content */}
         <motion.div 
           className="flex-1 text-background max-w-full lg:max-w-[650px] px-4 md:px-6"
@@ -366,18 +366,15 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <motion.a
-              href="#quote-form"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all text-sm md:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Talk to Our Experts
-            </motion.a>
+             <a 
+            href="https://wa.me/918719070455"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
+          >
+            <MessageCircle className="w-5 h-5" />
+            Talk to Our Experts
+          </a>
           </motion.div>
         </motion.div>
 

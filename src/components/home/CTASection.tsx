@@ -299,18 +299,7 @@ const CTASection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <motion.div 
-            className="flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            >
-              ✓
-            </motion.div>
-            <span className="font-semibold">Free Consultation</span>
-          </motion.div>
+          
           <motion.div 
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
