@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, CheckCircle2, Send } from "lucide-react";
+import QuoteFormModal from "../QuoteFormModal";
 
 interface IndustryHeroProps {
   badge: string;
@@ -33,6 +34,7 @@ const IndustryHero = ({
   showQuoteForm = true,
   whatsappNumber = "+918719070455",
 }: IndustryHeroProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -304,15 +306,15 @@ const IndustryHero = ({
           </div>
 
           <div className="flex flex-wrap gap-3 md:gap-4 justify-center px-2 relative z-30">
-            <a 
-            href="https://wa.me/918719070455"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
-          >
-            <MessageCircle className="w-5 h-5" />
-            {primaryCta}
-          </a>
+            <motion.button 
+              onClick={() => setIsModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <MessageCircle className="w-5 h-5" />
+              {primaryCta}
+            </motion.button>
           </div>
         </motion.div>
 
@@ -513,6 +515,9 @@ const IndustryHero = ({
           ></path>
         </svg>
       </div>
+
+      {/* Quote Form Modal */}
+      <QuoteFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

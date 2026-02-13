@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, MessageCircle, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import QuoteFormModal from "../QuoteFormModal";
 
 const industries = [
   { name: "Research for Everyone", href: "/research-for-everyone" },
@@ -28,6 +29,7 @@ const Header = () => {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
 
@@ -138,42 +140,24 @@ const Header = () => {
 
         {/* CTA Button */}
         <div className="hidden lg:flex items-center gap-4">
-          {/* <a 
-            href="tel:+918719070455"
-            className="inline-flex items-center gap-2 text-charcoal hover:text-green-600 transition-colors font-semibold"
-          >
-            <Phone className="w-4 h-4" />
-            <span className="text-sm ">+91 8719070455</span>
-          </a> */}
-          <a 
-            href="https://wa.me/918719070455"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+            onClick={() => setIsModalOpen(true)}
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
           >
             <MessageCircle className="w-5 h-5" />
             Talk to Our Experts
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu Button & CTA */}
         <div className="lg:hidden flex items-center gap-3">
-          {/* <a 
-            href="tel:+918719070455"
-            className="inline-flex items-center justify-center p-2.5 rounded-lg border-2 border-blue-500 text-blue-600 hover:bg-blue-50 transition-all"
-            title="Call Now"
-          >
-            <Phone className="w-5 h-5" />
-          </a> */}
-          <a 
-            href="https://wa.me/918719070455"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+            onClick={() => setIsModalOpen(true)}
             className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm"
           >
             <MessageCircle className="w-4 h-4" />
             Talk to Our Experts
-          </a>
+          </button>
           <button
             className="text-charcoal p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -297,6 +281,9 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Quote Form Modal */}
+      <QuoteFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </header>
   );
 };
