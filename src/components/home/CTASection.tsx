@@ -325,6 +325,73 @@ const CTASection = () => {
             <span className="font-semibold">Proven Results</span>
           </motion.div>
         </motion.div>
+
+        {/* Continuous Image Carousel */}
+        <div className="mt-16 overflow-hidden">
+          <motion.div
+            className="flex gap-6"
+            animate={{
+              x: [0, -1920],
+            }}
+            transition={{
+              x: {
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* First set of images */}
+            {[
+              "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop", // Lab research
+              "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&h=300&fit=crop", // Data charts
+              "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400&h=300&fit=crop", // Scientific equipment
+              "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&h=300&fit=crop", // Medical research
+              "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&h=300&fit=crop", // Microscope
+              "https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=400&h=300&fit=crop", // Research team
+              "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop", // Lab work
+              "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=400&h=300&fit=crop", // Scientific study
+            ].map((src, index) => (
+              <motion.div
+                key={`first-${index}`}
+                className="flex-shrink-0 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-xl"
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={src}
+                  alt={`Research ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+            
+            {/* Duplicate set for seamless loop */}
+            {[
+              "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
+              "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=400&h=300&fit=crop",
+            ].map((src, index) => (
+              <motion.div
+                key={`second-${index}`}
+                className="flex-shrink-0 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-xl"
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={src}
+                  alt={`Research ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

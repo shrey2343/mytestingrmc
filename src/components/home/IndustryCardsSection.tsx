@@ -14,7 +14,7 @@ const cards = [
       "Dr. Authority",
       "Ph. D. & DBA Researchers",
       "Corporate Authority",
-      "University Faculty/Professors",
+      "University Faculty / Professors",
     ],
     bgColor: "from-white to-blue-50",
     textColor: "text-charcoal",
@@ -314,7 +314,7 @@ const IndustryCardsSection = () => {
                       </p>
 
                       {/* Features - Fixed height with scroll if needed */}
-                      <div className="font-body text-sm sm:text-base leading-relaxed mb-5 text-white/90 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 w-full flex-grow overflow-y-auto max-h-[240px] px-2">
+                      <div className="font-body text-sm sm:text-base leading-relaxed mb-5 text-white/90 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 w-full flex-grow overflow-y-auto max-h-[240px] px-2">
                         {currentCard.features.map((feature, i) => (
                           <motion.div
                             key={i}
