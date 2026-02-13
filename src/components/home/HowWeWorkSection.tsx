@@ -172,7 +172,7 @@ const HowWeWorkSection = () => {
                     </div>
 
                     {/* Mockup Side with Animated Background */}
-                    <div className={`bg-gradient-to-br from-blue-600 to-blue-700 relative min-h-[400px] lg:min-h-full flex items-center justify-center p-8 overflow-hidden ${!isEven ? 'lg:order-1' : ''}`}>
+                    <div className={`bg-gradient-to-br from-blue-950 to-slate-950 relative min-h-[400px] lg:min-h-full flex items-center justify-center p-8 overflow-hidden ${!isEven ? 'lg:order-1' : ''}`}>
                       {/* Advanced Animated Background Effects */}
                       <div className="absolute inset-0 overflow-hidden">
                         {/* Liquid Metal Effect */}
@@ -209,7 +209,7 @@ const HowWeWorkSection = () => {
                         <div className="data-particles"></div>
                       </div>
 
-                      {/* Phone Mockup */}
+                      {/* Phone or Laptop Mockup */}
                       <motion.div
                         className="relative z-10"
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -218,7 +218,89 @@ const HowWeWorkSection = () => {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         whileHover={{ y: -10, scale: 1.02 }}
                       >
-                        <div className="relative w-[260px] h-[520px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl border border-white/10">
+                        {/* Show Laptop for Step 2 and 4, Phone for Step 1 and 3 */}
+                        {index === 1 || index === 3 ? (
+                          // Laptop Mockup
+                          <div className="relative flex flex-col items-center scale-[0.5] sm:scale-[0.65] md:scale-75 lg:scale-90">
+                            {/* Laptop Screen */}
+                            <div className="relative bg-black rounded-t-xl p-3 w-[500px] shadow-2xl">
+                              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-black rounded-b-xl z-20"></div>
+                              <div className="relative bg-white rounded-md overflow-auto" style={{ height: '320px' }}>
+                                {/* Laptop Content */}
+                                <div className="p-6 h-full">
+                                  {/* Header */}
+                                  <div className="flex items-center justify-between mb-4">
+                                    <div className="flex items-center gap-2">
+                                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center flex-shrink-0`}>
+                                        <IconComponent className="w-5 h-5 text-white" />
+                                      </div>
+                                      <div className="min-w-0">
+                                        <h4 className="text-base font-bold text-slate-900 truncate">{step.title}</h4>
+                                        <p className="text-[10px] text-slate-600">Step {step.number} of 4</p>
+                                      </div>
+                                    </div>
+                                    <div className="flex gap-2 flex-shrink-0">
+                                      <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-lg text-[10px] font-bold whitespace-nowrap">
+                                        {step.stats.time}
+                                      </span>
+                                      <span className="px-2 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-[10px] font-bold whitespace-nowrap">
+                                        {step.stats.efficiency}
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  {/* Progress Bar */}
+                                  <div className="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+                                    <motion.div
+                                      className={`h-full bg-gradient-to-r ${step.gradient}`}
+                                      initial={{ width: 0 }}
+                                      whileInView={{ width: `${(parseInt(step.number)) * 25}%` }}
+                                      viewport={{ once: true }}
+                                      transition={{ duration: 1, delay: 0.5 }}
+                                    />
+                                  </div>
+
+                                  {/* Features Grid */}
+                                  <div className="grid grid-cols-2 gap-2 mb-4">
+                                    {step.features.map((feature, idx) => (
+                                      <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.3, delay: 0.6 + idx * 0.1 }}
+                                        className="px-4 py-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-100"
+                                      >
+                                        <div className="flex items-center gap-2">
+                                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                                          <span className="text-sm font-medium text-slate-700 leading-tight">{feature}</span>
+                                        </div>
+                                      </motion.div>
+                                    ))}
+                                  </div>
+
+                                  {/* Action Button */}
+                                  <motion.button
+                                    className={`w-full mt-6 py-3 bg-gradient-to-r ${step.gradient} text-white rounded-xl font-semibold shadow-lg`}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                  >
+                                    Continue to Next Step
+                                  </motion.button>
+                                </div>
+                              </div>
+                            </div>
+                            {/* Laptop Base */}
+                            <div className="relative w-[110%]">
+                              <div className="h-2 bg-gradient-to-b from-gray-700 to-gray-800"></div>
+                              <div className="h-4 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-400 rounded-b-2xl shadow-2xl">
+                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-black/20 rounded-b-lg"></div>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          // Phone Mockup (existing code)
+                          <div className="relative w-[260px] h-[520px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl border border-white/10">
                           {/* Notch */}
                           <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
                           
@@ -305,34 +387,35 @@ const HowWeWorkSection = () => {
 
                           {/* Home Indicator */}
                           <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-28 h-1.5 bg-white/20 rounded-full"></div>
-                        </div>
 
-                        {/* Floating Glow Effects */}
-                        <motion.div
-                          className="absolute -top-4 -right-4 w-20 h-20 bg-white/20 rounded-full blur-xl"
-                          animate={{
-                            scale: [1, 1.2, 1],
-                            opacity: [0.5, 0.8, 0.5],
-                          }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                        />
-                        <motion.div
-                          className="absolute -bottom-4 -left-4 w-24 h-24 bg-cyan-300/30 rounded-full blur-xl"
-                          animate={{
-                            scale: [1, 1.3, 1],
-                            opacity: [0.5, 0.7, 0.5],
-                          }}
-                          transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: 0.5
-                          }}
-                        />
+                          {/* Floating Glow Effects */}
+                          <motion.div
+                            className="absolute -top-4 -right-4 w-20 h-20 bg-white/20 rounded-full blur-xl"
+                            animate={{
+                              scale: [1, 1.2, 1],
+                              opacity: [0.5, 0.8, 0.5],
+                            }}
+                            transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                          />
+                          <motion.div
+                            className="absolute -bottom-4 -left-4 w-24 h-24 bg-cyan-300/30 rounded-full blur-xl"
+                            animate={{
+                              scale: [1, 1.3, 1],
+                              opacity: [0.5, 0.7, 0.5],
+                            }}
+                            transition={{
+                              duration: 4,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: 0.5
+                            }}
+                          />
+                        </div>
+                        )}
                       </motion.div>
                     </div>
                   </div>
