@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 const cards = [
   {
@@ -89,6 +90,36 @@ const cards = [
 ];
 
 const IndustryCardsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const handleNext = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % cards.length);
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
+  };
+
+  const currentCard = cards[currentIndex];
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -1000 : 1000,
+      opacity: 0,
+    }),
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 px-6 overflow-hidden">
       {/* Animated Background Elements */}
@@ -187,131 +218,170 @@ const IndustryCardsSection = () => {
           </p>
         </motion.div>
 
-        {/* Enhanced Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.15,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ 
-                y: -15,
-                transition: { duration: 0.3 }
-              }}
-              className="relative group h-full"
-            >
-              {/* Glow effect on hover */}
+        {/* Carousel Container */}
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-16 md:px-20 lg:px-24 xl:px-28">
+          {/* Navigation Arrows - Outside the card */}
+          <button
+            onClick={handlePrev}
+            className="absolute -left-1 sm:-left-2 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 rounded-full p-2 sm:p-3 md:p-4 transition-all duration-300 hover:scale-110 group shadow-xl"
+            aria-label="Previous card"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white group-hover:text-blue-300 transition-colors" />
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="absolute -right-1 sm:-right-2 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 rounded-full p-2 sm:p-3 md:p-4 transition-all duration-300 hover:scale-110 group shadow-xl"
+            aria-label="Next card"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white group-hover:text-blue-300 transition-colors" />
+          </button>
+
+          {/* Card Carousel */}
+          <div className="relative h-[550px] sm:h-[580px] overflow-visible pt-8 sm:pt-12">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
-                className={`absolute -inset-0.5 bg-gradient-to-r ${
-                  card.accentColor === 'blue' ? 'from-blue-500 to-cyan-500' :
-                  card.accentColor === 'cyan' ? 'from-cyan-500 to-blue-500' :
-                  card.accentColor === 'amber' ? 'from-amber-500 to-orange-500' :
-                  'from-purple-500 to-pink-500'
-                } rounded-[22px] opacity-0 group-hover:opacity-75 blur-xl transition-opacity duration-500`}
-              />
-              
-              <div className={`relative bg-gradient-to-br ${card.bgColor} rounded-[20px] p-8 flex flex-col h-full border-2 border-transparent group-hover:border-blue-200 transition-all duration-500 overflow-hidden`}>
-                {/* Animated corner decoration */}
-                <motion.div
-                  className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-200/30 to-transparent rounded-bl-[100px]"
-                  animate={{
-                    opacity: [0.3, 0.6, 0.3],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.5,
-                  }}
-                />
-
-                {/* Icon with enhanced animation */}
-                <motion.div 
-                  className="bg-gradient-to-br from-white to-slate-50 rounded-xl p-3 mb-6 flex items-center justify-center w-16 h-16 shadow-lg relative z-10"
-                  whileHover={{ 
-                    scale: 1.1, 
-                    rotate: [0, -10, 10, 0],
-                    transition: { duration: 0.5 }
-                  }}
-                >
-                  <motion.div
-                    animate={{
-                      rotate: [0, 360],
-                    }}
-                    transition={{
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                  >
-                    <img
-                      src={card.iconUrl}
-                      alt={card.title}
-                      className="w-9 h-9 object-contain"
-                    />
-                  </motion.div>
-                </motion.div>
-
-                {/* Title with gradient on hover */}
-                <h3 className={`font-display text-[22px] font-bold mb-4 leading-tight ${card.textColor} group-hover:bg-gradient-to-r ${
-                  card.accentColor === 'blue' ? 'group-hover:from-blue-600 group-hover:to-cyan-600' :
-                  card.accentColor === 'cyan' ? 'group-hover:from-cyan-600 group-hover:to-blue-600' :
-                  card.accentColor === 'amber' ? 'group-hover:from-amber-600 group-hover:to-orange-600' :
-                  'group-hover:from-purple-600 group-hover:to-pink-600'
-                } group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300`}>
-                  {card.title}
-                </h3>
-
-                {/* Subtitle */}
-                <p className={`font-body text-sm font-semibold mb-5 ${card.textColor} opacity-80`}>
-                  {card.subtitle}
-                </p>
-
-                {/* Features with stagger animation - flex-grow to push button down */}
-                <div className={`font-body text-sm leading-[1.9] mb-6 flex-grow ${card.textColor} opacity-75`}>
-                  {card.features.map((feature, i) => (
+                key={currentIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <div className="relative group w-full h-full flex items-center">
+                 
+                  {/* Glassmorphism Card - Fixed Height */}
+                  <div className="relative w-full h-full bg-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 border-2 border-white/20 overflow-visible shadow-2xl">
+                    {/* Animated gradient overlay for better readability */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/10 to-white/5 pointer-events-none rounded-3xl" />
+                    
+                    {/* Animated corner decoration */}
                     <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 + i * 0.05 }}
-                      className="flex items-start gap-2 mb-1"
-                    >
-                      <span className={`${card.accentColor === 'blue' ? 'text-blue-500' :
-                        card.accentColor === 'cyan' ? 'text-cyan-500' :
-                        card.accentColor === 'amber' ? 'text-amber-500' :
-                        'text-purple-500'} font-bold`}>✔</span>
-                      <span>{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
+                      className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl ${
+                        currentCard.accentColor === 'blue' ? 'from-blue-400/20' :
+                        currentCard.accentColor === 'blue' ? 'from-blue-400/20' :
+                        currentCard.accentColor === 'blue' ? 'from-blue-400/20' :
+                        'from-blue-400/20'
+                      } to-transparent rounded-bl-[200px] rounded-tr-3xl`}
+                      animate={{
+                        opacity: [0.3, 0.5, 0.3],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                      }}
+                    />
 
-                {/* Enhanced Button - always at bottom */}
-                <Link
-                  to={card.link}
-                  className="relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300 group/btn overflow-hidden mt-auto"
-                >
-                  <span className="relative z-10">Learn more</span>
-                  <ArrowRight className="w-4 h-4 relative z-10 group-hover/btn:translate-x-1 transition-transform" />
-                  
-                  {/* Button shine effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.6 }}
-                  />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+                    {/* Icon - Positioned slightly left of center */}
+                    <motion.div 
+                      className="absolute -top-12 left-1/2 -translate-x-1/2 -ml-32 sm:-ml-40 md:-ml-16 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-5 flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 shadow-2xl border border-white/30 z-10"
+                      animate={{ 
+                        scale: [1, 1.05, 1],
+                        rotate: [0, 5, -5, 0],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                      }}
+                    >
+                      <img
+                        src={currentCard.iconUrl}
+                        alt={currentCard.title}
+                        className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                      />
+                    </motion.div>
+
+                    {/* Content Container - Fixed structure */}
+                    <div className="relative z-10 h-full flex flex-col pt-6 sm:pt-8">
+                      {/* Title - Fixed height */}
+                      <h3 className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-center ${
+                        currentCard.accentColor === 'blue' ? 'text-blue-100' :
+                        currentCard.accentColor === 'blue' ? 'text-blue-100' :
+                        currentCard.accentColor === 'blue' ? 'text-blue-100' :
+                        'text-blue-100'
+                      } drop-shadow-lg min-h-[3rem] flex items-center justify-center`}>
+                        {currentCard.title}
+                      </h3>
+
+                      {/* Subtitle - Fixed height */}
+                      <p className="font-body text-sm sm:text-base md:text-lg font-semibold mb-5 sm:mb-6 text-center text-white/90 drop-shadow-md max-w-4xl mx-auto min-h-[3rem] flex items-center justify-center px-4">
+                        {currentCard.subtitle}
+                      </p>
+
+                      {/* Features - Fixed height with scroll if needed */}
+                      <div className="font-body text-sm sm:text-base leading-relaxed mb-5 text-white/90 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 w-full flex-grow overflow-y-auto max-h-[240px] px-2">
+                        {currentCard.features.map((feature, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.05 }}
+                            className="flex items-start gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-xl border border-white/20 hover:bg-white/20 transition-all h-fit"
+                          >
+                            <span className={`${
+                              currentCard.accentColor === 'blue' ? 'text-blue-300' :
+                              currentCard.accentColor === 'blue' ? 'text-blue-300' :
+                              currentCard.accentColor === 'blue' ? 'text-blue-300' :
+                              'text-blue-300'
+                            } font-bold text-lg flex-shrink-0`}>✔</span>
+                            <span className="text-white font-medium drop-shadow text-sm">{feature}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* Button - Always at bottom */}
+                      <div className="flex justify-center mt-auto pt-4">
+                        <Link
+                          to={currentCard.link}
+                          className={`relative inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-bold text-base ${
+                            currentCard.accentColor === 'blue' ? 'bg-blue-500 hover:bg-blue-600' :
+                            currentCard.accentColor === 'blue' ? 'bg-blue-500 hover:bg-blue-600' :
+                            currentCard.accentColor === 'blue' ? 'bg-blue-500 hover:bg-blue-600' :
+                            'bg-blue-500 hover:bg-purple-600'
+                          } text-white transition-all duration-300 group/btn overflow-hidden shadow-2xl border-2 border-white/30`}
+                        >
+                          <span className="relative z-10">Learn more</span>
+                          <ArrowRight className="w-5 h-5 relative z-10 group-hover/btn:translate-x-1 transition-transform" />
+                          
+                          {/* Button shine effect */}
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                            initial={{ x: '-100%' }}
+                            whileHover={{ x: '100%' }}
+                            transition={{ duration: 0.6 }}
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-3 mt-8 sm:mt-10">
+            {cards.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setDirection(index > currentIndex ? 1 : -1);
+                  setCurrentIndex(index);
+                }}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'w-12 bg-white shadow-lg' 
+                    : 'w-3 bg-white/40 hover:bg-white/60'
+                }`}
+                aria-label={`Go to card ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
