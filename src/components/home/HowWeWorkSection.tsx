@@ -70,14 +70,6 @@ const HowWeWorkSection = () => {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <motion.div 
-            className="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-full text-sm font-bold mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            How We Work
-          </motion.div>
           <motion.h2 
             className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight"
             initial={{ opacity: 0, y: 20 }}

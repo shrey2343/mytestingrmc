@@ -80,7 +80,7 @@ const ServicesSection = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+    <section className="relative py-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Floating Geometric Shapes */}
@@ -193,22 +193,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-        >
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
-            animate={{
-              boxShadow: [
-                "0 0 20px rgba(59, 130, 246, 0.1)",
-                "0 0 40px rgba(59, 130, 246, 0.3)",
-                "0 0 20px rgba(59, 130, 246, 0.1)",
-              ],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <Sparkles className="w-5 h-5 text-blue-500" />
-            <span className="text-blue-700 font-semibold text-sm">OUR SERVICES</span>
-          </motion.div>
-          
+        > 
           <motion.h2 
             className="font-display text-4xl md:text-5xl font-bold mb-4"
             animate={{

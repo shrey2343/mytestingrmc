@@ -212,22 +212,8 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
-            animate={{
-              boxShadow: [
-                "0 0 20px rgba(59, 130, 246, 0.1)",
-                "0 0 40px rgba(59, 130, 246, 0.3)",
-                "0 0 20px rgba(59, 130, 246, 0.1)",
-              ],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <Star className="w-5 h-5 text-yellow-400" fill="currentColor" />
-            <span className="text-blue-300 font-semibold text-sm">CLIENT TESTIMONIALS</span>
-          </motion.div>
-          
-          <motion.h2 
+         
+             <motion.h2 
             className="font-display text-4xl md:text-5xl font-bold text-background mb-4"
             animate={{
               backgroundPosition: ['0%', '100%', '0%'],

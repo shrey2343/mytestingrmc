@@ -4,7 +4,7 @@ import { Rocket, Sparkles, ArrowRight } from "lucide-react";
 const CTASection = () => {
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-24 flex flex-col items-center justify-center"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 flex flex-col items-center justify-center"
     >
       {/* Enhanced Background Graphics */}
       <div className="absolute inset-0 overflow-hidden">
@@ -159,26 +159,7 @@ const CTASection = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 text-center">
-        {/* Enhanced Badge */}
-        <motion.div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          animate={{
-            boxShadow: [
-              "0 0 20px rgba(59, 130, 246, 0.1)",
-              "0 0 40px rgba(59, 130, 246, 0.3)",
-              "0 0 20px rgba(59, 130, 246, 0.1)",
-            ],
-          }}
-        >
-          <Sparkles className="w-5 h-5 text-blue-500" />
-          <span className="text-blue-700 font-semibold text-sm">GET STARTED TODAY</span>
-        </motion.div>
-
-        {/* Enhanced Title */}
+       {/* Enhanced Title */}
         <motion.h2
           className="font-display text-charcoal text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-[900px] mx-auto"
           initial={{ opacity: 0, y: 30 }}
