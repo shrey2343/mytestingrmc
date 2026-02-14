@@ -246,7 +246,7 @@ const CTASection = () => {
             {/* Button Content */}
             <span className="relative z-10 flex items-center gap-3">
               <Rocket className="w-6 h-6" />
-              Get A Callback
+              Get a Callback
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

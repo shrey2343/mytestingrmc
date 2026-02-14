@@ -470,7 +470,7 @@ const IndustryHero = ({
                   ) : (
                     <>
                       <Send className="w-4 h-4 md:w-5 md:h-5" />
-                      Get A Callback
+                      Get a Callback
                     </>
                   )}
                 </motion.button>

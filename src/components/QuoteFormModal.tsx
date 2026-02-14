@@ -357,7 +357,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        Get A Callback
+                        Get a Callback
                       </>
                     )}
                   </motion.button>
