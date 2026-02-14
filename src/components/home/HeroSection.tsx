@@ -389,7 +389,7 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-2 sm:mb-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
                   <FileCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Free Sample Available</h3>
@@ -403,7 +403,7 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-2 sm:mb-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
                   <DollarSign className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Cost Efficient Pricing</h3>
@@ -417,7 +417,7 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-2 sm:mb-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
                   <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Complete Data Confidentiality</h3>
