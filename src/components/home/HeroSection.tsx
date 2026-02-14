@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Clock, FileCheck, DollarSign, Shield } from "lucide-react";
+import { Send, CheckCircle2 } from "lucide-react";
 import QuoteFormModal from "../QuoteFormModal";
 
 const HeroSection = () => {
@@ -347,9 +347,12 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Research, Experimentation &<br />
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              Scientific Publication Partner
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              Research & Experimentation <br />
+            </span>
+           
+            <span className="text-white bg-clip-text text-transparent">
+               Partner
             </span>
           </motion.h1>
           
@@ -375,10 +378,8 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
-                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Faster Turnaround Time</h3>
+               
+                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">⚡Faster Turnaround Time</h3>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Get results in half the usual time.</p>
               </div>
             </motion.div>
@@ -389,10 +390,8 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
-                  <FileCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Free Sample Available</h3>
+                
+                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">🎁Free Sample Available</h3>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Check our quality before you commit.</p>
               </div>
             </motion.div>
@@ -403,10 +402,8 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
-                  <DollarSign className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Cost Efficient Pricing</h3>
+               
+                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">💰Cost Efficient Pricing</h3>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Premium service without premium cost.</p>
               </div>
             </motion.div>
@@ -417,10 +414,8 @@ const HeroSection = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 sm:mb-3">
-                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Complete Data Confidentiality</h3>
+                
+                <h3 className="text-white font-semibold text-sm sm:text-base mb-1">🔒Complete Data Confidentiality</h3>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Your work stays 100% secure.</p>
               </div>
             </motion.div>

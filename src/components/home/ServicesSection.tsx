@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Check, Sparkles, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
     id: "research",
     title: "Research for Everyone",
     subtitle:
-      "Supporting doctoral research, institutional R&D, and funded academic projects",
+      "Supporting High School, Undergraduate (UG), Master's, Doctorate, and Corporate professionals.",
+    link: "/research-for-everyone",
     services: [
       "Topic selection & research problem identification",
       "Research proposal & synopsis development",
@@ -30,6 +32,7 @@ const categories = [
     title: "Startups & Enterprises",
     subtitle:
       "Validating ideas, strengthening funding stories, and building research-backed credibility",
+    link: "/startups-enterprises",
     services: [
       "Market research & competitive analysis",
       "Idea validation & feasibility studies",
@@ -46,6 +49,7 @@ const categories = [
     title: "Biosciences ",
     subtitle:
       "Advancing Research, Innovation & Scientific Intelligence Globally",
+    link: "/biosciences",
     services: [
       "Genomics & Next Generation Sequencing (WGS, WES, RNA-Seq, Variant Analysis)",
       "Clinical Research & Biostatistics (Survival, Regression, Predictive Modeling)",
@@ -63,6 +67,7 @@ const categories = [
     title: "MedCom & Research Agencies",
     subtitle:
       "A dependable, white-label research and scientific execution partner",
+    link: "/medcom-research-agencies",
     services: [
       "White-label medical writing",
       "Systematic reviews & meta-analysis",
@@ -219,107 +224,137 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           {/* LEFT – ENHANCED CATEGORY TABS */}
-          <div className="lg:w-1/3 space-y-4">
-            {categories.map((category, index) => {
-              const isActive = activeCategory.id === category.id;
+          <div className="lg:w-1/3">
+            {/* Mobile: Horizontal Scrollable Tabs */}
+            <div className="lg:hidden flex gap-3 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+              {categories.map((category, index) => {
+                const isActive = activeCategory.id === category.id;
 
-              return (
-                <motion.button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category)}
-                  className="relative w-full text-left group"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
-                >
-                  {/* Glow Effect on Active */}
-                  {isActive && (
-                    <motion.div
-                      className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-75 blur-lg"
-                      layoutId="activeGlow"
-                    />
-                  )}
+                return (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category)}
+                    className="relative flex-shrink-0 snap-start"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className={`relative px-4 py-3 rounded-xl transition-all duration-300 whitespace-nowrap ${
+                      isActive
+                        ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg"
+                        : "bg-white/80 text-slate-700 border border-slate-200"
+                    }`}>
+                      <span className="font-semibold text-sm">{category.title}</span>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </div>
 
-                  {/* Card Background */}
-                  <div className={`relative p-6 rounded-2xl transition-all duration-300 ${
-                    isActive
-                      ? "bg-white shadow-2xl border-2 border-blue-200"
-                      : "bg-white/60 hover:bg-white/90 border-2 border-transparent hover:border-blue-100 shadow-md hover:shadow-lg"
-                  }`}>
-                    {/* Animated Border */}
+            {/* Desktop: Vertical Tabs */}
+            <div className="hidden lg:block space-y-4">
+              {categories.map((category, index) => {
+                const isActive = activeCategory.id === category.id;
+
+                return (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category)}
+                    className="relative w-full text-left group"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ x: 5 }}
+                  >
+                    {/* Glow Effect on Active */}
                     {isActive && (
-                      <motion.span
-                        layoutId="activeBlueBorder"
-                        className="absolute inset-0 rounded-2xl border-2 border-blue-500/60 pointer-events-none"
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      <motion.div
+                        className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-75 blur-lg"
+                        layoutId="activeGlow"
                       />
                     )}
 
-                    {/* Corner Accent */}
-                    <motion.div
-                      className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl rounded-tr-2xl transition-opacity duration-300 ${
-                        isActive ? 'from-blue-400/30 to-transparent opacity-100' : 'from-blue-300/20 to-transparent opacity-0 group-hover:opacity-100'
-                      }`}
-                      animate={isActive ? {
-                        opacity: [0.3, 0.6, 0.3],
-                      } : {}}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                      }}
-                    />
-
-                    {/* Number Badge */}
-                    <motion.div
-                      className={`absolute -left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg ${
-                        isActive 
-                          ? 'bg-gradient-to-br from-blue-500 to-cyan-500 text-white' 
-                          : 'bg-slate-200 text-slate-600 group-hover:bg-blue-100'
-                      }`}
-                      animate={isActive ? {
-                        scale: [1, 1.1, 1],
-                      } : {}}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                      }}
-                    >
-                      {index + 1}
-                    </motion.div>
-
-                    <h3 className={`font-display text-xl font-extrabold tracking-tight mb-2 transition-colors duration-300 ${
-                      isActive ? "text-blue-700" : "text-blue-600 group-hover:text-blue-700"
+                    {/* Card Background */}
+                    <div className={`relative p-6 rounded-2xl transition-all duration-300 ${
+                      isActive
+                        ? "bg-white shadow-2xl border-2 border-blue-200"
+                        : "bg-white/60 hover:bg-white/90 border-2 border-transparent hover:border-blue-100 shadow-md hover:shadow-lg"
                     }`}>
-                      {category.title}
-                    </h3>
+                      {/* Animated Border */}
+                      {isActive && (
+                        <motion.span
+                          layoutId="activeBlueBorder"
+                          className="absolute inset-0 rounded-2xl border-2 border-blue-500/60 pointer-events-none"
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        />
+                      )}
 
-                    <p className="text-sm text-slate-600 line-clamp-2 pr-4">
-                      {category.subtitle}
-                    </p>
+                      {/* Corner Accent */}
+                      <motion.div
+                        className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl rounded-tr-2xl transition-opacity duration-300 ${
+                          isActive ? 'from-blue-400/30 to-transparent opacity-100' : 'from-blue-300/20 to-transparent opacity-0 group-hover:opacity-100'
+                        }`}
+                        animate={isActive ? {
+                          opacity: [0.3, 0.6, 0.3],
+                        } : {}}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                        }}
+                      />
 
-                    {/* Arrow Indicator */}
-                    <motion.div
-                      className={`absolute right-4 top-1/2 -translate-y-1/2 transition-opacity duration-300 ${
-                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
-                      }`}
-                      animate={isActive ? {
-                        x: [0, 5, 0],
-                      } : {}}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                      }}
-                    >
-                      <ArrowRight className="w-5 h-5 text-blue-600" />
-                    </motion.div>
-                  </div>
-                </motion.button>
-              );
-            })}
+                      {/* Number Badge */}
+                      <motion.div
+                        className={`absolute -left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg ${
+                          isActive 
+                            ? 'bg-gradient-to-br from-blue-500 to-cyan-500 text-white' 
+                            : 'bg-slate-200 text-slate-600 group-hover:bg-blue-100'
+                        }`}
+                        animate={isActive ? {
+                          scale: [1, 1.1, 1],
+                        } : {}}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                        }}
+                      >
+                        {index + 1}
+                      </motion.div>
+
+                      <h3 className={`font-display text-xl font-extrabold tracking-tight mb-2 transition-colors duration-300 ${
+                        isActive ? "text-blue-700" : "text-blue-600 group-hover:text-blue-700"
+                      }`}>
+                        {category.title}
+                      </h3>
+
+                      <p className="text-sm text-slate-600 line-clamp-2 pr-4">
+                        {category.subtitle}
+                      </p>
+
+                      {/* Arrow Indicator */}
+                      <motion.div
+                        className={`absolute right-4 top-1/2 -translate-y-1/2 transition-opacity duration-300 ${
+                          isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
+                        }`}
+                        animate={isActive ? {
+                          x: [0, 5, 0],
+                        } : {}}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                        }}
+                      >
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      </motion.div>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </div>
           </div>
 
           {/* RIGHT – ENHANCED SERVICES */}
@@ -389,7 +424,7 @@ const ServicesSection = () => {
                       </motion.p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                       {activeCategory.services.map((service, index) => (
                         <motion.div 
                           key={index} 
@@ -414,6 +449,37 @@ const ServicesSection = () => {
                       ))}
                     </div>
 
+                    {/* Learn More Button */}
+                    <motion.div
+                      className="mt-8 flex justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <Link to={activeCategory.link}>
+                        <motion.button
+                          className="group relative px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <span>Learn More</span>
+                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                          
+                          {/* Shine Effect */}
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-xl"
+                            animate={{
+                              x: ['-100%', '100%'],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              repeatDelay: 1,
+                            }}
+                          />
+                        </motion.button>
+                      </Link>
+                    </motion.div>
                     
                   </motion.div>
                 </AnimatePresence>

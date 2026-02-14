@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Phone, FileText, CheckCircle, Clock, TrendingUp } from "lucide-react";
+import { Phone, FileText, CheckCircle, Clock, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const steps = [
   {
@@ -50,6 +51,23 @@ const steps = [
 ];
 
 const IndustryProcess = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 300; // Adjust based on your mockup width
+      const currentScroll = scrollContainerRef.current.scrollLeft;
+      const targetScroll = direction === 'left' 
+        ? currentScroll - scrollAmount 
+        : currentScroll + scrollAmount;
+      
+      scrollContainerRef.current.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="py-16 px-4 w-full bg-gradient-to-br from-white to-blue-50/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -79,328 +97,217 @@ const IndustryProcess = () => {
           </motion.p>
         </div>
 
-        {/* Steps Cards */}
-        <div className="space-y-8">
-          {steps.map((step, index) => {
-            const IconComponent = step.icon;
-            const isEven = index % 2 === 0;
-            
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="relative group"
+        {/* Single Card with 3 Mobile Mockups */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="relative group"
+        >
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden transition-all duration-500 hover:border-blue-400/40 hover:shadow-blue-100">
+            {/* Background Section with 3 Phones */}
+            <div className="bg-gradient-to-br from-blue-950 to-slate-950 relative min-h-[600px] flex items-center justify-center p-8 overflow-hidden">
+              {/* Advanced Animated Background Effects */}
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Liquid Metal Effect */}
+                <div className="liquid-metal"></div>
+                
+                {/* DNA Helix Animation */}
+                <div className="dna-helix"></div>
+                
+                {/* Quantum Dots */}
+                <div className="quantum-dots"></div>
+                
+                {/* Floating Cubes */}
+                <div className="floating-cubes"></div>
+                
+                {/* Sine Wave Grid */}
+                <div className="sine-wave-grid"></div>
+                
+                {/* Color Spectrum Flow */}
+                <div className="color-spectrum"></div>
+                
+                {/* Morphing Polygons */}
+                <div className="morphing-polygons"></div>
+                
+                {/* Particle Vortex */}
+                <div className="particle-vortex"></div>
+                
+                {/* Glitch Effect */}
+                <div className="glitch-effect"></div>
+                
+                {/* Light Streaks */}
+                <div className="light-streaks"></div>
+                
+                {/* Data Particles */}
+                <div className="data-particles"></div>
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => scroll('left')}
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 group pointer-events-auto"
+                aria-label="Scroll left"
               >
-                <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden transition-all duration-500 hover:border-blue-400/40 hover:shadow-blue-100">
-                  <div className="flex flex-col lg:grid lg:grid-cols-2 min-h-[500px]">
-                    {/* Content Side */}
-                    <div className={`p-8 sm:p-10 md:p-14 flex flex-col justify-center ${!isEven ? 'lg:order-2' : ''}`}>
-                      {/* Step Header */}
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-lg transform -rotate-3 transition-transform group-hover:rotate-0`}>
-                          <IconComponent className="w-7 h-7 text-white" />
-                        </div>
-                        <div>
-                          <span className="text-xs font-black uppercase tracking-widest text-slate-400 block mb-1">
-                            Step {step.number}
-                          </span>
-                          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
-                            {step.title}
-                          </h3>
-                        </div>
-                      </div>
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-blue-600 group-hover:text-blue-700" />
+              </button>
 
-                      {/* Stats Badges */}
-                      <div className="flex flex-wrap gap-3 mb-6">
-                        <span className="flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-xl text-xs font-bold border border-blue-100">
-                          <Clock className="w-3.5 h-3.5" /> {step.stats.time}
-                        </span>
-                        <span className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-xl text-xs font-bold border border-emerald-100">
-                          <TrendingUp className="w-3.5 h-3.5" /> {step.stats.efficiency} Success
-                        </span>
-                      </div>
+              <button
+                onClick={() => scroll('right')}
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 group pointer-events-auto"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-blue-600 group-hover:text-blue-700" />
+              </button>
 
-                      {/* Description */}
-                      <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed font-medium">
-                        {step.description}
-                      </p>
-
-                      {/* Features List */}
-                      <div className="flex flex-col gap-3">
-                        {step.features.map((feature, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 * i }}
-                            className="flex items-center gap-3 bg-slate-50 px-4 py-3 rounded-2xl border border-slate-100 transition-all hover:bg-blue-50 hover:border-blue-200 group/feature"
-                          >
-                            <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                            <span className="text-sm font-semibold text-slate-700">
-                              {feature}
-                            </span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Mockup Side with Animated Background */}
-                    <div className={`bg-gradient-to-br from-blue-950 to-slate-950 relative min-h-[400px] lg:min-h-full flex items-center justify-center p-8 overflow-hidden ${!isEven ? 'lg:order-1' : ''}`}>
-                      {/* Advanced Animated Background Effects */}
-                      <div className="absolute inset-0 overflow-hidden">
-                        {/* Liquid Metal Effect */}
-                        <div className="liquid-metal"></div>
+              {/* 3 Phone Mockups in a Row */}
+              <div 
+                ref={scrollContainerRef}
+                className="relative z-10 flex md:grid md:grid-cols-3 gap-8 max-w-6xl w-full overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-12 md:px-0"
+              >
+                {steps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  
+                  return (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col items-center flex-shrink-0 snap-center"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                      whileHover={{ y: -10, scale: 1.02 }}
+                    >
+                      {/* Phone Mockup */}
+                      <div className="relative w-[260px] h-[520px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl border border-white/10">
+                        {/* Notch */}
+                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
                         
-                        {/* DNA Helix Animation */}
-                        <div className="dna-helix"></div>
-                        
-                        {/* Quantum Dots */}
-                        <div className="quantum-dots"></div>
-                        
-                        {/* Floating Cubes */}
-                        <div className="floating-cubes"></div>
-                        
-                        {/* Sine Wave Grid */}
-                        <div className="sine-wave-grid"></div>
-                        
-                        {/* Color Spectrum Flow */}
-                        <div className="color-spectrum"></div>
-                        
-                        {/* Morphing Polygons */}
-                        <div className="morphing-polygons"></div>
-                        
-                        {/* Particle Vortex */}
-                        <div className="particle-vortex"></div>
-                        
-                        {/* Glitch Effect */}
-                        <div className="glitch-effect"></div>
-                        
-                        {/* Light Streaks */}
-                        <div className="light-streaks"></div>
-                        
-                        {/* Data Particles */}
-                        <div className="data-particles"></div>
-                      </div>
-
-                      {/* Phone or Laptop Mockup */}
-                      <motion.div
-                        className="relative z-10"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        whileHover={{ y: -10, scale: 1.02 }}
-                      >
-                        {/* Show Laptop for Step 2 and 4, Phone for Step 1 and 3 */}
-                        {index === 1 || index === 3 ? (
-                          // Laptop Mockup
-                          <div className="relative flex flex-col items-center scale-[0.5] sm:scale-[0.65] md:scale-75 lg:scale-90">
-                            {/* Laptop Screen */}
-                            <div className="relative bg-black rounded-t-xl p-3 w-[500px] shadow-2xl">
-                              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-black rounded-b-xl z-20"></div>
-                              <div className="relative bg-white rounded-md overflow-auto" style={{ height: '320px' }}>
-                                {/* Laptop Content */}
-                                <div className="p-6 h-full">
-                                  {/* Header */}
-                                  <div className="flex items-center justify-between mb-4">
-                                    <div className="flex items-center gap-2">
-                                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center flex-shrink-0`}>
-                                        <IconComponent className="w-5 h-5 text-white" />
-                                      </div>
-                                      <div className="min-w-0">
-                                        <h4 className="text-base font-bold text-slate-900 truncate">{step.title}</h4>
-                                        <p className="text-[10px] text-slate-600">Step {step.number} of 3</p>
-                                      </div>
-                                    </div>
-                                    <div className="flex gap-2 flex-shrink-0">
-                                      <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-lg text-[10px] font-bold whitespace-nowrap">
-                                        {step.stats.time}
-                                      </span>
-                                      <span className="px-2 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-[10px] font-bold whitespace-nowrap">
-                                        {step.stats.efficiency}
-                                      </span>
-                                    </div>
-                                  </div>
-
-                                  {/* Progress Bar */}
-                                  <div className="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
-                                    <motion.div
-                                      className={`h-full bg-gradient-to-r ${step.gradient}`}
-                                      initial={{ width: 0 }}
-                                      whileInView={{ width: `${(parseInt(step.number)) * 33.33}%` }}
-                                      viewport={{ once: true }}
-                                      transition={{ duration: 1, delay: 0.5 }}
-                                    />
-                                  </div>
-
-                                  {/* Features Grid */}
-                                  <div className="grid grid-cols-2 gap-2 mb-4">
-                                    {step.features.map((feature, idx) => (
-                                      <motion.div
-                                        key={idx}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.3, delay: 0.6 + idx * 0.1 }}
-                                        className="px-4 py-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-100"
-                                      >
-                                        <div className="flex items-center gap-2">
-                                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                                          <span className="text-sm font-medium text-slate-700 leading-tight">{feature}</span>
-                                        </div>
-                                      </motion.div>
-                                    ))}
-                                  </div>
-
-                                  {/* Action Button */}
-                                  <motion.button
-                                    className={`w-full mt-6 py-3 bg-gradient-to-r ${step.gradient} text-white rounded-xl font-semibold shadow-lg`}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                  >
-                                    Continue to Next Step
-                                  </motion.button>
-                                </div>
-                              </div>
-                            </div>
-                            {/* Laptop Base */}
-                            <div className="relative w-[110%]">
-                              <div className="h-2 bg-gradient-to-b from-gray-700 to-gray-800"></div>
-                              <div className="h-4 bg-gradient-to-b from-gray-300 via-gray-100 to-gray-400 rounded-b-2xl shadow-2xl">
-                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-black/20 rounded-b-lg"></div>
-                              </div>
+                        {/* Screen */}
+                        <div className="relative w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
+                          {/* Status Bar */}
+                          <div className={`absolute top-0 left-0 right-0 h-12 bg-gradient-to-r ${step.gradient} flex items-center justify-between px-6 text-white text-xs z-10`}>
+                            <span className="font-semibold">9:41</span>
+                            <div className="flex gap-1">
+                              <div className="w-1 h-3 bg-white rounded"></div>
+                              <div className="w-1 h-3 bg-white rounded"></div>
+                              <div className="w-1 h-3 bg-white rounded"></div>
+                              <div className="w-1 h-3 bg-white/50 rounded"></div>
                             </div>
                           </div>
-                        ) : (
-                          // Phone Mockup (existing code)
-                          <div className="relative w-[260px] h-[520px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl border border-white/10">
-                          {/* Notch */}
-                          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
-                          
-                          {/* Screen */}
-                          <div className="relative w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                            {/* Status Bar */}
-                            <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-between px-6 text-white text-xs z-10">
-                              <span className="font-semibold">9:41</span>
-                              <div className="flex gap-1">
-                                <div className="w-1 h-3 bg-white rounded"></div>
-                                <div className="w-1 h-3 bg-white rounded"></div>
-                                <div className="w-1 h-3 bg-white rounded"></div>
-                                <div className="w-1 h-3 bg-white/50 rounded"></div>
-                              </div>
+
+                          {/* Content */}
+                          <div className="pt-16 px-6 pb-6 h-full overflow-hidden">
+                            {/* Icon */}
+                            <motion.div
+                              className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-4 shadow-lg`}
+                              animate={{
+                                rotate: [0, 5, -5, 0],
+                              }}
+                              transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                              }}
+                            >
+                              <IconComponent className="w-8 h-8 text-white" />
+                            </motion.div>
+
+                            {/* Title */}
+                            <h4 className="text-lg font-bold text-slate-900 mb-2">
+                              {step.title}
+                            </h4>
+                            <p className="text-xs text-slate-600 mb-3">
+                              Step {step.number} of 3
+                            </p>
+
+                            {/* Stats Badges */}
+                            <div className="flex gap-2 mb-4">
+                              <span className="flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-1 rounded-lg text-[10px] font-bold">
+                                <Clock className="w-3 h-3" /> {step.stats.time}
+                              </span>
+                              <span className="flex items-center gap-1 bg-emerald-50 text-emerald-700 px-2 py-1 rounded-lg text-[10px] font-bold">
+                                <TrendingUp className="w-3 h-3" /> {step.stats.efficiency}
+                              </span>
                             </div>
 
-                            {/* Content */}
-                            <div className="pt-16 px-6 pb-6 h-full overflow-hidden">
-                              {/* Icon */}
+                            {/* Progress Bar */}
+                            <div className="w-full h-2 bg-slate-200 rounded-full mb-6 overflow-hidden">
                               <motion.div
-                                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-4 shadow-lg`}
-                                animate={{
-                                  rotate: [0, 5, -5, 0],
-                                }}
-                                transition={{
-                                  duration: 3,
-                                  repeat: Infinity,
-                                  ease: "easeInOut"
-                                }}
-                              >
-                                <IconComponent className="w-8 h-8 text-white" />
-                              </motion.div>
+                                className={`h-full bg-gradient-to-r ${step.gradient}`}
+                                initial={{ width: 0 }}
+                                whileInView={{ width: `${(parseInt(step.number)) * 33.33}%` }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, delay: 0.5 }}
+                              />
+                            </div>
 
-                              {/* Title */}
-                              <h4 className="text-lg font-bold text-slate-900 mb-2">
-                                {step.title}
-                              </h4>
-                              <p className="text-xs text-slate-600 mb-4">
-                                Step {step.number} of 3
-                              </p>
+                            {/* Description */}
+                            <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                              {step.description}
+                            </p>
 
-                              {/* Progress Bar */}
-                              <div className="w-full h-2 bg-slate-200 rounded-full mb-6 overflow-hidden">
+                            {/* Feature Pills */}
+                            <div className="space-y-2 mb-6">
+                              {step.features.map((feature, idx) => (
                                 <motion.div
-                                  className={`h-full bg-gradient-to-r ${step.gradient}`}
-                                  initial={{ width: 0 }}
-                                  whileInView={{ width: `${(parseInt(step.number)) * 33.33}%` }}
+                                  key={idx}
+                                  initial={{ opacity: 0, x: -20 }}
+                                  whileInView={{ opacity: 1, x: 0 }}
                                   viewport={{ once: true }}
-                                  transition={{ duration: 1, delay: 0.5 }}
-                                />
-                              </div>
-
-                              {/* Feature Pills */}
-                              <div className="space-y-2 mb-6">
-                                {step.features.slice(0, 3).map((feature, idx) => (
-                                  <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.3, delay: 0.6 + idx * 0.1 }}
-                                    className="px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg text-xs text-slate-700 border border-blue-100 font-medium"
-                                  >
-                                    ✓ {feature}
-                                  </motion.div>
-                                ))}
-                              </div>
-
-                              {/* Button */}
-                              <motion.button
-                                className={`w-full py-3 bg-gradient-to-r ${step.gradient} text-white rounded-xl font-semibold shadow-lg text-sm`}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                              >
-                                Continue
-                              </motion.button>
+                                  transition={{ duration: 0.3, delay: 0.6 + idx * 0.1 }}
+                                  className="px-4 py-2 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg text-xs text-slate-700 border border-blue-100 font-medium"
+                                >
+                                  ✓ {feature}
+                                </motion.div>
+                              ))}
                             </div>
                           </div>
-
-                          {/* Phone Buttons */}
-                          <div className="absolute right-0 top-32 w-1 h-12 bg-slate-700 rounded-l"></div>
-                          <div className="absolute right-0 top-48 w-1 h-16 bg-slate-700 rounded-l"></div>
-                          <div className="absolute left-0 top-40 w-1 h-8 bg-slate-700 rounded-r"></div>
-
-                          {/* Home Indicator */}
-                          <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-28 h-1.5 bg-white/20 rounded-full"></div>
-
-                          {/* Floating Glow Effects */}
-                          <motion.div
-                            className="absolute -top-4 -right-4 w-20 h-20 bg-white/20 rounded-full blur-xl"
-                            animate={{
-                              scale: [1, 1.2, 1],
-                              opacity: [0.5, 0.8, 0.5],
-                            }}
-                            transition={{
-                              duration: 3,
-                              repeat: Infinity,
-                              ease: "easeInOut"
-                            }}
-                          />
-                          <motion.div
-                            className="absolute -bottom-4 -left-4 w-24 h-24 bg-cyan-300/30 rounded-full blur-xl"
-                            animate={{
-                              scale: [1, 1.3, 1],
-                              opacity: [0.5, 0.7, 0.5],
-                            }}
-                            transition={{
-                              duration: 4,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                              delay: 0.5
-                            }}
-                          />
                         </div>
-                        )}
-                      </motion.div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+
+                        {/* Phone Buttons */}
+                        <div className="absolute right-0 top-32 w-1 h-12 bg-slate-700 rounded-l"></div>
+                        <div className="absolute right-0 top-48 w-1 h-16 bg-slate-700 rounded-l"></div>
+                        <div className="absolute left-0 top-40 w-1 h-8 bg-slate-700 rounded-r"></div>
+
+                        {/* Home Indicator */}
+                        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-28 h-1.5 bg-white/20 rounded-full"></div>
+
+                        {/* Floating Glow Effects */}
+                        <motion.div
+                          className="absolute -top-4 -right-4 w-20 h-20 bg-white/20 rounded-full blur-xl"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 0.8, 0.5],
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                        <motion.div
+                          className="absolute -bottom-4 -left-4 w-24 h-24 bg-cyan-300/30 rounded-full blur-xl"
+                          animate={{
+                            scale: [1, 1.3, 1],
+                            opacity: [0.5, 0.7, 0.5],
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: 0.5
+                          }}
+                        />
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Advanced CSS Animations */}

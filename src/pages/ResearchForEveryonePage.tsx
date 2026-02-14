@@ -14,7 +14,12 @@ const ResearchForEveryonePage = () => {
     titleWhite: "Accessible Research",
     titleRed: "For All",
     subtitle: "Making quality research accessible to students, professionals, and individuals pursuing knowledge and academic excellence.",
-    tags: ["Students", "Researchers", "Professionals", "Academics", "Freelancers", "Learners"],
+    tags: ["Ivy leagues Admissions",
+      "EBI Visa Assistance",
+      "Dr. Authority",
+      "Ph. D. & DBA Researchers",
+      "Corporate Authority",
+      "University Faculty / Professors"],
     primaryCta: " Talk to Our Experts",
     secondaryCta: "Explore Services",
     stats: [
