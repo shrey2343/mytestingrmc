@@ -95,7 +95,7 @@ const EditingPage = () => {
     {
       quote: "RMC's editing service transformed my research paper. The attention to detail and language improvement was outstanding.",
       author: "Prof. Vikram Desai",
-      role: "Associate Professor, Pune University",
+      role: "Associate Professor",
     },
   ];
 
@@ -108,13 +108,7 @@ const EditingPage = () => {
         subtitle="Comprehensive editing services to ensure your documents are error-free and publication-ready."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="Our Process"
-        title="Editing Workflow"
-        subtitle="A meticulous editing process that ensures every document meets the highest quality standards."
-        steps={processSteps}
-          darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why Choose Us"
         title="Your Editing Partner"

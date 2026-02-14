@@ -354,30 +354,59 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.p 
-            className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-slate-300 mb-6 md:mb-10 text-center lg:text-left"
+            className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We collaborate with researchers, healthcare organizations, AI innovators, startups, and enterprises to design studies, execute experiments, analyze data, and translate findings into publications, reports, and scientific communications.
+           Partnering with global researchers, healthcare innovators, startups, universities, and bioscience organizations to design studies, analyze data, and publish impactful research.
           </motion.p>
-          
-          <motion.div
-            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start"
+
+          {/* Feature Cards */}
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 md:mb-10 max-w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <motion.button 
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+            <motion.div 
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:bg-white/10 transition-all"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="w-5 h-5" />
-              Talk to Our Experts
-            </motion.button>
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Faster Turnaround Time</h3>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Get results in half the usual time.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:bg-white/10 transition-all"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Free Sample Available</h3>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Check our quality before you commit.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:bg-white/10 transition-all"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Cost Efficient Pricing</h3>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Premium service without premium cost.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:bg-white/10 transition-all"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Complete Data Confidentiality</h3>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">Your work stays 100% secure.</p>
+            </motion.div>
           </motion.div>
+          
+          
         </motion.div>
 
         {/* Right Content - Quote Form */}
@@ -542,7 +571,7 @@ const HeroSection = () => {
                   ) : (
                     <>
                       <Send className="w-4 h-4 md:w-5 md:h-5" />
-                      Get A Free Quote
+                      Get A Callback
                     </>
                   )}
                 </motion.button>

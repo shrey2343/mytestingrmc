@@ -1804,13 +1804,7 @@ const GlobalAdmissionStandout = () => {
         </div>
       </section>
 
-      <IndustryProcess
-        sectionLabel="How It Works"
-        title="Your Research Publication Journey"
-        subtitle="A systematic approach to help you publish research and strengthen your university applications."
-        steps={processSteps}
-        darkTheme={true}
-      />
+      <IndustryProcess/>
 
       {/* Who This Program Is For Section */}
       <section style={{

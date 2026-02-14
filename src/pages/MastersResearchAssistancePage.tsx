@@ -147,18 +147,18 @@ const MastersResearchAssistancePage = () => {
   const testimonials = [
     {
       quote: "The support I received for my master's thesis was exceptional. The feedback was detailed, professional, and academically sound.",
-      author: "Sarah Williams",
-      role: "MS Student, Data Analytics (USA)",
+      author: "Suzen Dior",
+      role: "MS Student",
     },
     {
       quote: "Ethical, reliable, and highly professional research assistance. The team helped me refine my proposal and analyze complex datasets effectively.",
-      author: "Daniel Thompson",
-      role: "Research Analyst, Corporate Sector (USA)",
+      author: "Richard Thompson",
+      role: "Research Analyst",
     },
     {
       quote: "From proposal development to final defense preparation, the guidance was structured and easy to follow. It made my doctoral journey much smoother.",
-      author: "Dr. Jennifer Lee",
-      role: "PhD Scholar, Business Administration (USA)",
+      author: "Dr.Swati Vishwakarma",
+      role: "PhD Scholar",
     },
   ];
 
@@ -275,13 +275,7 @@ const MastersResearchAssistancePage = () => {
         testimonials={testimonials}
         darkTheme={false}
       />
-      <IndustryProcess
-        sectionLabel="How the Process Works"
-        title="Your Master's Thesis Journey"
-        subtitle="A systematic and milestone-driven approach to ensure successful thesis completion."
-        steps={processSteps}
-        darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryCTA
         sectionLabel="🎓 Get Your Master's Thesis Done — Stress-Free & On Time"
         title="Ready to Start Your Master's Thesis?"

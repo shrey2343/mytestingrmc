@@ -305,17 +305,7 @@ const IndustryHero = ({
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-3 md:gap-4 justify-center px-2 relative z-30">
-            <motion.button 
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-green-500/50 text-sm md:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <MessageCircle className="w-5 h-5" />
-              {primaryCta}
-            </motion.button>
-          </div>
+         
         </motion.div>
 
         <motion.div
@@ -480,7 +470,7 @@ const IndustryHero = ({
                   ) : (
                     <>
                       <Send className="w-4 h-4 md:w-5 md:h-5" />
-                      Get A Free Quote
+                      Get A Callback
                     </>
                   )}
                 </motion.button>

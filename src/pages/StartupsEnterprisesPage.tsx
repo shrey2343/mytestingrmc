@@ -114,17 +114,17 @@ const StartupsEnterprisesPage = () => {
     {
       quote: "RMC's market research helped us pivot our product strategy and secure our Series A funding. Their insights were invaluable for our growth.",
       author: "James Mitchell",
-      role: "Founder & CEO, TechVenture, Austin",
+      role: "Founder & CEO",
     },
     {
       quote: "The research-backed pitch deck RMC created helped us close a $5M funding round. Their data analysis was spot-on and investor-ready.",
       author: "Lisa Thompson",
-      role: "Co-founder, HealthTech Startup, Seattle",
+      role: "Co-founder & CTO",
     },
     {
       quote: "RMC's evidence-driven approach transformed our MVP development. We launched with confidence backed by solid research insights.",
-      author: "David Park",
-      role: "Head of Innovation, Enterprise Solutions, Chicago",
+      author: "Ravindra Verma",
+      role: "Head of Innovation",
     },
   ];
 
@@ -137,13 +137,7 @@ const StartupsEnterprisesPage = () => {
         subtitle="We partner with founders, innovation teams, and enterprises to transform ideas, data, and experiments into research-backed outputs that strengthen trust with investors, partners, and global audiences."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="Our Process"
-        title="How We Work"
-        subtitle="A streamlined process designed for speed and quality, delivering insights when you need them most."
-        steps={processSteps}
-          darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why RMC"
         title="Built for Speed & Scale"

@@ -1,66 +1,51 @@
 import { motion } from "framer-motion";
-import { Phone, FileText, Users, CheckCircle, Clock, TrendingUp } from "lucide-react";
+import { Phone, FileText, CheckCircle, Clock, TrendingUp } from "lucide-react";
 
 const steps = [
   {
     number: "1",
-    title: "Book a Discovery Call",
+    title: "Get Callback & Plan",
     description:
-      "Share your goals, challenges, and context with us. We understand your research, data, or publication needs and assess how we can best support you.",
+      "Fill the form to receive a personalized research plan and quotation.",
     icon: Phone,
     features: [
       "Free consultation",
-      "Expert guidance",
-      "Custom solutions",
-      "Needs assessment"
+      "Personalized plan",
+      "Custom quotation",
+      "Expert guidance"
     ],
     gradient: "from-blue-500 to-cyan-500",
-    stats: { time: "30 min", efficiency: "100%" },
+    stats: { time: "24 hrs", efficiency: "100%" },
   },
   {
     number: "2",
-    title: "Research Planning & Scope Design",
+    title: "Review Free Sample",
     description:
-      "Our research experts design a clear plan tailored to your objectives. We define the scope, deliverables, timelines, and match you with the right expertise.",
+      "Evaluate our quality with a complimentary sample before proceeding.",
     icon: FileText,
     features: [
-      "Detailed roadmap",
-      "Clear milestones",
-      "Expert matching",
-      "Timeline planning"
+      "Quality preview",
+      "No commitment",
+      "Expert work sample",
+      "Risk-free evaluation"
     ],
-    gradient: "from-blue-600 to-blue-700",
-    stats: { time: "2-3 days", efficiency: "95%" },
+    gradient: "from-blue-600 to-indigo-600",
+    stats: { time: "2-3 days", efficiency: "100%" },
   },
   {
     number: "3",
-    title: "Expert-Led Execution",
+    title: "Start & Deliver Fast",
     description:
-      "Our team begins execution with structured milestones and regular collaboration. Research, analysis, writing, or preparation progresses with clarity and transparency.",
-    icon: Users,
+      "We begin immediately and deliver in up to 50% faster turnaround time.",
+    icon: TrendingUp,
     features: [
-      "Regular updates",
-      "Quality assurance",
-      "Collaborative approach",
-      "Progress tracking"
-    ],
-    gradient: "from-blue-600 to-indigo-600",
-    stats: { time: "Ongoing", efficiency: "98%" },
-  },
-  {
-    number: "4",
-    title: "Review, Delivery & Ongoing Support",
-    description:
-      "We refine, review, and deliver high-quality, research-ready outputs. We continue supporting you through submissions, presentations, or next steps.",
-    icon: CheckCircle,
-    features: [
-      "Final review",
-      "Timely delivery",
-      "Continued support",
-      "Revision assistance"
+      "Immediate start",
+      "50% faster delivery",
+      "Quality assured",
+      "Ongoing support"
     ],
     gradient: "from-blue-700 to-blue-800",
-    stats: { time: "< 24 hrs", efficiency: "96%" },
+    stats: { time: "50% faster", efficiency: "98%" },
   },
 ];
 
@@ -90,7 +75,7 @@ const HowWeWorkSection = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            A comprehensive 4-step journey designed for excellence in research and publication
+            A comprehensive 3-step journey designed for excellence in research and publication
           </motion.p>
         </div>
 
@@ -228,7 +213,7 @@ const HowWeWorkSection = () => {
                                       </div>
                                       <div className="min-w-0">
                                         <h4 className="text-base font-bold text-slate-900 truncate">{step.title}</h4>
-                                        <p className="text-[10px] text-slate-600">Step {step.number} of 4</p>
+                                        <p className="text-[10px] text-slate-600">Step {step.number} of 3</p>
                                       </div>
                                     </div>
                                     <div className="flex gap-2 flex-shrink-0">
@@ -246,7 +231,7 @@ const HowWeWorkSection = () => {
                                     <motion.div
                                       className={`h-full bg-gradient-to-r ${step.gradient}`}
                                       initial={{ width: 0 }}
-                                      whileInView={{ width: `${(parseInt(step.number)) * 25}%` }}
+                                      whileInView={{ width: `${(parseInt(step.number)) * 33.33}%` }}
                                       viewport={{ once: true }}
                                       transition={{ duration: 1, delay: 0.5 }}
                                     />
@@ -331,7 +316,7 @@ const HowWeWorkSection = () => {
                                 {step.title}
                               </h4>
                               <p className="text-xs text-slate-600 mb-4">
-                                Step {step.number} of 4
+                                Step {step.number} of 3
                               </p>
 
                               {/* Progress Bar */}
@@ -339,7 +324,7 @@ const HowWeWorkSection = () => {
                                 <motion.div
                                   className={`h-full bg-gradient-to-r ${step.gradient}`}
                                   initial={{ width: 0 }}
-                                  whileInView={{ width: `${(parseInt(step.number)) * 25}%` }}
+                                  whileInView={{ width: `${(parseInt(step.number)) * 33.33}%` }}
                                   viewport={{ once: true }}
                                   transition={{ duration: 1, delay: 0.5 }}
                                 />

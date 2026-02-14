@@ -95,17 +95,17 @@ const ResearchForEveryonePage = () => {
     {
       quote: "RMC helped me complete my PhD dissertation on time. The quality of research and writing exceeded my expectations. Highly recommended!",
       author: "Amanda Foster",
-      role: "PhD Graduate, Stanford University, California",
+      role: "PhD Graduate",
     },
     {
       quote: "The statistical analysis support I received was exceptional. RMC's experts made complex data interpretation simple and clear.",
       author: "Kevin Martinez",
-      role: "Master's Student, MIT, Massachusetts",
+      role: "Master's Student",
     },
     {
       quote: "From research proposal to final thesis, RMC supported me throughout my academic journey. Professional and reliable service.",
       author: "Rachel Green",
-      role: "Doctoral Candidate, Harvard University, Massachusetts",
+      role: "Doctoral Candidate",
     },
   ];
 
@@ -118,13 +118,7 @@ const ResearchForEveryonePage = () => {
         subtitle="Comprehensive research support designed to help you achieve academic excellence and professional growth."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="Our Process"
-        title="How It Works"
-        subtitle="A simple and transparent process to get the research help you need, when you need it."
-        steps={processSteps}
-          darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why Choose Us"
         title="Your Success Partner"

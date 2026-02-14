@@ -109,18 +109,18 @@ const HealthcareLifeSciencesPage = () => {
   const testimonials = [
     {
       quote: "RMC's medical writing team delivered exceptional quality manuscripts that were accepted in top-tier journals. Their understanding of regulatory requirements is impeccable.",
-      author: "Dr. Sarah Johnson",
-      role: "VP Medical Affairs, BioPharma Inc., Boston",
+      author: "Dr. Albert Robinson",
+      role: "VP Medical Affairs",
     },
     {
       quote: "The scientific rigor and attention to detail in RMC's publications helped us secure FDA approval faster than expected. Outstanding partnership.",
-      author: "Dr. Michael Chen",
-      role: "Chief Scientific Officer, MedTech Solutions, San Francisco",
+      author: "Dr. Mich Park",
+      role: "Chief Scientific Officer",
     },
     {
       quote: "Working with RMC transformed our research communication strategy. Their expertise in life sciences is unmatched in the industry.",
-      author: "Dr. Emily Rodriguez",
-      role: "Director of Research, LifeSciences Corp., New York",
+      author: "Dr. Mark Nicolas",
+      role: "Director of Research",
     },
   ];
 
@@ -175,13 +175,7 @@ const HealthcareLifeSciencesPage = () => {
         </div>
       </section>
 
-      <IndustryProcess
-        sectionLabel="Our Process"
-        title="Scientific Rigor at Every Step"
-        subtitle="A structured approach that ensures quality, compliance, and scientific integrity throughout the research lifecycle."
-        steps={processSteps}
-        darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why RMC"
         title="Scientific Excellence"

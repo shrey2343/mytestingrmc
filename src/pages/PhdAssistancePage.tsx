@@ -96,18 +96,18 @@ const PhdAssistancePage = () => {
   const testimonials = [
   {
     quote: "The structured guidance and ethical research support helped me complete my doctoral work with clarity and confidence. Every step was transparent and well explained.",
-    author: "Dr. Emily Carter",
-    role: "PhD Researcher, Biomedical Sciences (USA)",
+    author: "Dr. Stephen Rodrik",
+    role: "PhD Researcher",
   },
   {
     quote: "Their mentorship significantly improved my research methodology and academic writing. I successfully published my work in a peer-reviewed journal.",
-    author: "Michael Anderson",
-    role: "PhD Scholar, Computer Science (USA)",
+    author: "Mailo Watson",
+    role: "PhD Scholar",
   },
   {
     quote: "The support I received for my master's thesis was exceptional. The feedback was detailed, professional, and academically sound.",
-    author: "Sarah Williams",
-    role: "MS Student, Data Analytics (USA)",
+    author: "Shweta Chouhan",
+    role: "MS Student",
   },
   ];
 
@@ -120,12 +120,7 @@ const PhdAssistancePage = () => {
         subtitle="We work as research partners, helping you progress with clarity, confidence, and consistency while maintaining academic integrity, transparency, and ethical compliance."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="How the Process Works"
-        title="Your PhD Journey with Us"
-        subtitle="A milestone-driven approach ensuring structured progression from start to successful completion."
-        steps={processSteps}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Key Outcomes You Can Expect"
         title="Support Your PhD — Without Compromising Integrity"

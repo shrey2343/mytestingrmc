@@ -94,8 +94,8 @@ const DataAnalysisPage = () => {
   const testimonials = [
     {
       quote: "The data analysis team at RMC provided exceptional support. Their expertise in SPSS and interpretation helped me complete my research successfully.",
-      author: "Dr. Anjali Mehta",
-      role: "Research Scholar, JNU",
+      author: "Dr. Vivek Mehta",
+      role: "Research Scholar",
     },
   ];
 
@@ -108,13 +108,7 @@ const DataAnalysisPage = () => {
         subtitle="Comprehensive statistical analysis services to transform your data into meaningful insights."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="Our Process"
-        title="Analysis Workflow"
-        subtitle="A systematic approach to ensure accurate and reliable data analysis results."
-        steps={processSteps}
-          darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why Choose Us"
         title="Your Data Analysis Partner"

@@ -130,18 +130,18 @@ const BiosciencesPage = () => {
   const testimonials = [
     {
       quote: "RMC's genomic analysis expertise helped us publish in a high-impact journal. Their attention to detail and scientific rigor is exceptional.",
-      author: "Dr. Priya Sharma",
-      role: "Assistant Professor, IIT Delhi",
+      author: "Dr. Swara Sharma",
+      role: "Assistant Professor",
     },
     {
       quote: "The bioinformatics training program was comprehensive and practical. It gave me the skills I needed for my PhD research.",
       author: "Rahul Verma",
-      role: "PhD Scholar, AIIMS New Delhi",
+      role: "PhD Scholar",
     },
     {
       quote: "Professional, confidential, and scientifically sound. RMC delivered exactly what we needed for our biotech startup.",
-      author: "Dr. Anjali Mehta",
-      role: "Co-founder, BioGenix Labs",
+      author: "Dr. Anjali Goyal",
+      role: "Co-founder & CEO",
     },
   ];
 
@@ -688,13 +688,7 @@ const BiosciencesPage = () => {
         </div>
       </section>
 
-      <IndustryProcess
-        sectionLabel="🔍 HOW WE WORK"
-        title="Confidential. Precise. Outcome-Focused."
-        subtitle="A structured approach that ensures quality, compliance, and scientific integrity throughout the research lifecycle."
-        steps={processSteps}
-          darkTheme={true}
-      />
+      <IndustryProcess />
 
       {/* Why RMC Section - Custom Design */}
       <section className="py-24 bg-gradient-to-br from-blue-50 via-cyan-50 to-cyan-50 relative overflow-hidden">

@@ -7,84 +7,72 @@ const testimonials = [
   quote: "RMC transformed our research strategy with their strong expertise in data analysis and publication support. Their ethical and quality-focused approach helped our team publish in high-impact journals.",
   author: "Dr. Jonathan Miller",
   role: "Senior Research Scientist",
-  organization: "Healthcare Innovation Lab, Boston, USA",
   rating: 5,
 },
 {
-  quote: "As a PhD researcher, I struggled with thesis structure and data interpretation. RMC's clear and structured guidance helped me gain complete clarity, and I successfully defended my dissertation with confidence.",
-  author: "Emily Carter",
+  quote: "As a PhD researcher, I struggled with thesis structure and data interpretation. RMC's  clear and structured guidance helped me gain complete clarity, and I successfully defended my dissertation with confidence.",
+  author: "Shalini Mehta",
   role: "PhD Researcher",
-  organization: "Department of Life Sciences, USA",
   rating: 5,
 },
 {
   quote: "Collaborating with RMC for our startup's market research was a turning point. Their data-driven insights strengthened our investor pitch and played a key role in securing funding.",
-  author: "Michael Thompson",
+  author: "Michael Crook",
   role: "Founder & CEO",
-  organization: "HealthTech Startup, San Francisco, USA",
   rating: 5,
 },
 {
   quote: "The team at RMC provided exceptional support throughout our clinical trial documentation. Their attention to detail and regulatory knowledge was invaluable.",
-  author: "Dr. Sarah Johnson",
+  author: "Dr. Suraj Waskale",
   role: "Clinical Research Director",
-  organization: "MedTech Solutions, New York, USA",
   rating: 5,
 },
 {
   quote: "RMC's expertise in statistical analysis helped us uncover insights we hadn't considered. Their work directly contributed to our breakthrough publication.",
-  author: "Prof. David Chen",
+  author: "Prof. David Watson",
   role: "Professor of Biostatistics",
-  organization: "Stanford University, USA",
   rating: 5,
 },
 {
   quote: "Working with RMC streamlined our research process significantly. Their systematic approach and timely delivery exceeded our expectations.",
-  author: "Dr. Maria Rodriguez",
+  author: "Dr. Sneha Agrawal",
   role: "Research Lead",
-  organization: "Pharma Innovations, California, USA",
   rating: 5,
 },
 {
   quote: "RMC's medical writing services are top-notch. They helped us communicate complex research findings in a clear and compelling manner.",
-  author: "James Wilson",
+  author: "David Wilson",
   role: "VP of Research",
-  organization: "BioHealth Corp, Boston, USA",
   rating: 5,
 },
 {
   quote: "The consultation sessions with RMC were incredibly insightful. They guided us through every step of our research methodology.",
   author: "Dr. Priya Sharma",
   role: "Assistant Professor",
-  organization: "MIT, Massachusetts, USA",
   rating: 5,
 },
 {
   quote: "RMC's support in preparing our conference presentations was outstanding. We received excellent feedback from peers and reviewers.",
-  author: "Robert Anderson",
+  author: "Robert Antonio",
   role: "Senior Researcher",
-  organization: "Tech Research Institute, Seattle, USA",
   rating: 5,
 },
 {
   quote: "Their expertise in data visualization helped us present our findings in a much more impactful way. Highly recommend their services.",
   author: "Dr. Lisa Wang",
   role: "Data Scientist",
-  organization: "AI Research Lab, San Francisco, USA",
   rating: 5,
 },
 {
   quote: "RMC's team is professional, responsive, and deeply knowledgeable. They've become our go-to partner for all research-related needs.",
-  author: "Mark Stevens",
+  author: "Mark Miller",
   role: "Director of Innovation",
-  organization: "Enterprise Solutions Inc, Texas, USA",
   rating: 5,
 },
 {
   quote: "This team is professional, responsive, and deeply best. They've become our go-to partner for all research-related needs.",
-  author: "Dr.Robin Jarvish",
+  author: "Dr.Satyendra Mehra",
   role: "Director of Innovation",
-  organization: "Enterprise Solutions Inc, Texas, USA",
   rating: 5,
 },
 ];
@@ -309,9 +297,6 @@ const TestimonialsSection = () => {
                     <div className="border-t-2 border-gradient-to-r from-blue-200 to-cyan-200 pt-4">
                       <p className="font-bold text-charcoal text-base">{testimonial.author}</p>
                       <p className="text-xs text-slate-600 mt-1 font-medium">{testimonial.role}</p>
-                      <p className="text-xs text-blue-600 font-semibold mt-1">
-                        {testimonial.organization}
-                      </p>
                     </div>
 
                     {/* Bottom Accent Line */}

@@ -95,7 +95,7 @@ const EssayWritingPage = () => {
     {
       quote: "The essay I received was well-written, properly researched, and delivered on time. Highly recommend RMC for essay writing!",
       author: "Neha Singh",
-      role: "Undergraduate Student, Delhi University",
+      role: "Undergraduate Student",
     },
   ];
 
@@ -108,13 +108,7 @@ const EssayWritingPage = () => {
         subtitle="Professional essay writing services for all academic levels and topics with guaranteed quality."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="Our Process"
-        title="How It Works"
-        subtitle="A simple and transparent process to get your essay written by experts."
-        steps={processSteps}
-          darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why Choose Us"
         title="Your Writing Partner"

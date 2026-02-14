@@ -127,18 +127,18 @@ const MedComResearchAgenciesPage = () => {
   const testimonials = [
     {
       quote: "RMC has been our go-to partner for overflow work. Their quality is indistinguishable from our in-house team, and they always meet our tight deadlines.",
-      author: "Robert Anderson",
-      role: "Managing Director, MedCom Agency, Philadelphia",
+      author: "Robert Hawks",
+      role: "Managing Director",
     },
     {
       quote: "The white-label scientific writing support from RMC allowed us to scale our operations without hiring overhead. Exceptional partnership.",
-      author: "Jennifer Davis",
-      role: "VP Operations, Research Consultancy, Denver",
+      author: "Lucy Markus",
+      role: "VP Operations",
     },
     {
       quote: "RMC's confidential support helped us deliver complex medical communications on time. Their expertise in regulatory writing is outstanding.",
       author: "Mark Wilson",
-      role: "Director, Healthcare Communications, Miami",
+      role: "Director",
     },
   ];
 
@@ -192,13 +192,7 @@ const MedComResearchAgenciesPage = () => {
         subtitle="Comprehensive research services delivered under your brand with complete confidentiality."
         services={services}
       />
-      <IndustryProcess
-        sectionLabel="How We Work"
-        title="A Reliable, White-Label Scientific Partnership"
-        subtitle="A streamlined workflow designed to integrate seamlessly with your agency operations."
-        steps={processSteps}
-           darkTheme={true}
-      />
+      <IndustryProcess/>
       <IndustryWhyUs
         sectionLabel="Why Agencies Choose RMC"
         title="Scale Without Limits"
