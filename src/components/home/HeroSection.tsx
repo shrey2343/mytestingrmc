@@ -364,7 +364,7 @@ const HeroSection = () => {
 
           {/* Feature Cards */}
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 md:mb-10 max-w-full"
+            className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 md:mb-10 max-w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
