@@ -342,7 +342,7 @@ const HeroSection = () => {
         >
 
           <motion.h1 
-            className="font-display font-bold text-[34px] xs:text-[36px] sm:text-[38px] md:text-[44px] lg:text-[54px] leading-[1.3] mb-4 md:mb-6 text-center lg:text-left max-w-full"
+            className="font-display font-bold text-[41px] xs:text-[43px] sm:text-[45px] md:text-[48px] lg:text-[56px] leading-[1.3] mb-4 md:mb-6 text-center lg:text-left max-w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -356,7 +356,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.p 
-            className="font-body text-[20px] sm:text-[18px] md:text-lg leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left"
+            className="font-body text-[24px] sm:text-[22px] md:text-xl leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

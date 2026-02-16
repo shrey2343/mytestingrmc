@@ -10,7 +10,7 @@ interface IndustryHeroProps {
   titleRed: string;
   subtitle?: string;
   bulletPoints?: string[];
-  tags: string[];
+  tags?: string[];
   primaryCta: string;
   primaryCtaLink?: string;
   secondaryCta: string;
@@ -263,13 +263,13 @@ const IndustryHero = ({
             <span className="text-xs md:text-sm text-white/90">{badge}</span>
           </motion.div>
 
-          <h1 className="font-display font-bold text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] mb-4 md:mb-6">
+          <h1 className="font-display font-bold text-[39px] sm:text-[50px] md:text-[48px] lg:text-[52px] leading-[1.2] mb-4 md:mb-6">
             {titleWhite}
             <span className="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">{titleRed}</span>
           </h1>
 
           {subtitle && (
-            <p className="font-body text-sm md:text-base lg:text-lg leading-relaxed text-slate-300 mb-6 md:mb-8 px-2">
+            <p className="font-body text-[20px] md:text-lg lg:text-xl leading-relaxed text-slate-300 mb-6 md:mb-8 px-2">
               {subtitle}
             </p>
           )}
@@ -293,17 +293,19 @@ const IndustryHero = ({
             </div>
           )}
 
-          <div className="flex flex-wrap gap-2 md:gap-3 mb-8 md:mb-10 justify-center items-center max-w-[700px] mx-auto px-2">
-            {tags.map((tag, index) => (
-              <motion.span 
-                key={index} 
-                className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/5 border border-white/10 text-xs md:text-sm text-white/80 backdrop-blur-sm whitespace-nowrap"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
-              >
-                {tag}
-              </motion.span>
-            ))}
-          </div>
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 md:gap-3 mb-8 md:mb-10 justify-center items-center max-w-[700px] mx-auto px-2">
+              {tags.map((tag, index) => (
+                <motion.span 
+                  key={index} 
+                  className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/5 border border-white/10 text-xs md:text-sm text-white/80 backdrop-blur-sm whitespace-nowrap"
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
+                >
+                  {tag}
+                </motion.span>
+              ))}
+            </div>
+          )}
 
          
         </motion.div>

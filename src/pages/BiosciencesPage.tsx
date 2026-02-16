@@ -14,10 +14,6 @@ const BiosciencesPage = () => {
     titleWhite: "We Turn Complex Biological Data Into",
     titleRed: "Publishable, Defensible & Commercially Valuable Insights",
     subtitle: "Advanced Genomics | Clinical Data Modeling | Microbial Informatics | Research Intelligence",
-    tags: [
-      "Serving Researchers, Universities, Hospitals & Biotech Companies Worldwide",
-      "Confidential | High-Precision | Publication-Ready"
-    ],
     primaryCta: "Talk to Our Expert",
     secondaryCta: "Our Services",
     stats: [
@@ -158,7 +154,8 @@ const BiosciencesPage = () => {
     "University Research Students",
     "Early-Career Scientists",
     "Professionals Transitioning into Bioinformatics",
-    "Researchers Preparing for PhD or Industry Roles"
+    "Researchers Preparing for PhD or Industry Roles",
+    "Hospitals & Biotech Companies Worldwide"
   ];
 
   return (
