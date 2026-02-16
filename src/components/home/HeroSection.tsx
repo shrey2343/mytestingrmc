@@ -342,7 +342,8 @@ const HeroSection = () => {
         >
 
           <motion.h1 
-            className="font-display font-bold text-[41px] xs:text-[43px] sm:text-[45px] md:text-[48px] lg:text-[56px] leading-[1.3] mb-4 md:mb-6 text-center lg:text-left max-w-full"
+            className="font-display font-bold text-[41px] xs:text-[43px] sm:text-[45px] md:text-[48px] lg:text-[56px] leading-[1.3] mb-4 md:mb-6 text-center lg:text-left max-w-full break-words hyphens-auto"
+            style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
