@@ -342,16 +342,18 @@ const HeroSection = () => {
         >
 
           <motion.h1 
-            className="font-display font-bold text-[41px] xs:text-[43px] sm:text-[45px] md:text-[48px] lg:text-[56px] leading-[1.3] mb-4 md:mb-6 text-center lg:text-left max-w-full break-words hyphens-auto"
-            style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
+            className="font-display font-bold text-[28px] xs:text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px] leading-[1.25] mb-4 md:mb-6 text-center lg:text-left max-w-full px-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              Research, Experimentation & Publication
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent block">
+              Research,{" "}
+              <span className="whitespace-nowrap inline-block">Experimentation</span>
+              <br className="hidden sm:block" />
+              {" "}& Publication
             </span>{" "}
-            <span className="text-white">
+            <span className="text-white block mt-1">
               Partner
             </span>
           </motion.h1>
