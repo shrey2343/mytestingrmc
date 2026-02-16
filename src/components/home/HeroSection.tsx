@@ -342,14 +342,13 @@ const HeroSection = () => {
         >
 
           <motion.h1 
-            className="font-display font-bold text-[45px] sm:text-[32px] md:text-[42px] lg:text-[54px] leading-[1.2] mb-4 md:mb-6 text-center lg:text-left"
+            className="font-display font-bold text-[34px] xs:text-[36px] sm:text-[38px] md:text-[44px] lg:text-[54px] leading-[1.3] mb-4 md:mb-6 text-center lg:text-left max-w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              Research, Experimentation<br />
-              & Publication
+              Research, Experimentation & Publication
             </span>{" "}
             <span className="text-white">
               Partner
@@ -357,7 +356,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.p 
-            className="font-body text-[30px] sm:text-base md:text-lg leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left"
+            className="font-body text-[20px] sm:text-[18px] md:text-lg leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
