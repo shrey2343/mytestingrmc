@@ -128,11 +128,19 @@ const IndustryHero = ({
         email: formData.email,
         phone: formData.phone,
         service: serviceToSend,
-        
+        date: new Date().toLocaleString('en-US', { 
+          timeZone: 'Asia/Kolkata',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        })
       };
 
       // Send to webhook
-     await fetch("https://script.google.com/macros/s/AKfycbx7mq9gj63h7z6Jm6EBmOXuSCn4UXRXyOG6iVMdvsIdWMm6D9n-O9c4wNK-CMLY5yq0rg/exec", {
+     await fetch("https://script.google.com/macros/s/AKfycbwvr37wOGBpVt354OEDTI5GQwOK3WvNCqoVhLcAm3X4fTXWuUu0w4mARRfucyjaoD_GuQ/exec", {
   method: "POST",
   mode: "no-cors",
   headers: {

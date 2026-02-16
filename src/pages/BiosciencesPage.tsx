@@ -579,17 +579,12 @@ const BiosciencesPage = () => {
                         >
                           <span className="text-3xl">{icons[index]}</span>
                         </motion.div>
-                        <motion.div
-                          className={`w-10 h-10 bg-gradient-to-br ${gradients[index]} rounded-lg flex items-center justify-center shadow-md`}
-                          whileHover={{ scale: 1.2 }}
-                        >
-                          <span className="text-white text-lg font-bold">{index + 1}</span>
-                        </motion.div>
-                      </div>
+                       
                       
                       <h3 className="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-purple-600 group-hover:to-pink-600 transition-all">
                         {program.title}
                       </h3>
+                      </div>
                       <p className="text-slate-600 text-sm leading-relaxed">
                         {program.description}
                       </p>
@@ -640,11 +635,11 @@ const BiosciencesPage = () => {
                 </span>
               </motion.h3>
               
-              <div className="grid md:grid-cols-2 gap-5 mb-8">
+              <div className="grid grid-cols-2 gap-3 sm:gap-5 mb-8">
                 {trainingFor.map((item, index) => (
                   <motion.div 
                     key={index} 
-                    className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer"
+                    className="flex items-center gap-2 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -652,7 +647,7 @@ const BiosciencesPage = () => {
                     whileHover={{ x: 10, scale: 1.02 }}
                   >
                     <motion.div 
-                      className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"
+                      className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"
                       animate={{ 
                         scale: [1, 1.5, 1],
                         boxShadow: ['0 0 0 0 rgba(168, 85, 247, 0.4)', '0 0 0 10px rgba(168, 85, 247, 0)', '0 0 0 0 rgba(168, 85, 247, 0)']
@@ -663,7 +658,7 @@ const BiosciencesPage = () => {
                         delay: index * 0.2
                       }}
                     />
-                    <span className="text-slate-700 font-medium group-hover:text-purple-600 transition-colors">{item}</span>
+                    <span className="text-slate-700 font-medium group-hover:text-purple-600 transition-colors text-sm sm:text-base">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -846,16 +841,16 @@ const BiosciencesPage = () => {
                   <div className={`absolute -inset-1 bg-gradient-to-r ${gradients[index]} rounded-2xl blur-lg opacity-40 group-hover:opacity-100 transition duration-500`} />
                   
                   {/* Card content */}
-                  <div className="relative p-6 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-slate-100 overflow-hidden min-h-[140px] flex flex-col">
+                  <div className="relative p-6 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-slate-100 overflow-hidden min-h-[100px]">
                     {/* Animated background gradient */}
                     <motion.div
                       className={`absolute inset-0 bg-gradient-to-br ${gradients[index]} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                     />
                     
-                    <div className="relative z-10 flex-1 flex flex-col">
+                    <div className="relative z-10 flex items-center gap-4">
                       {/* Icon */}
                       <motion.div
-                        className={`w-14 h-14 bg-gradient-to-br ${gradients[index]} rounded-xl flex items-center justify-center shadow-lg mb-4`}
+                        className={`w-14 h-14 flex-shrink-0 bg-gradient-to-br ${gradients[index]} rounded-xl flex items-center justify-center shadow-lg`}
                         whileHover={{ rotate: 360, scale: 1.15 }}
                         transition={{ duration: 0.6 }}
                       >
@@ -863,7 +858,7 @@ const BiosciencesPage = () => {
                       </motion.div>
                       
                       {/* Text */}
-                      <p className="text-slate-700 font-semibold leading-relaxed group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-emerald-600 group-hover:to-teal-600 transition-all">
+                      <p className="text-slate-700 font-semibold leading-relaxed group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-emerald-600 group-hover:to-teal-600 transition-all flex-1">
                         {benefit}
                       </p>
                     </div>
