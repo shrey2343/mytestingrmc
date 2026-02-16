@@ -360,7 +360,7 @@ const HeroSection = () => {
               <span className="whitespace-nowrap inline-block text-[32px] xs:text-[36px] sm:text-[50px] md:text-[54px] lg:text-[62px]">Experimentation</span>
               <br className="sm:hidden" />
               <span className="whitespace-nowrap inline-block">
-                <span className="text-[28px] sm:text-[50px] md:text-[54px] lg:text-[62px]">&</span>
+                <span className="text-[28px] sm:text-[45px] md:text-[54px] lg:text-[62px]">&</span>
                 {" "}Publication
               </span>
             </span>{" "}
