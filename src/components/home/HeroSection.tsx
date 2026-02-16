@@ -342,14 +342,14 @@ const HeroSection = () => {
         >
 
           <motion.h1 
-            className="font-display font-bold text-[28px] xs:text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px] leading-[1.25] mb-4 md:mb-6 text-center lg:text-left max-w-full px-3"
+            className="font-display font-bold text-[52px] xs:text-[54px] sm:text-[56px] md:text-[60px] lg:text-[68px] leading-[1.25] mb-4 md:mb-6 text-center lg:text-left max-w-full px-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent block">
               Research,{" "}
-              <span className="whitespace-nowrap inline-block">Experimentation</span>
+              <span className="whitespace-nowrap inline-block text-[34px] xs:text-[48px] sm:text-[56px] md:text-[60px] lg:text-[68px]">Experimentation</span>
               <br className="hidden sm:block" />
               {" "}& Publication
             </span>{" "}
@@ -359,7 +359,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.p 
-            className="font-body text-[24px] sm:text-[22px] md:text-xl leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left"
+            className="font-body text-[24px] sm:text-[26px] md:text-2xl lg:text-3xl leading-relaxed text-slate-300 mb-6 md:mb-8 text-center lg:text-left px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
