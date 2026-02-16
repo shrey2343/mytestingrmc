@@ -58,10 +58,10 @@ const Footer = () => {
 
               {/* Email */}
               <a
-                href="mailto:Hello@rmcdr.com"
+                href="mailto:hello@rmcdr.com"
                 className="text-background/70 hover:text-white text-sm transition-colors mt-4 block"
               >
-                Hello@rmcdr.com
+                hello@rmcdr.com
               </a>
             </div>
 
@@ -103,7 +103,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link to="/phd-assistance" onClick={scrollToTop} className="text-background/70 hover:text-white text-sm transition-colors">
-                    Ph. D. Assistance
+                    Ph.D Assistance
                   </Link>
                 </li>
                 <li>
