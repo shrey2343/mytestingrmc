@@ -28,12 +28,25 @@ const BiosciencesPage = () => {
     {
       title: "Genomic & NGS Data Analysis",
       description: "We provide comprehensive next-generation sequencing analysis services for research and clinical applications.",
-      benefits: [
-        "Whole Genome & Whole Exome Sequencing",
-        "RNA-Seq & Transcriptomics",
-        "Variant Calling & Functional Annotation",
-        "Differential Gene Expression",
-        "Pathway & Enrichment Analysis"
+      benefits: [" Whole Genome Sequencing (WGS) - DNA -seq",
+
+"Whole Exome Sequencing (WES) - DNA - seq",
+
+"Targeted Gene Panel Analysis",
+
+"Copy Number Variation (CNV) Detection",
+
+"Structural Variant (SV) Analysis",
+
+"RNA-Seq Analysis",
+"Differential Gene Expression (DGE)",
+"Alternative Splicing Analysis",
+"Transcriptome Assembly & Quantification",
+"Variant Calling (SNV/Indel)",
+"Functional Annotation & Prioritization",
+"ACMG-Based Clinical Interpretation",
+"Pathway & Gene Ontology Enrichment",
+"Network & Systems Biology Analysis",
       ]
     },
     {
@@ -387,8 +400,9 @@ const BiosciencesPage = () => {
         title="Advanced Bioinformatics Services"
         subtitle="We don't provide basic data processing. We deliver structured, scientifically validated outputs aligned with global research standards."
         services={services}
-          darkTheme={true}
-          hideLearnMore={true}
+        darkTheme={true}
+        hideLearnMore={true}
+        firstCardFullWidth={true}
       />
 
       {/* Training Programs Section */}

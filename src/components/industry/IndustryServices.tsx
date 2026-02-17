@@ -15,9 +15,10 @@ interface IndustryServicesProps {
   hideLearnMore?: boolean;
   hideDescription?: boolean;
   darkTheme?: boolean;
+  firstCardFullWidth?: boolean;
 }
 
-const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMore = false, hideDescription = false, darkTheme = false }: IndustryServicesProps) => {
+const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMore = false, hideDescription = false, darkTheme = false, firstCardFullWidth = false }: IndustryServicesProps) => {
   const bgClass = darkTheme ? "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950" : "bg-gradient-to-r from-white to-blue-50";
   const labelClass = darkTheme ? "text-blue-400" : "text-blue-600";
   const titleClass = darkTheme ? "text-white" : "text-slate-900";
@@ -88,7 +89,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="relative group h-full flex flex-col"
+              className={`relative group h-full flex flex-col ${firstCardFullWidth && index === 0 ? 'md:col-span-2 lg:col-span-3' : ''}`}
             >
               <motion.div
                 className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500"
@@ -117,7 +118,7 @@ const IndustryServices = ({ sectionLabel, title, subtitle, services, hideLearnMo
                 <>
                   <div className="mb-4 flex-grow">
                     <h4 className={`text-sm font-semibold ${cardTitleClass} mb-2`}>This helps you in:</h4>
-                    <ul className="space-y-2">
+                    <ul className={`${firstCardFullWidth && index === 0 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2' : 'space-y-2'}`}>
                       {service.benefits.map((benefit, benefitIndex) => (
                         <li key={benefitIndex} className={`flex items-start gap-2 text-sm ${cardTextClass}`}>
                           <CheckCircle className={`w-4 h-4 ${benefitIconClass} mt-0.5 flex-shrink-0`} />
